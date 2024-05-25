@@ -20,7 +20,7 @@ const uwatchfreeSchema = JSON.stringify([
       '@type': 'ImageObject',
       url: 'https://softwarebay.vercel.app/logo.png',
       width: 280,
-      height: 80
+      height: 100
     }
   },
   {
@@ -43,12 +43,11 @@ const softwareSchema = JSON.stringify({
   '@type': 'http://schema.org/SoftwareApplication',
   datePublished: '14-10-2019',
   dateModified: '1-12-2023',
-  softwareVersion: 'TypingMaster 11.0.868',
-  url: 'https://filehippo.com/download_typingmaster/',
+  softwareVersion: 'Education 2024',
+  url: 'https://softwarebay.vercel.app/education/',
   operatingSystem: 'Windows',
   applicationCategory: 'teaching-training',
-  image:
-    'https://sc.filehippo.net/images/t_app-logo-l,f_auto,dpr_auto/p/f5741d5e-96d7-11e6-aad5-00163ed833e7/300349631/typingmaster-logo',
+  image: 'https://softwarebay.vercel.app/og_image.jpg',
   name: 'TypingMaster',
   interactionStatistic: 498618,
   offers: {
@@ -58,7 +57,7 @@ const softwareSchema = JSON.stringify({
   },
   aggregateRating: {
     '@type': 'http://schema.org/AggregateRating',
-    '@id': 'https://filehippo.com/download_typingmaster/',
+    '@id': 'https://softwarebay.vercel.app/education/',
     ratingValue: 8,
     ratingCount: 0,
     bestRating: '10',

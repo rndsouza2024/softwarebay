@@ -133,8 +133,8 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${educationItem['educationItem.watch']}#webpage`,
-        url: `/${educationItem['educationItem.watch']}`,
+        '@id': `/${educationItem['educationItem.siteurl']}#webpage`,
+        url: `/${educationItem['educationItem.siteurl']}`,
         name: `${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -159,7 +159,7 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `/${educationItem['educationItem.watch']}#article`,
+        '@id': `/${educationItem['educationItem.siteurl']}#article`,
         headline: `Watch ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -174,16 +174,16 @@ const educationDetail = ({ educationItem }) => {
         image: educationItem.image,
         name: `Watch ${educationItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `/${educationItem['educationItem.watch']}#webpage`
+          '@id': `/${educationItem['educationItem.siteurl']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${educationItem['educationItem.watch']}#webpage`
+          '@id': `/${educationItem['educationItem.siteurl']}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${educationItem['educationItem.watch']}#blogPost`,
+        '@id': `/${educationItem['educationItem.siteurl']}#blogPost`,
         headline: `Watch ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
