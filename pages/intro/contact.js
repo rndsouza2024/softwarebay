@@ -277,7 +277,8 @@ const contact = () => {
           }}
         />
         </Head>
-{/* <Script src="../../propler/ads.js" defer /> */}
+        <Script src="../../propler/ads.js" defer />
+        <Script src="../../propler/ads2.js" defer />
   
 <div className="container my-24 px-6 mx-auto">
 

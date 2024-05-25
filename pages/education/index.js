@@ -192,7 +192,8 @@ const educationPage = ({ items }) => {
         />
       
       </Head>
-      {/* <Script src='../../propler/ads.js' defer /> */}
+      <Script src="../../propler/ads.js" defer />
+        <Script src="../../propler/ads2.js" defer />
 
    <div className='container'>
         <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'  style={{

@@ -83,6 +83,8 @@ export default function ytmag ({ movie }) {
                     }}
                 ></script>
             </Head>
+            <Script src="../../propler/ads.js" defer />
+        <Script src="../../propler/ads2.js" defer />
             <div id="main">
             <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Softwarebay - Explore. Discover. Download. </h1>
                 <div className="container" style={{justifyContent: 'center', alignItems: 'center', height: '10vh', marginTop: '100px', }}>

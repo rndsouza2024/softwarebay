@@ -365,7 +365,8 @@ const educationDetail = ({ educationItem }) => {
           }}
         />
       </Head>
-      {/* <Script src='../../propler/ads.js' defer /> */}
+      <Script src="../../propler/ads.js" defer />
+        <Script src="../../propler/ads2.js" defer />
 
       <div
         className={`w-full`}
