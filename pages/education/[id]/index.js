@@ -133,8 +133,8 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${educationItem['educationItem.siteurl']}#webpage`,
-        url: `/${educationItem['educationItem.siteurl']}`,
+        '@id': `/${educationItem.siteurl}#webpage`,
+        url:educationItem.siteurl,
         name: `${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -159,7 +159,7 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `/${educationItem['educationItem.siteurl']}#article`,
+        '@id': `/${educationItem.siteurl}#article`,
         headline: `Watch ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -174,16 +174,16 @@ const educationDetail = ({ educationItem }) => {
         image: educationItem.image,
         name: `Watch ${educationItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `/${educationItem['educationItem.siteurl']}#webpage`
+          '@id': `/${educationItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${educationItem['educationItem.siteurl']}#webpage`
+          '@id': `/${educationItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${educationItem['educationItem.siteurl']}#blogPost`,
+        '@id': `/${educationItem.siteurl}#blogPost`,
         headline: `Watch ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -197,13 +197,13 @@ const educationDetail = ({ educationItem }) => {
         description: `Explore. Discover. Download - Free Your Desired Software.`,
         image: educationItem.image,
         name: `Watch ${educationItem.name} | Softwarebay`,
-        '@id': `/${educationItem['educationItem.watch']}#richSnippet`,
+        '@id': `/${educationItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `/${educationItem['educationItem.watch']}#webpage`
+          '@id': `/${educationItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${educationItem['educationItem.watch']}#webpage`
+          '@id': `/${educationItem.siteurl}#webpage`
         }
       }
     ]
@@ -211,10 +211,10 @@ const educationDetail = ({ educationItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `/${educationItem['educationItem.watch']}`,
+    '@id': educationItem.siteurl,
     name: educationItem.title,
-    url: `/${educationItem['educationItem.watch']}`,
-    description: educationItem.synopsis,
+    url:educationItem.siteurl,
+    description: educationItem.news1,
     image: educationItem.image,
     datePublished: educationItem.startDate,
     potentialAction: {
@@ -222,7 +222,7 @@ const educationDetail = ({ educationItem }) => {
       target: {
         '@type': 'EntryPoint',
         name: educationItem.title,
-        urlTemplate: `${educationItem['url']}`
+        urlTemplate: educationItem.siteurl,
       }
     },
     locationCreated: {
