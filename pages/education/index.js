@@ -4,6 +4,8 @@ import Image from 'next/image'
 import latestData from '../../public/latest.json'
 import educationData from '../../public/education.json'
 import Head from 'next/head'
+import Script from 'next/script';
+
 
 
 
