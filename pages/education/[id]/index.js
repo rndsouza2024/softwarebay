@@ -159,11 +159,11 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `/${educationItem.siteurl}#article`,
+        '@id': `${educationItem.siteurl}#article`,
         headline: `Watch ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'educationItem',
+        articleSection: 'Educational',
         author: {
           '@id': 'https://softwarebay.vercel.appauthor/educationItem/'
         },
@@ -174,16 +174,16 @@ const educationDetail = ({ educationItem }) => {
         image: educationItem.image,
         name: `Watch ${educationItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `/${educationItem.siteurl}#webpage`
+          '@id': `${educationItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${educationItem.siteurl}#webpage`
+          '@id': `${educationItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${educationItem.siteurl}#blogPost`,
+        '@id': `${educationItem.siteurl}#blogPost`,
         headline: `Watch ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -197,17 +197,18 @@ const educationDetail = ({ educationItem }) => {
         description: `Explore. Discover. Download - Free Your Desired Software.`,
         image: educationItem.image,
         name: `Watch ${educationItem.name} | Softwarebay`,
-        '@id': `/${educationItem.siteurl}#richSnippet`,
+        '@id': `${educationItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `/${educationItem.siteurl}#webpage`
+          '@id': `${educationItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${educationItem.siteurl}#webpage`
+          '@id': `${educationItem.siteurl}#webpage`
         }
       }
     ]
   })
+  
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
@@ -317,15 +318,11 @@ const educationDetail = ({ educationItem }) => {
           content='dmv6sg06w9r5eji88'
         />
 
-        {/* <script src='https://www.youtube.com/iframe_api' /> */}
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
         />
-        {/* <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: ldJsonData }}
-        /> */}
+       
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
