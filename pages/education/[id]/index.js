@@ -160,7 +160,7 @@ const educationDetail = ({ educationItem }) => {
       {
         '@type': 'Article',
         '@id': `${educationItem.siteurl}#article`,
-        headline: `Watch ${educationItem.name} | Softwarebay`,
+        headline: `Download ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'Educational',
@@ -172,7 +172,7 @@ const educationDetail = ({ educationItem }) => {
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
         image: educationItem.image,
-        name: `Watch ${educationItem.name} | Softwarebay`,
+        name: `Download ${educationItem.name} | Softwarebay`,
         isPartOf: {
           '@id': `${educationItem.siteurl}#webpage`
         },
@@ -184,7 +184,7 @@ const educationDetail = ({ educationItem }) => {
       {
         '@type': 'BlogPosting',
         '@id': `${educationItem.siteurl}#blogPost`,
-        headline: `Watch ${educationItem.name} | Softwarebay`,
+        headline: `Download ${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'educationItem',
@@ -196,7 +196,7 @@ const educationDetail = ({ educationItem }) => {
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
         image: educationItem.image,
-        name: `Watch ${educationItem.name} | Softwarebay`,
+        name: `Download ${educationItem.name} | Softwarebay`,
         '@id': `${educationItem.siteurl}#richSnippet`,
         isPartOf: {
           '@id': `${educationItem.siteurl}#webpage`
@@ -261,7 +261,7 @@ const educationDetail = ({ educationItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch {educationItem && educationItem.name} | Softwarebay</title>
+        <title> Download {educationItem && educationItem.name} | Softwarebay</title>
         <link rel='canonical' href={educationItem && educationItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />

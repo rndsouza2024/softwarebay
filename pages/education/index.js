@@ -91,7 +91,7 @@ const educationPage = ({ items }) => {
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
        <Head>
-        <title> Watch Education | Softwarebay</title>
+        <title> Download Education | Softwarebay</title>
         <link rel='canonical' href="https://softwarebay.vercel.app/education/" />
         <meta
           name='robots'
@@ -104,7 +104,7 @@ const educationPage = ({ items }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content=" Watch Education | Softwarebay"
+          content=" Download Education | Softwarebay"
         />
         <meta
           property='og:description'
