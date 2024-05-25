@@ -133,8 +133,8 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${educationItem.siteurl}#webpage`,
-        url:educationItem.siteurl,
+        '@id': `${educationItem.siteurl}#webpage`,
+        url: educationItem.siteurl,
         name: `${educationItem.name} | Softwarebay`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -145,9 +145,9 @@ const educationDetail = ({ educationItem }) => {
       },
       {
         '@type': 'Person',
-        '@id': 'https://softwarebay.vercel.appauthor/educationItem/',
+        '@id': 'https://softwarebay.vercel.appauthor/softwarebay/',
         name: 'Dr Trailer',
-        url: 'https://softwarebay.vercel.appauthor/educationItem/',
+        url: 'https://softwarebay.vercel.appauthor/softwarebay/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -189,7 +189,7 @@ const educationDetail = ({ educationItem }) => {
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'educationItem',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/educationItem/'
+          '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -208,13 +208,13 @@ const educationDetail = ({ educationItem }) => {
       }
     ]
   })
-  
+
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': educationItem.siteurl,
+    '@id':  `${educationItem.siteurl}#webpage`, // Add a comma here
     name: educationItem.title,
-    url:educationItem.siteurl,
+    url: educationItem.siteurl,
     description: educationItem.news1,
     image: educationItem.image,
     datePublished: educationItem.startDate,
@@ -248,10 +248,11 @@ const educationDetail = ({ educationItem }) => {
       name: 'Action Platform',
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     }
-  }
-
+  };
+  
   // Convert newsArticleSchema and videoObjects to JSON strings
-  const newsArticleJson = JSON.stringify(newsArticleSchema)
+  const newsArticleJson = JSON.stringify(newsArticleSchema);
+  
 
   return (
     <div>
