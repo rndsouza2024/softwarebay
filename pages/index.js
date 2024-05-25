@@ -12,7 +12,7 @@ const HomePage = () => {
   const [education, seteducation] = useState(educationData.slice(0, 2)) // Only the first 2 items
   // const [browsers, setBrowsers] = useState(browsersData.slice(0, 2)) // Only the first 2 items
 
-  const pageTitle = 'Softwarebay - Explore. Discover. Connect.'
+  const pageTitle = 'Softwarebay - Explore. Discover. Download.'
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -62,14 +62,14 @@ const HomePage = () => {
       {
         '@type': 'Organization',
         '@id': 'https://softwarebay.vercel.app/#organization',
-        name: 'Softwarebay - Download Free Software.',
+        name: 'Softwarebay - Explore. Discover. Download.',
         url: 'https://softwarebay.vercel.app'
       },
       {
         '@type': 'WebSite',
         '@id': 'https://softwarebay.vercel.app/#website',
         url: 'https://softwarebay.vercel.app',
-        name: 'Softwarebay - Explore. Discover. Connect.',
+        name: 'Softwarebay - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
           '@id': 'https://softwarebay.vercel.app/#organization'
@@ -128,7 +128,7 @@ const HomePage = () => {
             publisher: {
               '@type': 'Organization',
               '@id': 'https://softwarebay.vercel.app/#organization',
-              name: 'Softwarebay - Explore. Discover. Connect.',
+              name: 'Softwarebay - Explore. Discover. Download.',
               url: 'https://softwarebay.vercel.app'
             }
           },
@@ -155,7 +155,7 @@ const HomePage = () => {
             publisher: {
               '@type': 'Organization',
               '@id': 'https://softwarebay.vercel.app/#organization',
-              name: 'Softwarebay - Explore. Discover. Connect.',
+              name: 'Softwarebay - Explore. Discover. Download.',
               url: 'https://softwarebay.vercel.app'
             }
           },
@@ -182,7 +182,7 @@ const HomePage = () => {
             publisher: {
               '@type': 'Organization',
               '@id': 'https://softwarebay.vercel.app/#organization',
-              name: 'Softwarebay - Explore. Discover. Connect.',
+              name: 'Softwarebay - Explore. Discover. Download.',
               url: 'https://softwarebay.vercel.app'
             }
           }
@@ -248,7 +248,7 @@ const HomePage = () => {
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Softwarebay - Explore. Discover. Connect.'
+            content='Softwarebay - Explore. Discover. Download.'
           />
           <meta
             property='og:description'
@@ -257,7 +257,7 @@ const HomePage = () => {
           <meta property='og:url' content='https://softwarebay.vercel.app/' />
           <meta
             property='og:site_name'
-            content='Softwarebay - Explore. Discover. Connect.'
+            content='Softwarebay - Explore. Discover. Download.'
           />
           <meta
             property='og:image'
@@ -268,7 +268,7 @@ const HomePage = () => {
           <meta property='og:image:type' content='image/webp' />
           <meta
             name='application-name'
-            content='Softwarebay - Explore. Discover. Connect.'
+            content='Softwarebay - Explore. Discover. Download.'
           />
           <meta
             property='article:modified_time'
