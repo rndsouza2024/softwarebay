@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import educationData from '../public/education.json'
 import latestData from '../public/latest.json'
-import browserData from '../public/browsers.json'
+// import browserData from '../public/browsers.json'
 import multimediaData from '../public/multimedia.json'
 
 import Head from 'next/head'
@@ -21,7 +21,7 @@ const HomePage = () => {
 
    // Initial state with a consistent set of data
    const [education, seteducation] = useState(educationData.slice(0, 2));
-  const [browser, setbrowser] = useState(browserData.slice(0, 2));
+  // const [browser, setbrowser] = useState(browserData.slice(0, 2));
   const [multimedia, setmultimedia] = useState(multimediaData.slice(0, 2));
 
 
@@ -30,11 +30,11 @@ const HomePage = () => {
   // Update the state with random items after the component mounts
   useEffect(() => {
     const shufflededucationData = getRandomItems(educationData, 2);
-    const shuffledbrowserData = getRandomItems(browserData, 2);
+    // const shuffledbrowserData = getRandomItems(browserData, 2);
     const shuffledmultimediaData = getRandomItems(multimediaData, 2);
 
     seteducation(shufflededucationData);
-    setbrowser(shuffledbrowserData);
+    // setbrowser(shuffledbrowserData);
     setmultimedia(shuffledmultimediaData);
 
   }, []);
@@ -553,7 +553,7 @@ const HomePage = () => {
           <div className='flex-container'>
             <div className='category-container'>
               <div className='card-container'>
-                 {browser.map(browserItem => (
+                 {/* {browser.map(browserItem => (
                   <div key={browserItem.id} className='card'>
                     <a href={`/browsers/${browserItem.id}`}>
                       <div className='relative'>
@@ -578,7 +578,7 @@ const HomePage = () => {
                       </div>
                     </a>
                   </div>
-                ))}
+                ))} */}
                 
          
        {multimedia.map(multimediaItem => (
