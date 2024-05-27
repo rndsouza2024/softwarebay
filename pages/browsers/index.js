@@ -265,10 +265,10 @@ const browsersPage = ({ items }) => {
           <button className='border border-black p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-11605' className='menu-3dcad'>
               <a
-                href='http://softwarebay.vercel.app/browsers/'
+                href='http://softwarebay.vercel.app/multimedia/'
                 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
               >
-                browsers<span className='p'></span>
+                Multimedia<span className='p'></span>
               </a>
             </li>
           </button>
