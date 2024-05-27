@@ -18,11 +18,11 @@ const latestDetail = ({ latest }) => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Softwarebay',
-      url: 'http://softwarebay.vercel.app/',
-      image: ['http://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+      url: 'https://softwarebay.vercel.app/',
+      image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://softwarebay.vercel.app/logo.png',
+        url: 'https://softwarebay.vercel.app/logo.png',
         width: 280,
         height: 80
       }
@@ -30,12 +30,12 @@ const latestDetail = ({ latest }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://softwarebay.vercel.app/',
+      url: 'https://softwarebay.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'http://softwarebay.vercel.app/search?q={search_term_string}'
+          urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -52,8 +52,8 @@ const latestDetail = ({ latest }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://softwarebay.vercel.app#website',
-        url: 'http://softwarebay.vercel.app',
+        '@id': 'https://softwarebay.vercel.app#website',
+        url: 'https://softwarebay.vercel.app',
         name: 'Softwarebay',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -68,15 +68,15 @@ const latestDetail = ({ latest }) => {
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
-          '@id': 'http://softwarebay.vercel.app#website'
+          '@id': 'https://softwarebay.vercel.app#website'
         },
         inLanguage: 'en-US'
       },
       {
         '@type': 'Person',
-        '@id': 'http://softwarebay.vercel.appauthor/latest/',
+        '@id': 'https://softwarebay.vercel.appauthor/latest/',
         name: 'Dr Trailer',
-        url: 'http://softwarebay.vercel.appauthor/latest/',
+        url: 'https://softwarebay.vercel.appauthor/latest/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -84,7 +84,7 @@ const latestDetail = ({ latest }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['http://softwarebay.vercel.app']
+        sameAs: ['https://softwarebay.vercel.app']
       },
       {
         '@type': 'Article',
@@ -94,7 +94,7 @@ const latestDetail = ({ latest }) => {
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'latest',
         author: {
-          '@id': 'http://softwarebay.vercel.appauthor/latest/'
+          '@id': 'https://softwarebay.vercel.appauthor/latest/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -118,7 +118,7 @@ const latestDetail = ({ latest }) => {
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'latest',
         author: {
-          '@id': 'http://softwarebay.vercel.appauthor/latest/'
+          '@id': 'https://softwarebay.vercel.appauthor/latest/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -169,7 +169,7 @@ const latestDetail = ({ latest }) => {
       name: 'Softwarebay',
       logo: {
         '@type': 'ImageObject',
-        url: 'http://softwarebay.vercel.app/og_image.jpg'
+        url: 'https://softwarebay.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -370,7 +370,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-248' className='menu-operating-systems'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/operating-systems/'
+                  href='https://softwarebay.vercel.app/softwares/operating-systems/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Desktop<span className='p'></span>
@@ -380,7 +380,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11605' className='menu-3dcad'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/3d-cad/'
+                  href='https://softwarebay.vercel.app/softwares/3d-cad/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Multimedia<span className='p'></span>
@@ -390,7 +390,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11610' className='menu-graphicdesign'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/graphic-design/'
+                  href='https://softwarebay.vercel.app/softwares/graphic-design/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Graphic Design<span className='p'></span>
@@ -400,7 +400,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-196' className='menu-multimedia'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/multimedia/'
+                  href='https://softwarebay.vercel.app/softwares/multimedia/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Network<span className='p'></span>
@@ -410,7 +410,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-161' className='menu-development'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/development/'
+                  href='https://softwarebay.vercel.app/softwares/development/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Development<span className='p'></span>
@@ -420,7 +420,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-84' className='menu-antivirus'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/antivirus/'
+                  href='https://softwarebay.vercel.app/softwares/antivirus/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   File Sharing<span className='p'></span>
@@ -430,7 +430,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-84' className='menu-antivirus'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/antivirus/'
+                  href='https://softwarebay.vercel.app/softwares/antivirus/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Security<span className='p'></span>
@@ -440,7 +440,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11606' className='menu-education'>
                 <a
-                  href='http://softwarebay.vercel.app/'
+                  href='https://softwarebay.vercel.app/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Games<span className='p'></span>
@@ -450,7 +450,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
-                  href='http://softwarebay.vercel.app/education'
+                  href='https://softwarebay.vercel.app/education'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Education<span className='p'></span>
@@ -460,7 +460,7 @@ const latestDetail = ({ latest }) => {
              <button className='border border-black p-2 m-1 hover:bg-orange-100'>
             <li id='menu-item-35' className='menu-home active'>
               <a
-                href='http://softwarebay.vercel.app/mobile'
+                href='https://softwarebay.vercel.app/mobile'
                 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
               >
                 Mobile<span className='p'></span>
@@ -470,7 +470,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11606' className='menu-education'>
                 <a
-                  href='http://softwarebay.vercel.app/softwares/education/'
+                  href='https://softwarebay.vercel.app/softwares/education/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Utilities<span className='p'></span>
@@ -480,7 +480,7 @@ const latestDetail = ({ latest }) => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-194' className='menu-tutorials'>
                 <a
-                  href='http://softwarebay.vercel.app/tutorials/'
+                  href='https://softwarebay.vercel.app/tutorials/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Other Software<span className='p'></span>

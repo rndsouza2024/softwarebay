@@ -42,11 +42,11 @@ const HomePage = () => {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Softwarebay',
-      url: 'http://softwarebay.vercel.app/',
-      image: ['http://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+      url: 'https://softwarebay.vercel.app/',
+      image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
       logo: {
         '@type': 'ImageObject',
-        url: 'http://softwarebay.vercel.app/logo.png',
+        url: 'https://softwarebay.vercel.app/logo.png',
         width: 280,
         height: 80
       }
@@ -54,12 +54,12 @@ const HomePage = () => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: 'http://softwarebay.vercel.app/',
+      url: 'https://softwarebay.vercel.app/',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'http://softwarebay.vercel.app/search?q={search_term_string}'
+          urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -71,9 +71,9 @@ const HomePage = () => {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'http://softwarebay.vercel.app/author/education/',
+        '@id': 'https://softwarebay.vercel.app/author/education/',
         name: 'Dr Trailer',
-        url: 'http://softwarebay.vercel.app/author/education/',
+        url: 'https://softwarebay.vercel.app/author/education/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -84,37 +84,37 @@ const HomePage = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'http://softwarebay.vercel.app/#organization',
+        '@id': 'https://softwarebay.vercel.app/#organization',
         name: 'Softwarebay - Explore. Discover. Download.',
-        url: 'http://softwarebay.vercel.app'
+        url: 'https://softwarebay.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://softwarebay.vercel.app/#website',
-        url: 'http://softwarebay.vercel.app',
+        '@id': 'https://softwarebay.vercel.app/#website',
+        url: 'https://softwarebay.vercel.app',
         name: 'Softwarebay - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'http://softwarebay.vercel.app/#organization'
+          '@id': 'https://softwarebay.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'http://softwarebay.vercel.app/?s={search_term_string}',
+          target: 'https://softwarebay.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'http://softwarebay.vercel.app/#webpage',
-        url: 'http://softwarebay.vercel.app/',
+        '@id': 'https://softwarebay.vercel.app/#webpage',
+        url: 'https://softwarebay.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
-          '@id': 'http://softwarebay.vercel.app/author/education/',
+          '@id': 'https://softwarebay.vercel.app/author/education/',
           name: 'Dr Trailer',
-          url: 'http://softwarebay.vercel.app/author/education/',
+          url: 'https://softwarebay.vercel.app/author/education/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -124,22 +124,22 @@ const HomePage = () => {
           }
         },
         isPartOf: {
-          '@id': 'http://softwarebay.vercel.app/#website'
+          '@id': 'https://softwarebay.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'http://softwarebay.vercel.app/',
-            url: 'http://softwarebay.vercel.app/',
+            '@id': 'https://softwarebay.vercel.app/',
+            url: 'https://softwarebay.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'http://softwarebay.vercel.app/author/education/',
+              '@id': 'https://softwarebay.vercel.app/author/education/',
               name: 'Dr Trailer',
-              url: 'http://softwarebay.vercel.app/author/education/',
+              url: 'https://softwarebay.vercel.app/author/education/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -150,23 +150,23 @@ const HomePage = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://softwarebay.vercel.app/#organization',
+              '@id': 'https://softwarebay.vercel.app/#organization',
               name: 'Softwarebay - Explore. Discover. Download.',
-              url: 'http://softwarebay.vercel.app'
+              url: 'https://softwarebay.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'http://softwarebay.vercel.app/',
-            url: 'http://softwarebay.vercel.app/',
+            '@id': 'https://softwarebay.vercel.app/',
+            url: 'https://softwarebay.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'http://softwarebay.vercel.app/author/education/',
+              '@id': 'https://softwarebay.vercel.app/author/education/',
               name: 'Dr Trailer',
-              url: 'http://softwarebay.vercel.app/author/education/',
+              url: 'https://softwarebay.vercel.app/author/education/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -177,23 +177,23 @@ const HomePage = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://softwarebay.vercel.app/#organization',
+              '@id': 'https://softwarebay.vercel.app/#organization',
               name: 'Softwarebay - Explore. Discover. Download.',
-              url: 'http://softwarebay.vercel.app'
+              url: 'https://softwarebay.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'http://softwarebay.vercel.app/',
-            url: 'http://softwarebay.vercel.app/',
+            '@id': 'https://softwarebay.vercel.app/',
+            url: 'https://softwarebay.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'http://softwarebay.vercel.app/author/education/',
+              '@id': 'https://softwarebay.vercel.app/author/education/',
               name: 'Dr Trailer',
-              url: 'http://softwarebay.vercel.app/author/education/',
+              url: 'https://softwarebay.vercel.app/author/education/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -204,9 +204,9 @@ const HomePage = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://softwarebay.vercel.app/#organization',
+              '@id': 'https://softwarebay.vercel.app/#organization',
               name: 'Softwarebay - Explore. Discover. Download.',
-              url: 'http://softwarebay.vercel.app'
+              url: 'https://softwarebay.vercel.app'
             }
           }
         ]
@@ -223,7 +223,7 @@ const HomePage = () => {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://softwarebay.vercel.app/sitemap.xml'
+            href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <meta
             name='viewport'
@@ -266,7 +266,7 @@ const HomePage = () => {
             name='description'
             content='Explore. Discover. Download - Free Your Desired Software.'
           /> */}
-          {/* <link rel='canonical' href='http://softwarebay.vercel.app/' /> */}
+          {/* <link rel='canonical' href='https://softwarebay.vercel.app/' /> */}
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
           <meta
@@ -277,14 +277,14 @@ const HomePage = () => {
             property='og:description'
             content='Explore. Discover. Download - Free Your Desired Software.'
           />
-          <meta property='og:url' content='http://softwarebay.vercel.app/' />
+          <meta property='og:url' content='https://softwarebay.vercel.app/' />
           <meta
             property='og:site_name'
             content='Softwarebay - Explore. Discover. Download.'
           />
           <meta
             property='og:image'
-            content='http://softwarebay.vercel.app/og_image.jpg'
+            content='https://softwarebay.vercel.app/og_image.jpg'
           />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
@@ -301,7 +301,7 @@ const HomePage = () => {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://softwarebay.vercel.app/sitemap.xml'
+            href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta
@@ -405,7 +405,7 @@ const HomePage = () => {
 
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-284913' className='menu-softwarecategories'>
-                <a href='http://softwarebay.vercel.app/browsers/'>
+                <a href='https://softwarebay.vercel.app/browsers/'>
                   <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
                     Browser<span className='p'></span>
                   </h3>
@@ -415,7 +415,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-248' className='menu-operating-systems'>
                 <a
-                  href='http://softwarebay.vercel.app/desktop/'
+                  href='https://softwarebay.vercel.app/desktop/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Desktop<span className='p'></span>
@@ -425,7 +425,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11605' className='menu-3dcad'>
                 <a
-                  href='http://softwarebay.vercel.app/multimedia/'
+                  href='https://softwarebay.vercel.app/multimedia/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Multimedia<span className='p'></span>
@@ -435,7 +435,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11610' className='menu-graphicdesign'>
                 <a
-                  href='http://softwarebay.vercel.app/graphic-design/'
+                  href='https://softwarebay.vercel.app/graphic-design/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Graphic Design<span className='p'></span>
@@ -445,7 +445,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-196' className='menu-multimedia'>
                 <a
-                  href='http://softwarebay.vercel.app/network/'
+                  href='https://softwarebay.vercel.app/network/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Network<span className='p'></span>
@@ -455,7 +455,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-161' className='menu-development'>
                 <a
-                  href='http://softwarebay.vercel.app/development/'
+                  href='https://softwarebay.vercel.app/development/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Development<span className='p'></span>
@@ -465,7 +465,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-84' className='menu-antivirus'>
                 <a
-                  href='http://softwarebay.vercel.app/file-sharing/'
+                  href='https://softwarebay.vercel.app/file-sharing/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   File Sharing<span className='p'></span>
@@ -475,7 +475,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-84' className='menu-antivirus'>
                 <a
-                  href='http://softwarebay.vercel.app/security/'
+                  href='https://softwarebay.vercel.app/security/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Security<span className='p'></span>
@@ -485,7 +485,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11606' className='menu-education'>
                 <a
-                  href='http://softwarebay.vercel.app/games/'
+                  href='https://softwarebay.vercel.app/games/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Games<span className='p'></span>
@@ -495,7 +495,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
-                  href='http://softwarebay.vercel.app/education'
+                  href='https://softwarebay.vercel.app/education'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Education<span className='p'></span>
@@ -505,7 +505,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
-                  href='http://softwarebay.vercel.app/mobile'
+                  href='https://softwarebay.vercel.app/mobile'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Mobile<span className='p'></span>
@@ -515,7 +515,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-11606' className='menu-education'>
                 <a
-                  href='http://softwarebay.vercel.app/utilities/'
+                  href='https://softwarebay.vercel.app/utilities/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Utilities<span className='p'></span>
@@ -525,7 +525,7 @@ const HomePage = () => {
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-194' className='menu-tutorials'>
                 <a
-                  href='http://softwarebay.vercel.app/othersoftware/'
+                  href='https://softwarebay.vercel.app/othersoftware/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Other Software<span className='p'></span>

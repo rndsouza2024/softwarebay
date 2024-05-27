@@ -9,7 +9,7 @@ class MyDocument extends Document {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://softwarebay.vercel.app/sitemap.xml'
+            href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <link
             rel='icon'
@@ -50,7 +50,7 @@ class MyDocument extends Document {
           />
           <link
             rel='canonical'
-            href='http://softwarebay.vercel.app/'
+            href='https://softwarebay.vercel.app/'
           />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
@@ -64,7 +64,7 @@ class MyDocument extends Document {
           />
           <meta
             property='og:url'
-            content='http://softwarebay.vercel.app/'
+            content='https://softwarebay.vercel.app/'
           />
           <meta
             property='og:site_name'
@@ -72,7 +72,7 @@ class MyDocument extends Document {
           />
           <meta
             property='og:image'
-            content='http://softwarebay.vercel.app/og_image.jpg'
+            content='https://softwarebay.vercel.app/og_image.jpg'
           />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
@@ -89,7 +89,7 @@ class MyDocument extends Document {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://softwarebay.vercel.app/sitemap.xml'
+            href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta

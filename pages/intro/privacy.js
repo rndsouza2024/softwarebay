@@ -11,9 +11,9 @@ const Privacy = () => {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'http://softwarebay.vercel.app/author/ytmag/',
+        '@id': 'https://softwarebay.vercel.app/author/ytmag/',
         name: 'Dr Trailer',
-        url: 'http://softwarebay.vercel.app/author/ytmag/',
+        url: 'https://softwarebay.vercel.app/author/ytmag/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -24,37 +24,37 @@ const Privacy = () => {
       },
       {
         '@type': 'Organization',
-        '@id': 'http://softwarebay.vercel.app/#organization',
+        '@id': 'https://softwarebay.vercel.app/#organization',
         name: 'Softwarebay - Explore. Discover. Download.',
-        url: 'http://softwarebay.vercel.app'
+        url: 'https://softwarebay.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'http://softwarebay.vercel.app/#website',
-        url: 'http://softwarebay.vercel.app',
+        '@id': 'https://softwarebay.vercel.app/#website',
+        url: 'https://softwarebay.vercel.app',
         name: 'Softwarebay - Explore. Discover. Download.',
         publisher: {
           '@type': 'Organization',
-          '@id': 'http://softwarebay.vercel.app/#organization'
+          '@id': 'https://softwarebay.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'http://softwarebay.vercel.app/?s={search_term_string}',
+          target: 'https://softwarebay.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'http://softwarebay.vercel.app/#webpage',
-        url: 'http://softwarebay.vercel.app/',
+        '@id': 'https://softwarebay.vercel.app/#webpage',
+        url: 'https://softwarebay.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
-          '@id': 'http://softwarebay.vercel.app/author/ytmag/',
+          '@id': 'https://softwarebay.vercel.app/author/ytmag/',
           name: 'Dr Trailer',
-          url: 'http://softwarebay.vercel.app/author/ytmag/',
+          url: 'https://softwarebay.vercel.app/author/ytmag/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -64,22 +64,22 @@ const Privacy = () => {
           }
         },
         isPartOf: {
-          '@id': 'http://softwarebay.vercel.app/#website'
+          '@id': 'https://softwarebay.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'http://softwarebay.vercel.app/',
-            url: 'http://softwarebay.vercel.app/',
+            '@id': 'https://softwarebay.vercel.app/',
+            url: 'https://softwarebay.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'http://softwarebay.vercel.app/author/ytmag/',
+              '@id': 'https://softwarebay.vercel.app/author/ytmag/',
               name: 'Dr Trailer',
-              url: 'http://softwarebay.vercel.app/author/ytmag/',
+              url: 'https://softwarebay.vercel.app/author/ytmag/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -90,23 +90,23 @@ const Privacy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://softwarebay.vercel.app/#organization',
+              '@id': 'https://softwarebay.vercel.app/#organization',
               name: 'Softwarebay - Explore. Discover. Download.',
-              url: 'http://softwarebay.vercel.app'
+              url: 'https://softwarebay.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'http://softwarebay.vercel.app/',
-            url: 'http://softwarebay.vercel.app/',
+            '@id': 'https://softwarebay.vercel.app/',
+            url: 'https://softwarebay.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'http://softwarebay.vercel.app/author/ytmag/',
+              '@id': 'https://softwarebay.vercel.app/author/ytmag/',
               name: 'Dr Trailer',
-              url: 'http://softwarebay.vercel.app/author/ytmag/',
+              url: 'https://softwarebay.vercel.app/author/ytmag/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -117,23 +117,23 @@ const Privacy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://softwarebay.vercel.app/#organization',
+              '@id': 'https://softwarebay.vercel.app/#organization',
               name: 'Softwarebay - Explore. Discover. Download.',
-              url: 'http://softwarebay.vercel.app'
+              url: 'https://softwarebay.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'http://softwarebay.vercel.app/',
-            url: 'http://softwarebay.vercel.app/',
+            '@id': 'https://softwarebay.vercel.app/',
+            url: 'https://softwarebay.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'http://softwarebay.vercel.app/author/ytmag/',
+              '@id': 'https://softwarebay.vercel.app/author/ytmag/',
               name: 'Dr Trailer',
-              url: 'http://softwarebay.vercel.app/author/ytmag/',
+              url: 'https://softwarebay.vercel.app/author/ytmag/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -144,9 +144,9 @@ const Privacy = () => {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'http://softwarebay.vercel.app/#organization',
+              '@id': 'https://softwarebay.vercel.app/#organization',
               name: 'Softwarebay - Explore. Discover. Download.',
-              url: 'http://softwarebay.vercel.app'
+              url: 'https://softwarebay.vercel.app'
             }
           }
         ]
@@ -163,7 +163,7 @@ const Privacy = () => {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://softwarebay.vercel.app/sitemap.xml'
+            href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <meta
             name='viewport'
@@ -206,7 +206,7 @@ const Privacy = () => {
             name='description'
             content='Explore. Discover. Download - Free Your Desired Software.'
           />
-          <link rel='canonical' href='http://softwarebay.vercel.app/intro/privacy' />
+          <link rel='canonical' href='https://softwarebay.vercel.app/intro/privacy' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
           <meta
@@ -217,14 +217,14 @@ const Privacy = () => {
             property='og:description'
             content='Explore. Discover. Download - Free Your Desired Software.'
           />
-          <meta property='og:url' content='http://softwarebay.vercel.app/intro/privacy/' />
+          <meta property='og:url' content='https://softwarebay.vercel.app/intro/privacy/' />
           <meta
             property='og:site_name'
             content='Softwarebay '
           />
           <meta
             property='og:image'
-            content='http://softwarebay.vercel.app/og_image.jpg'
+            content='https://softwarebay.vercel.app/og_image.jpg'
           />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
@@ -241,7 +241,7 @@ const Privacy = () => {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='http://softwarebay.vercel.app/sitemap.xml'
+            href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta
