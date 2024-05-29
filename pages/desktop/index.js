@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
-import securityData from '../../public/security.json'
+import desktopData from '../../public/desktop.json'
 import Head from 'next/head'
 import Script from 'next/script';
 
@@ -45,12 +45,12 @@ const softwareSchema = JSON.stringify({
   '@type': 'http://schema.org/SoftwareApplication',
   datePublished: '13-04-2024',
   dateModified: '13-04-2024',
-  softwareVersion: 'Security 2024',
-  url: 'https://softwarebay.vercel.app/security/',
+  softwareVersion: 'Desktop 2024',
+  url: 'https://softwarebay.vercel.app/desktop/',
   operatingSystem: 'Windows',
-  applicationCategory: 'Security',
+  applicationCategory: 'Desktop',
   image: 'https://softwarebay.vercel.app/og_image.jpg',
-  name: 'Security',
+  name: 'Desktop',
   interactionStatistic: 498618,
   offers: {
     '@type': 'http://schema.org/Offer',
@@ -59,7 +59,7 @@ const softwareSchema = JSON.stringify({
   },
   aggregateRating: {
     '@type': 'http://schema.org/AggregateRating',
-    '@id': 'https://softwarebay.vercel.app/security/',
+    '@id': 'https://softwarebay.vercel.app/desktop/',
     ratingValue: 8,
     ratingCount: 0,
     bestRating: '10',
@@ -80,21 +80,21 @@ const breadcrumbSchema = JSON.stringify({
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Security',
-      item: 'https://softwarebay.vercel.app/security/'
+      name: 'Desktop',
+      item: 'https://softwarebay.vercel.app/desktop/'
     },
    
   ]
 })
 
-const securityPage = ({ items }) => {
+const desktopPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
        <Head>
-        <title> Download Security | Softwarebay</title>
-        <link rel='canonical' href="https://softwarebay.vercel.app/security/" />
+        <title> Download Desktop | Softwarebay</title>
+        <link rel='canonical' href="https://softwarebay.vercel.app/desktop/" />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -106,7 +106,7 @@ const securityPage = ({ items }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content=" Download Security | Softwarebay"
+          content=" Download Desktop | Softwarebay"
         />
         <meta
           property='og:description'
@@ -116,7 +116,7 @@ const securityPage = ({ items }) => {
           property='og:description'
           content='Explore. Discover. Download - Free Your Desired Software.'
         />
-        <meta property='og:url' content= "https://softwarebay.vercel.app/security"/>
+        <meta property='og:url' content= "https://softwarebay.vercel.app/desktop"/>
         <meta name='keywords' content=""/>
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
@@ -125,7 +125,7 @@ const securityPage = ({ items }) => {
           content= "https://softwarebay.vercel.app/og_image.jpg"
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Security' />
+        <meta property='article:section' content='Desktop' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -197,7 +197,7 @@ const securityPage = ({ items }) => {
       <Script src="../../propler/ads.js" defer />
         <Script src="../../propler/ads2.js" defer />
 
-
+  
         <h1  className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'  style={{
           justifyContent: 'center',
           alignItems: 'center',
@@ -207,7 +207,7 @@ const securityPage = ({ items }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '15px'
-        }}>SoftwareBay Security Section.</h1>
+        }}>SoftwareBay Desktop Section.</h1>
 
 <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
@@ -232,7 +232,7 @@ const securityPage = ({ items }) => {
           id='menu-header-menu'
           className='menu flex flex-wrap justify-center'
         >
-             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
@@ -374,16 +374,16 @@ const securityPage = ({ items }) => {
             </button>
         </ul>
       </div>
- 
+    
       <div className='container'>
-        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>security Section</h1> */}
+        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>desktop Section</h1> */}
         <div className='flex-container'>
           <div className='main-content'>
             <div className='card-container'>
-            {securityData.map(item => (
+            {desktopData.map(item => (
           <div key={item.id}>
                 {/* <div key={item.id} className='card'> */}
-                  <Link href={`/security/${item.id}`}>
+                  <Link href={`/desktop/${item.id}`}>
                     <div className='relative'>
                       <Image
                         src={item.image}
@@ -393,7 +393,7 @@ const securityPage = ({ items }) => {
                         height={140} // Specify the desired height
                         style={{
                             filter:
-                            'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }} 
                       />
                       <p className='text-black text-2xl font-semibold mt-2'>
@@ -413,7 +413,7 @@ const securityPage = ({ items }) => {
                   </Link>
                 </div>
               ))}
-               <p className=' text-black text-2xl font-semibold mt-2'  style={{
+              <p className=' text-black text-2xl font-semibold mt-2'  style={{
                   marginTop: '15px',
                   color: '#000',
                   font: 'bold',
@@ -581,7 +581,7 @@ const securityPage = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://softwarebay.vercel.app/security.json');
+    const res = await fetch('https://softwarebay.vercel.app/desktop.json');
     const data = await res.json();
     
     return {
@@ -600,4 +600,4 @@ export async function getStaticProps() {
 }
 
 
-export default securityPage
+export default desktopPage

@@ -742,7 +742,7 @@ const educationDetail = ({ educationItem }) => {
                   marginTop: '50px',
                   marginBottom: '50px',
                   filter:
-                    'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
                 {!showTimer ? (
@@ -1019,7 +1019,7 @@ const educationDetail = ({ educationItem }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                              'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
                         <p className='text-black text-lg font-semibold mt-2'>

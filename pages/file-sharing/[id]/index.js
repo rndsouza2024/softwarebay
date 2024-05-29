@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import securityData from '../../../public/security.json'
+import filesharingData from '../../../public/filesharing.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
 import Script from 'next/script'
 
-const securityDetail = ({ securityItem }) => {
+const filesharingDetail = ({ filesharingItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -92,7 +92,7 @@ const securityDetail = ({ securityItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = securityItem.videoitem
+      const videoIds = filesharingItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -129,7 +129,7 @@ const securityDetail = ({ securityItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, securityItem])
+  }, [playerReady, showTimer, filesharingItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -163,15 +163,15 @@ const securityDetail = ({ securityItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: securityItem.datePublished,
-    dateModified: securityItem.dateModified,
-    softwareVersion: securityItem.softwareVersion,
-    url: securityItem.siteurl,
-    operatingSystem: securityItem.operatingSystem,
-    applicationCategory: securityItem.applicationCategory,
-    image: securityItem.image,
-    name: securityItem.name,
-    interactionStatistic: securityItem.interactionStatistic,
+    datePublished: filesharingItem.datePublished,
+    dateModified: filesharingItem.dateModified,
+    softwareVersion: filesharingItem.softwareVersion,
+    url: filesharingItem.siteurl,
+    operatingSystem: filesharingItem.operatingSystem,
+    applicationCategory: filesharingItem.applicationCategory,
+    image: filesharingItem.image,
+    name: filesharingItem.name,
+    interactionStatistic: filesharingItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -179,7 +179,7 @@ const securityDetail = ({ securityItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': securityItem.siteurl,
+      '@id': filesharingItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -200,14 +200,14 @@ const securityDetail = ({ securityItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Security',
-        item: securityItem.baseurl
+        name: 'filesharingItem',
+        item: filesharingItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: securityItem.name,
-        item: securityItem.siteurl
+        name: filesharingItem.name,
+        item: filesharingItem.siteurl
       }
     ]
   })
@@ -232,11 +232,11 @@ const securityDetail = ({ securityItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${securityItem.siteurl}#webpage`,
-        url: securityItem.siteurl,
-        name: `${securityItem.name} | Softwarebay`,
-        datePublished: securityItem.datePublished,
-        dateModified: securityItem.dateModified,
+        '@id': `${filesharingItem.siteurl}#webpage`,
+        url: filesharingItem.siteurl,
+        name: `${filesharingItem.name} | Softwarebay`,
+        datePublished: filesharingItem.datePublished,
+        dateModified: filesharingItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -258,35 +258,35 @@ const securityDetail = ({ securityItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${securityItem.siteurl}#article`,
-        headline: `Download ${securityItem.name} | Softwarebay`,
-        datePublished: securityItem.datePublished,
-        dateModified: securityItem.dateModified,
-        articleSection: 'Security',
+        '@id': `${filesharingItem.siteurl}#article`,
+        headline: `Download ${filesharingItem.name} | Softwarebay`,
+        datePublished: filesharingItem.datePublished,
+        dateModified: filesharingItem.dateModified,
+        articleSection: 'File Sharing',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/securityItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/filesharingItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: securityItem.image,
-        name: `Download ${securityItem.name} | Softwarebay`,
+        image: filesharingItem.image,
+        name: `Download ${filesharingItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${filesharingItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${filesharingItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${securityItem.siteurl}#blogPost`,
-        headline: `Download ${securityItem.name} | Softwarebay`,
-        datePublished: securityItem.datePublished,
-        dateModified: securityItem.dateModified,
-        articleSection: 'Security',
+        '@id': `${filesharingItem.siteurl}#blogPost`,
+        headline: `Download ${filesharingItem.name} | Softwarebay`,
+        datePublished: filesharingItem.datePublished,
+        dateModified: filesharingItem.dateModified,
+        articleSection: 'File Sharing',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -294,15 +294,15 @@ const securityDetail = ({ securityItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: securityItem.image,
-        name: `Download ${securityItem.name} | Softwarebay`,
-        '@id': `${securityItem.siteurl}#richSnippet`,
+        image: filesharingItem.image,
+        name: `Download ${filesharingItem.name} | Softwarebay`,
+        '@id': `${filesharingItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${filesharingItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${filesharingItem.siteurl}#webpage`
         }
       }
     ]
@@ -311,23 +311,23 @@ const securityDetail = ({ securityItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${securityItem.siteurl}#webpage`, // Add a comma here
-    name: securityItem.title,
-    url: securityItem.siteurl,
-    description: securityItem.news1,
-    image: securityItem.image,
-    datePublished: securityItem.startDate,
+    '@id': `${filesharingItem.siteurl}#webpage`, // Add a comma here
+    name: filesharingItem.title,
+    url: filesharingItem.siteurl,
+    description: filesharingItem.news1,
+    image: filesharingItem.image,
+    datePublished: filesharingItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: securityItem.title,
-        urlTemplate: securityItem.siteurl
+        name: filesharingItem.title,
+        urlTemplate: filesharingItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: securityItem.country
+      name: filesharingItem.country
     },
     author: {
       '@type': 'Person',
@@ -361,9 +361,12 @@ const securityDetail = ({ securityItem }) => {
         />
         <title>
           {' '}
-          Download {securityItem && securityItem.name} | Softwarebay
+          Download {filesharingItem && filesharingItem.name} | Softwarebay
         </title>
-        <link rel='canonical' href={securityItem && securityItem.siteurl} />
+        <link
+          rel='canonical'
+          href={filesharingItem && filesharingItem.siteurl}
+        />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -371,7 +374,7 @@ const securityDetail = ({ securityItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${securityItem && securityItem.name} - Softwarebay`}
+          content={`${filesharingItem && filesharingItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
@@ -383,20 +386,20 @@ const securityDetail = ({ securityItem }) => {
         />
         <meta
           property='og:url'
-          content={`${securityItem && securityItem.url}`}
+          content={`${filesharingItem && filesharingItem.url}`}
         />
         <meta
           name='keywords'
-          content={`${securityItem && securityItem.keywords}`}
+          content={`${filesharingItem && filesharingItem.keywords}`}
         />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${securityItem && securityItem.group}`}
+          content={`${filesharingItem && filesharingItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Security' />
+        <meta property='article:section' content='File Sharing' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -404,7 +407,7 @@ const securityDetail = ({ securityItem }) => {
         />
         <meta
           property='og:image'
-          content={`${securityItem && securityItem.backimage}`}
+          content={`${filesharingItem && filesharingItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -497,7 +500,7 @@ const securityDetail = ({ securityItem }) => {
             marginBottom: '12px'
           }}
         >
-          {securityItem.title}
+          {filesharingItem.title}
         </h1>
 
         <p
@@ -694,8 +697,8 @@ const securityDetail = ({ securityItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={securityItem.channelposter}
-              alt={securityItem.title}
+              src={filesharingItem.channelposter}
+              alt={filesharingItem.title}
               width={300}
               height={300}
               // priority
@@ -724,18 +727,17 @@ const securityDetail = ({ securityItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {securityItem.title}
+                  {filesharingItem.title}
                 </h2>
               </div>
-
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {securityItem.version}
+                Version: {filesharingItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {securityItem.developers}
+                Developers: {filesharingItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {securityItem.license}
+                License: {filesharingItem.license}
               </p>
               <div
                 className='flex flex-col items-center justify-center'
@@ -749,7 +751,7 @@ const securityDetail = ({ securityItem }) => {
                 {!showTimer ? (
                   <button
                     onClick={handleDownloadClick}
-                    className=' animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                    className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                   >
                     Download Now
                   </button>
@@ -791,9 +793,9 @@ const securityDetail = ({ securityItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {securityItem.downloadlink && (
+                        {filesharingItem.downloadlink && (
                           <Link
-                            href={securityItem.downloadlink}
+                            href={filesharingItem.downloadlink}
                             target='_blank'
                           >
                             <div
@@ -819,13 +821,13 @@ const securityDetail = ({ securityItem }) => {
                                   aria-hidden='true'
                                 ></i>{' '}
                               </span>
-                              Click Here to Download {securityItem.ver3}
+                              Click Here to Download
                             </div>
                           </Link>
                         )}
-                        {securityItem.downloadlink1 && (
+                        {filesharingItem.downloadlink1 && (
                           <Link
-                            href={securityItem.downloadlink1}
+                            href={filesharingItem.downloadlink1}
                             target='_blank'
                           >
                             <div
@@ -839,55 +841,11 @@ const securityDetail = ({ securityItem }) => {
                                   'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                               }}
                             >
-                               <span
-                                style={{
-                                  color: '#0efa06',
-                                  fontSize: '24px',
-                                  textShadow: '3px 5px 5px #000'
-                                }}
-                              >
-                                <i
-                                  className='fa fa-download'
-                                  aria-hidden='true'
-                                ></i>{' '}
-                              </span>
-                              Click Here to Download {securityItem.ver1}
+                              Click Here to Download
                             </div>
                           </Link>
                         )}
-                            {securityItem.downloadlink2 && (
-                          <Link
-                            href={securityItem.downloadlink2}
-                            target='_blank'
-                          >
-                            <div
-                              className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                              style={{
-                                margin: 'auto',
-                                marginBottom: '50px',
-                                borderRadius: '50px',
-                                boxShadow: '0 0 10px 0 #fff',
-                                filter:
-                                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-                              }}
-                            >
-                               <span
-                                style={{
-                                  color: '#0efa06',
-                                  fontSize: '24px',
-                                  textShadow: '3px 5px 5px #000'
-                                }}
-                              >
-                                <i
-                                  className='fa fa-download'
-                                  aria-hidden='true'
-                                ></i>{' '}
-                              </span>
-                              Click Here to Download {securityItem.ver2}
-                            </div>
-                          </Link>
-                        )}
-                        {securityItem.additionalLinks?.map((link, index) => (
+                        {filesharingItem.additionalLinks?.map((link, index) => (
                           <Link key={index} href={link.url} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
@@ -911,12 +869,12 @@ const securityDetail = ({ securityItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head1} </strong>
+                  <strong> {filesharingItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={securityItem.image1}
-                alt={securityItem.name}
+                src={filesharingItem.image1}
+                alt={filesharingItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -933,7 +891,7 @@ const securityDetail = ({ securityItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {securityItem.news1.split('\n\n').map((paragraph, idx) => (
+              {filesharingItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -947,12 +905,12 @@ const securityDetail = ({ securityItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head2} </strong>
+                  <strong> {filesharingItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={securityItem.image2}
-                alt={securityItem.name}
+                src={filesharingItem.image2}
+                alt={filesharingItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -969,7 +927,7 @@ const securityDetail = ({ securityItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {securityItem.news2.split('\n\n').map((paragraph, idx) => (
+              {filesharingItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -983,12 +941,12 @@ const securityDetail = ({ securityItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head3} </strong>
+                  <strong> {filesharingItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={securityItem.image3}
-                alt={securityItem.name}
+                src={filesharingItem.image3}
+                alt={filesharingItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -1002,10 +960,10 @@ const securityDetail = ({ securityItem }) => {
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {securityItem.news3.split('\n\n').map((paragraph, idx) => (
+              {filesharingItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1019,11 +977,10 @@ const securityDetail = ({ securityItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head4} </strong>
+                  <strong> {filesharingItem.head4} </strong>
                 </p>
               </div>
-
-              {securityItem.news4.split('\n\n').map((paragraph, idx) => (
+              {filesharingItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1195,7 +1152,7 @@ const securityDetail = ({ securityItem }) => {
 }
 
 export async function getStaticPaths () {
-  const paths = securityData.map(item => ({
+  const paths = filesharingData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1203,7 +1160,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const securityItem = securityData.find(item => item.id === params.id)
-  return { props: { securityItem } }
+  const filesharingItem = filesharingData.find(item => item.id === params.id)
+  return { props: { filesharingItem } }
 }
-export default securityDetail
+export default filesharingDetail

@@ -800,7 +800,7 @@ const moviesDetail = ({ moviesItem }) => {
                   marginTop: '50px',
                   marginBottom: '50px',
                   filter:
-                    'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
                 {!showTimer ? (

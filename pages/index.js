@@ -577,6 +577,8 @@ const HomePage = () => {
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
+                            width: '200px', // Ensures the image is displayed at this width
+                            height: '300px',  // Ensures the image is displayed at this height
                             filter:
                                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -618,6 +620,8 @@ const HomePage = () => {
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
+                            width: '200px', // Ensures the image is displayed at this width
+                            height: '300px',  // Ensures the image is displayed at this height
                             filter:
                                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -659,6 +663,8 @@ const HomePage = () => {
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
+                            width: '200px', // Ensures the image is displayed at this width
+                            height: '300px',  // Ensures the image is displayed at this height
                             filter:
                                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
@@ -699,6 +705,8 @@ const HomePage = () => {
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
+                            width: '200px', // Ensures the image is displayed at this width
+                            height: '300px',  // Ensures the image is displayed at this height
                             filter:
                               'contrast(1.2) saturate(1.5) brightness(1.0) hue-rotate(-15deg)'
                           }}
@@ -739,6 +747,8 @@ const HomePage = () => {
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
+                            width: '200px', // Ensures the image is displayed at this width
+                            height: '300px',  // Ensures the image is displayed at this height
                             filter:
                                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}

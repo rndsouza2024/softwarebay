@@ -392,7 +392,7 @@ const graphicdesignPage = ({ items }) => {
                         height={140} // Specify the desired height
                         style={{
                             filter:
-                            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }} 
                       />
                       <p className='text-black text-2xl font-semibold mt-2'>
@@ -449,7 +449,7 @@ const graphicdesignPage = ({ items }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }} 
                         />
                         <p className='text-black text-lg font-semibold mt-2'>

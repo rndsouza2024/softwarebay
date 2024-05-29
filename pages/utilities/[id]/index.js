@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import securityData from '../../../public/security.json'
+import utilitiesData from '../../../public/utilities.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
 import Script from 'next/script'
 
-const securityDetail = ({ securityItem }) => {
+const utilitiesDetail = ({ utilitiesItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -92,7 +92,7 @@ const securityDetail = ({ securityItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = securityItem.videoitem
+      const videoIds = utilitiesItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -129,7 +129,7 @@ const securityDetail = ({ securityItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, securityItem])
+  }, [playerReady, showTimer, utilitiesItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -163,15 +163,15 @@ const securityDetail = ({ securityItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: securityItem.datePublished,
-    dateModified: securityItem.dateModified,
-    softwareVersion: securityItem.softwareVersion,
-    url: securityItem.siteurl,
-    operatingSystem: securityItem.operatingSystem,
-    applicationCategory: securityItem.applicationCategory,
-    image: securityItem.image,
-    name: securityItem.name,
-    interactionStatistic: securityItem.interactionStatistic,
+    datePublished: utilitiesItem.datePublished,
+    dateModified: utilitiesItem.dateModified,
+    softwareVersion: utilitiesItem.softwareVersion,
+    url: utilitiesItem.siteurl,
+    operatingSystem: utilitiesItem.operatingSystem,
+    applicationCategory: utilitiesItem.applicationCategory,
+    image: utilitiesItem.image,
+    name: utilitiesItem.name,
+    interactionStatistic: utilitiesItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -179,7 +179,7 @@ const securityDetail = ({ securityItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': securityItem.siteurl,
+      '@id': utilitiesItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -200,14 +200,14 @@ const securityDetail = ({ securityItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Security',
-        item: securityItem.baseurl
+        name: 'Utilities',
+        item: utilitiesItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: securityItem.name,
-        item: securityItem.siteurl
+        name: utilitiesItem.name,
+        item: utilitiesItem.siteurl
       }
     ]
   })
@@ -232,11 +232,11 @@ const securityDetail = ({ securityItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${securityItem.siteurl}#webpage`,
-        url: securityItem.siteurl,
-        name: `${securityItem.name} | Softwarebay`,
-        datePublished: securityItem.datePublished,
-        dateModified: securityItem.dateModified,
+        '@id': `${utilitiesItem.siteurl}#webpage`,
+        url: utilitiesItem.siteurl,
+        name: `${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -258,35 +258,35 @@ const securityDetail = ({ securityItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${securityItem.siteurl}#article`,
-        headline: `Download ${securityItem.name} | Softwarebay`,
-        datePublished: securityItem.datePublished,
-        dateModified: securityItem.dateModified,
-        articleSection: 'Security',
+        '@id': `${utilitiesItem.siteurl}#article`,
+        headline: `Download ${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
+        articleSection: 'Utilities',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/securityItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/utilitiesItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: securityItem.image,
-        name: `Download ${securityItem.name} | Softwarebay`,
+        image: utilitiesItem.image,
+        name: `Download ${utilitiesItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${securityItem.siteurl}#blogPost`,
-        headline: `Download ${securityItem.name} | Softwarebay`,
-        datePublished: securityItem.datePublished,
-        dateModified: securityItem.dateModified,
-        articleSection: 'Security',
+        '@id': `${utilitiesItem.siteurl}#blogPost`,
+        headline: `Download ${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
+        articleSection: 'Utilities',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -294,15 +294,15 @@ const securityDetail = ({ securityItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: securityItem.image,
-        name: `Download ${securityItem.name} | Softwarebay`,
-        '@id': `${securityItem.siteurl}#richSnippet`,
+        image: utilitiesItem.image,
+        name: `Download ${utilitiesItem.name} | Softwarebay`,
+        '@id': `${utilitiesItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${securityItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         }
       }
     ]
@@ -311,23 +311,23 @@ const securityDetail = ({ securityItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${securityItem.siteurl}#webpage`, // Add a comma here
-    name: securityItem.title,
-    url: securityItem.siteurl,
-    description: securityItem.news1,
-    image: securityItem.image,
-    datePublished: securityItem.startDate,
+    '@id': `${utilitiesItem.siteurl}#webpage`, // Add a comma here
+    name: utilitiesItem.title,
+    url: utilitiesItem.siteurl,
+    description: utilitiesItem.news1,
+    image: utilitiesItem.image,
+    datePublished: utilitiesItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: securityItem.title,
-        urlTemplate: securityItem.siteurl
+        name: utilitiesItem.title,
+        urlTemplate: utilitiesItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: securityItem.country
+      name: utilitiesItem.country
     },
     author: {
       '@type': 'Person',
@@ -361,9 +361,9 @@ const securityDetail = ({ securityItem }) => {
         />
         <title>
           {' '}
-          Download {securityItem && securityItem.name} | Softwarebay
+          Download {utilitiesItem && utilitiesItem.name} | Softwarebay
         </title>
-        <link rel='canonical' href={securityItem && securityItem.siteurl} />
+        <link rel='canonical' href={utilitiesItem && utilitiesItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -371,7 +371,7 @@ const securityDetail = ({ securityItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${securityItem && securityItem.name} - Softwarebay`}
+          content={`${utilitiesItem && utilitiesItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
@@ -383,20 +383,20 @@ const securityDetail = ({ securityItem }) => {
         />
         <meta
           property='og:url'
-          content={`${securityItem && securityItem.url}`}
+          content={`${utilitiesItem && utilitiesItem.url}`}
         />
         <meta
           name='keywords'
-          content={`${securityItem && securityItem.keywords}`}
+          content={`${utilitiesItem && utilitiesItem.keywords}`}
         />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${securityItem && securityItem.group}`}
+          content={`${utilitiesItem && utilitiesItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Security' />
+        <meta property='article:section' content='Utilities' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -404,7 +404,7 @@ const securityDetail = ({ securityItem }) => {
         />
         <meta
           property='og:image'
-          content={`${securityItem && securityItem.backimage}`}
+          content={`${utilitiesItem && utilitiesItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -497,7 +497,7 @@ const securityDetail = ({ securityItem }) => {
             marginBottom: '12px'
           }}
         >
-          {securityItem.title}
+          {utilitiesItem.title}
         </h1>
 
         <p
@@ -694,8 +694,8 @@ const securityDetail = ({ securityItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={securityItem.channelposter}
-              alt={securityItem.title}
+              src={utilitiesItem.channelposter}
+              alt={utilitiesItem.title}
               width={300}
               height={300}
               // priority
@@ -724,18 +724,18 @@ const securityDetail = ({ securityItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {securityItem.title}
+                  {utilitiesItem.title}
                 </h2>
               </div>
 
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {securityItem.version}
+                Version: {utilitiesItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {securityItem.developers}
+                Developers: {utilitiesItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {securityItem.license}
+                License: {utilitiesItem.license}
               </p>
               <div
                 className='flex flex-col items-center justify-center'
@@ -749,7 +749,7 @@ const securityDetail = ({ securityItem }) => {
                 {!showTimer ? (
                   <button
                     onClick={handleDownloadClick}
-                    className=' animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                    className='animate-pulse bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                   >
                     Download Now
                   </button>
@@ -791,9 +791,9 @@ const securityDetail = ({ securityItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {securityItem.downloadlink && (
+                        {utilitiesItem.downloadlink && (
                           <Link
-                            href={securityItem.downloadlink}
+                            href={utilitiesItem.downloadlink}
                             target='_blank'
                           >
                             <div
@@ -819,13 +819,13 @@ const securityDetail = ({ securityItem }) => {
                                   aria-hidden='true'
                                 ></i>{' '}
                               </span>
-                              Click Here to Download {securityItem.ver3}
+                              Click Here to Download
                             </div>
                           </Link>
                         )}
-                        {securityItem.downloadlink1 && (
+                        {utilitiesItem.downloadlink1 && (
                           <Link
-                            href={securityItem.downloadlink1}
+                            href={utilitiesItem.downloadlink1}
                             target='_blank'
                           >
                             <div
@@ -839,55 +839,11 @@ const securityDetail = ({ securityItem }) => {
                                   'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                               }}
                             >
-                               <span
-                                style={{
-                                  color: '#0efa06',
-                                  fontSize: '24px',
-                                  textShadow: '3px 5px 5px #000'
-                                }}
-                              >
-                                <i
-                                  className='fa fa-download'
-                                  aria-hidden='true'
-                                ></i>{' '}
-                              </span>
-                              Click Here to Download {securityItem.ver1}
+                              Click Here to Download
                             </div>
                           </Link>
                         )}
-                            {securityItem.downloadlink2 && (
-                          <Link
-                            href={securityItem.downloadlink2}
-                            target='_blank'
-                          >
-                            <div
-                              className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                              style={{
-                                margin: 'auto',
-                                marginBottom: '50px',
-                                borderRadius: '50px',
-                                boxShadow: '0 0 10px 0 #fff',
-                                filter:
-                                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-                              }}
-                            >
-                               <span
-                                style={{
-                                  color: '#0efa06',
-                                  fontSize: '24px',
-                                  textShadow: '3px 5px 5px #000'
-                                }}
-                              >
-                                <i
-                                  className='fa fa-download'
-                                  aria-hidden='true'
-                                ></i>{' '}
-                              </span>
-                              Click Here to Download {securityItem.ver2}
-                            </div>
-                          </Link>
-                        )}
-                        {securityItem.additionalLinks?.map((link, index) => (
+                        {utilitiesItem.additionalLinks?.map((link, index) => (
                           <Link key={index} href={link.url} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
@@ -911,12 +867,12 @@ const securityDetail = ({ securityItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head1} </strong>
+                  <strong> {utilitiesItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={securityItem.image1}
-                alt={securityItem.name}
+                src={utilitiesItem.image1}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -933,7 +889,7 @@ const securityDetail = ({ securityItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {securityItem.news1.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -947,12 +903,12 @@ const securityDetail = ({ securityItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head2} </strong>
+                  <strong> {utilitiesItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={securityItem.image2}
-                alt={securityItem.name}
+                src={utilitiesItem.image2}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -969,7 +925,7 @@ const securityDetail = ({ securityItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {securityItem.news2.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -983,12 +939,12 @@ const securityDetail = ({ securityItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head3} </strong>
+                  <strong> {utilitiesItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={securityItem.image3}
-                alt={securityItem.name}
+                src={utilitiesItem.image3}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -1002,10 +958,10 @@ const securityDetail = ({ securityItem }) => {
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {securityItem.news3.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1019,11 +975,10 @@ const securityDetail = ({ securityItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {securityItem.head4} </strong>
+                  <strong> {utilitiesItem.head4} </strong>
                 </p>
               </div>
-
-              {securityItem.news4.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1195,7 +1150,7 @@ const securityDetail = ({ securityItem }) => {
 }
 
 export async function getStaticPaths () {
-  const paths = securityData.map(item => ({
+  const paths = utilitiesData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1203,7 +1158,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const securityItem = securityData.find(item => item.id === params.id)
-  return { props: { securityItem } }
+  const utilitiesItem = utilitiesData.find(item => item.id === params.id)
+  return { props: { utilitiesItem } }
 }
-export default securityDetail
+export default utilitiesDetail

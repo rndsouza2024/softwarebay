@@ -742,7 +742,7 @@ const browsersDetail = ({ browsersItem }) => {
                   marginTop: '50px',
                   marginBottom: '50px',
                   filter:
-                    'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
                 {!showTimer ? (
@@ -1003,7 +1003,7 @@ const browsersDetail = ({ browsersItem }) => {
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                    'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               /> */}
               {browsersItem.news4.split('\n\n').map((paragraph, idx) => (
@@ -1048,7 +1048,7 @@ const browsersDetail = ({ browsersItem }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                              'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
                         <p className='text-black text-lg font-semibold mt-2'>
