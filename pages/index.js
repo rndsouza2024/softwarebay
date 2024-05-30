@@ -399,7 +399,7 @@ const HomePage = () => {
         <div
           className='shadow-lg flex items-center justify-center'
           role='navigation'
-          loading='priority'
+         
         >
           <ul
             id='menu-header-menu'
@@ -575,6 +575,7 @@ const HomePage = () => {
                           src={gamesItem.image}
                           alt={gamesItem.title}
                           className='rounded-lg '
+                          loading='priority'
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -618,6 +619,7 @@ const HomePage = () => {
                           src={moviesItem.image}
                           alt={moviesItem.title}
                           className='rounded-lg '
+                          loading='priority'
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -661,6 +663,7 @@ const HomePage = () => {
                           src={multimediaItem.image}
                           alt={multimediaItem.title}
                           className='rounded-lg '
+                          loading='priority'
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -703,6 +706,7 @@ const HomePage = () => {
                           src={graphicdesignItem.image}
                           alt={graphicdesignItem.title}
                           className='rounded-lg '
+                          loading='priority'
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -745,6 +749,7 @@ const HomePage = () => {
                           src={securityItem.image}
                           alt={securityItem.title}
                           className='rounded-lg '
+                          loading='priority'
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
