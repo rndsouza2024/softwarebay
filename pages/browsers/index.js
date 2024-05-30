@@ -93,6 +93,7 @@ const browsersPage = ({ items }) => {
   const shareMessage = 'Share this Software with your friends!'
 
   return (
+    <Script src="https://softwarebay.vercel.app/components/ShareButtons.js" strategy="lazyOnload" />
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
       <Head>
         <title> Download Browsers | Softwarebay™</title>
