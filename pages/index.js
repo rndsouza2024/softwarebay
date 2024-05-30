@@ -561,7 +561,18 @@ const HomePage = () => {
             </button>
           </ul>
         </div>
-
+        <div
+          className='share-buttons-container'
+          style={{
+            marginTop: '15px'
+          }}
+        >
+          <ShareButtons
+            title={title}
+            description={description}
+            shareMessage={shareMessage}
+          />
+        </div>
         <h3
           className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  font-bold hover:text-blue-800 text-3xl  mt-2'
           style={{
@@ -976,18 +987,7 @@ const HomePage = () => {
             }
           }
         `}</style>
-        <div
-          className='share-buttons-container'
-          style={{
-            marginTop: '15px'
-          }}
-        >
-          <ShareButtons
-            title={title}
-            description={description}
-            shareMessage={shareMessage}
-          />
-        </div>
+  
         <style jsx>{`
           .share-buttons-container {
             position: fixed !important;
