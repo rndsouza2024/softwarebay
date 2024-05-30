@@ -203,7 +203,7 @@ const browsersPage = ({ items }) => {
       </Head>
       <Script src='../../propler/ads.js' defer />
       <Script src='../../propler/ads2.js' defer />
-      <Script src="https://softwarebay.vercel.app/components/ShareButtons.js" strategy="afterInteractive" async />
+   
       {/* <div className='container'> */}
       <h1
         className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
