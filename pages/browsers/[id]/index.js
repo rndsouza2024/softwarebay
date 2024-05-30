@@ -968,7 +968,7 @@ const browsersDetail = ({ browsersItem }) => {
                 height={720}
                 // priority
                 objectFit='cover'
-                loading="eager"
+                // loading="eager"
                 style={{
                   width: '800px', // Ensures the image is displayed at this width
                   height: '400px', // Ensures the image is displayed at this height
