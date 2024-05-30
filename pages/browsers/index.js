@@ -93,7 +93,7 @@ const browsersPage = ({ items }) => {
   const shareMessage = 'Share this Software with your friends!'
 
   return (
-    <Script src="https://softwarebay.vercel.app/components/ShareButtons.js" strategy="lazyOnload" />
+
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
       <Head>
         <title> Download Browsers | Softwarebay™</title>
@@ -203,7 +203,7 @@ const browsersPage = ({ items }) => {
       </Head>
       <Script src='../../propler/ads.js' defer />
       <Script src='../../propler/ads2.js' defer />
-
+      <Script src="https://softwarebay.vercel.app/components/ShareButtons.js" strategy="lazyOnload" />
       {/* <div className='container'> */}
       <h1
         className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
