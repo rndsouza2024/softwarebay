@@ -5,7 +5,6 @@ import moviesData from '../public/movies.json'
 import multimediaData from '../public/multimedia.json'
 import graphicdesignData from '../public/graphicdesign.json'
 import gamesData from '../public/games.json'
-import ShareButtons from '@components/ShareButtons'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -222,10 +221,6 @@ const HomePage = () => {
       }
     ]
   })
-
-  const title = 'Welcome to SoftwareBay.™'
-  const description = 'SoftwareBay.™ -Explore. Discover.'
-  const shareMessage = 'Share this SoftwareBay.™ -Explore. Discover. Download with your friends!'
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
@@ -953,41 +948,6 @@ const HomePage = () => {
             }
           }
         `}</style>
-          <style jsx>{`
-          .share-buttons-container {
-            position: fixed !important;
-            top: 50% !important;
-            right: 0 !important;
-            transform: translateY(-50%) !important;
-            display: flex !important;
-            flex-direction: column !important; /* Display buttons in a column */
-            gap: 10px !important;
-            padding: 10px !important;
-            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
-          }
-
-          @media (max-width: 600px) {
-            .share-buttons-container {
-              flex-direction: column;
-              right: 0;
-              top: auto;
-              bottom: 10px;
-              transform: translateY(0);
-            }
-          }
-        `}</style>
-        <div
-          className='share-buttons-container'
-          style={{
-            marginTop: '15px'
-          }}
-        >
-          <ShareButtons
-            title={title}
-            description={description}
-            shareMessage={shareMessage}
-          />
-        </div>
       </div>
     </div>
   )
