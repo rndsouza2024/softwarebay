@@ -375,7 +375,7 @@ const multimediaDetail = ({ multimediaItem }) => {
         />
         <meta
           property='og:description'
-          content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
+          content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'/>
     
         <meta
           property='og:url'
