@@ -617,6 +617,7 @@ const HomePage = () => {
                           src={moviesItem.image}
                           alt={moviesItem.title}
                           className='rounded-lg '
+                          loading='priority '
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -660,6 +661,7 @@ const HomePage = () => {
                           src={multimediaItem.image}
                           alt={multimediaItem.title}
                           className='rounded-lg '
+                          loading='priority '
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -702,6 +704,7 @@ const HomePage = () => {
                           src={graphicdesignItem.image}
                           alt={graphicdesignItem.title}
                           className='rounded-lg '
+                          loading='priority '
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -744,6 +747,7 @@ const HomePage = () => {
                           src={securityItem.image}
                           alt={securityItem.title}
                           className='rounded-lg '
+                          loading='priority '
                           width={140} // Specify the desired width
                           height={140} // Specify the desired height
                           style={{
@@ -796,6 +800,7 @@ const HomePage = () => {
                             src={latestItem.image}
                             alt={latestItem.title}
                             className='rounded-lg mx-auto'
+                            loading='priority '
                             width={140} // Specify the desired width
                             height={140} // Specify the desired height
                             style={{

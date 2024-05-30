@@ -709,7 +709,7 @@ const browsersDetail = ({ browsersItem }) => {
               height={300}
               // priority
               objectFit='cover'
-              loading='lazy'
+              loading='priority '
               style={{
                 width: '400px', // Ensures the image is displayed at this width
                 height: '500px', // Ensures the image is displayed at this height

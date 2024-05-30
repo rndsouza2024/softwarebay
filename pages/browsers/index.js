@@ -399,6 +399,7 @@ const browsersPage = ({ items }) => {
                       <Image
                         src={item.image}
                         alt={item.title}
+                        loading='priority '
                         className='rounded-lg'
                         width={140} // Specify the desired width
                         height={140} // Specify the desired height
