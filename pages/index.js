@@ -5,6 +5,7 @@ import moviesData from '../public/movies.json'
 import multimediaData from '../public/multimedia.json'
 import graphicdesignData from '../public/graphicdesign.json'
 import gamesData from '../public/games.json'
+import ShareButtons from '@components/ShareButtons'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -26,8 +27,9 @@ const HomePage = () => {
   const [movies, setmovies] = useState(moviesData.slice(0, 2))
   const [multimedia, setmultimedia] = useState(multimediaData.slice(0, 2))
   const [graphicdesign, setgraphicdesign] = useState(
-    graphicdesignData.slice(0, 2))
-    const [games, setgames] = useState(gamesData.slice(0, 2))  
+    graphicdesignData.slice(0, 2)
+  )
+  const [games, setgames] = useState(gamesData.slice(0, 2))
 
   // Update the state with random items after the component mounts
   useEffect(() => {
@@ -52,7 +54,9 @@ const HomePage = () => {
       '@type': 'Organization',
       name: 'Softwarebay',
       url: 'https://softwarebay.vercel.app/',
-      image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+      image: [
+        'https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+      ],
       logo: {
         '@type': 'ImageObject',
         url: 'https://softwarebay.vercel.app/logo.png',
@@ -68,7 +72,8 @@ const HomePage = () => {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://softwarebay.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -223,6 +228,12 @@ const HomePage = () => {
     ]
   })
 
+  const title = 'Softwarebay - Explore. Discover. Download.'
+  const description =
+    'Check out this amazing Softwarebay - Explore. Discover. Download.'
+  const shareMessage =
+    'Share this Softwarebay - Explore. Discover. Download. with your friends!'
+
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
       <div className='container'>
@@ -313,7 +324,10 @@ const HomePage = () => {
             href='https://softwarebay.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
-          <meta name="trustpilot-one-time-domain-verification-id" content="48b41bc7-60cf-4de8-9c3b-6a55be476696"/>
+          <meta
+            name='trustpilot-one-time-domain-verification-id'
+            content='48b41bc7-60cf-4de8-9c3b-6a55be476696'
+          />
           <meta
             name='google-adsense-account'
             content='ca-pub-5527677677744511'
@@ -560,17 +574,16 @@ const HomePage = () => {
           <div className='flex-container'>
             <div className='category-container'>
               <div className='card-container'>
-              {games.map(gamesItem => (
+                {games.map(gamesItem => (
                   <div key={gamesItem.id} className='card'>
                     <a href={`/games/${gamesItem.id}`}>
-                    <p
-                          className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                          style={{ marginBottom: '20px' }}
-                        >
-                          {gamesItem.name}
-                        </p>
+                      <p
+                        className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                        style={{ marginBottom: '20px' }}
+                      >
+                        {gamesItem.name}
+                      </p>
                       <div className='relative'>
-                    
                         <Image
                           src={gamesItem.image}
                           alt={gamesItem.title}
@@ -579,12 +592,12 @@ const HomePage = () => {
                           height={140} // Specify the desired height
                           style={{
                             width: '200px', // Ensures the image is displayed at this width
-                            height: '300px',  // Ensures the image is displayed at this height
+                            height: '300px', // Ensures the image is displayed at this height
                             filter:
-                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                     
+
                         <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                           {gamesItem.text}
                         </div>
@@ -595,25 +608,27 @@ const HomePage = () => {
                     </a>
                   </div>
                 ))}
-                <p className=' animate-pulse text-black text-2xl font-semibold mt-2'  style={{
-                  marginTop: '15px',
-                  color: '#000',
-                  font: 'bold',
-                  textShadow: '1px 2px 2px #000 '
-                }}>
+                <p
+                  className=' animate-pulse text-black text-2xl font-semibold mt-2'
+                  style={{
+                    marginTop: '15px',
+                    color: '#000',
+                    font: 'bold',
+                    textShadow: '1px 2px 2px #000 '
+                  }}
+                >
                   Many More Coming Soon...
                 </p>
                 {movies.map(moviesItem => (
                   <div key={moviesItem.id} className='card'>
                     <a href={`/movies/${moviesItem.id}`}>
-                    <p
-                          className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                          style={{ marginBottom: '20px' }}
-                        >
-                          {moviesItem.name}
-                        </p>
+                      <p
+                        className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                        style={{ marginBottom: '20px' }}
+                      >
+                        {moviesItem.name}
+                      </p>
                       <div className='relative'>
-                    
                         <Image
                           src={moviesItem.image}
                           alt={moviesItem.title}
@@ -622,12 +637,12 @@ const HomePage = () => {
                           height={140} // Specify the desired height
                           style={{
                             width: '200px', // Ensures the image is displayed at this width
-                            height: '300px',  // Ensures the image is displayed at this height
+                            height: '300px', // Ensures the image is displayed at this height
                             filter:
-                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                     
+
                         <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                           {moviesItem.text}
                         </div>
@@ -638,24 +653,27 @@ const HomePage = () => {
                     </a>
                   </div>
                 ))}
-                <p className=' animate-pulse text-black text-2xl font-semibold mt-2'  style={{
-                  marginTop: '15px',
-                  color: '#000',
-                  font: 'bold',
-                  textShadow: '1px 2px 2px #000 '
-                }}>
+                <p
+                  className=' animate-pulse text-black text-2xl font-semibold mt-2'
+                  style={{
+                    marginTop: '15px',
+                    color: '#000',
+                    font: 'bold',
+                    textShadow: '1px 2px 2px #000 '
+                  }}
+                >
                   Many More Coming Soon...
                 </p>
-             
+
                 {multimedia.map(multimediaItem => (
                   <div key={multimediaItem.id} className='card'>
                     <a href={`/multimedia/${multimediaItem.id}`}>
-                    <p
-                          className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                          style={{ marginBottom: '20px' }}
-                        >
-                          {multimediaItem.name}
-                        </p>
+                      <p
+                        className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                        style={{ marginBottom: '20px' }}
+                      >
+                        {multimediaItem.name}
+                      </p>
                       <div className='relative'>
                         <Image
                           src={multimediaItem.image}
@@ -665,12 +683,12 @@ const HomePage = () => {
                           height={140} // Specify the desired height
                           style={{
                             width: '200px', // Ensures the image is displayed at this width
-                            height: '300px',  // Ensures the image is displayed at this height
+                            height: '300px', // Ensures the image is displayed at this height
                             filter:
-                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                     
+
                         <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                           {multimediaItem.text}
                         </div>
@@ -681,23 +699,26 @@ const HomePage = () => {
                     </a>
                   </div>
                 ))}
-               <p className=' animate-pulse text-black text-2xl font-semibold mt-2'  style={{
-                  marginTop: '15px',
-                  color: '#000',
-                  font: 'bold',
-                  textShadow: '1px 2px 2px #000 '
-                }}>
+                <p
+                  className=' animate-pulse text-black text-2xl font-semibold mt-2'
+                  style={{
+                    marginTop: '15px',
+                    color: '#000',
+                    font: 'bold',
+                    textShadow: '1px 2px 2px #000 '
+                  }}
+                >
                   Many More Coming Soon...
                 </p>
                 {graphicdesign.map(graphicdesignItem => (
                   <div key={graphicdesignItem.id} className='card'>
                     <a href={`/graphic-design/${graphicdesignItem.id}`}>
-                    <p
-                          className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                          style={{ marginBottom: '20px' }}
-                        >
-                          {graphicdesignItem.name}
-                        </p>
+                      <p
+                        className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                        style={{ marginBottom: '20px' }}
+                      >
+                        {graphicdesignItem.name}
+                      </p>
                       <div className='relative'>
                         <Image
                           src={graphicdesignItem.image}
@@ -707,12 +728,12 @@ const HomePage = () => {
                           height={140} // Specify the desired height
                           style={{
                             width: '200px', // Ensures the image is displayed at this width
-                            height: '300px',  // Ensures the image is displayed at this height
+                            height: '300px', // Ensures the image is displayed at this height
                             filter:
                               'contrast(1.2) saturate(1.5) brightness(1.0) hue-rotate(-15deg)'
                           }}
                         />
-                        
+
                         <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                           {graphicdesignItem.text}
                         </div>
@@ -723,23 +744,26 @@ const HomePage = () => {
                     </a>
                   </div>
                 ))}
-                 <p className=' animate-pulse text-black text-2xl font-semibold mt-2'  style={{
-                  marginTop: '15px',
-                  color: '#000',
-                  font: 'bold',
-                  textShadow: '1px 2px 2px #000 '
-                }}>
+                <p
+                  className=' animate-pulse text-black text-2xl font-semibold mt-2'
+                  style={{
+                    marginTop: '15px',
+                    color: '#000',
+                    font: 'bold',
+                    textShadow: '1px 2px 2px #000 '
+                  }}
+                >
                   Many More Coming Soon...
                 </p>
                 {security.map(securityItem => (
                   <div key={securityItem.id} className='card'>
                     <a href={`/security/${securityItem.id}`}>
-                    <p
-                          className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                          style={{ marginBottom: '20px' }}
-                        >
-                          {securityItem.name}
-                        </p>
+                      <p
+                        className='text-black text-xl bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                        style={{ marginBottom: '20px' }}
+                      >
+                        {securityItem.name}
+                      </p>
                       <div className='relative'>
                         <Image
                           src={securityItem.image}
@@ -749,12 +773,12 @@ const HomePage = () => {
                           height={140} // Specify the desired height
                           style={{
                             width: '200px', // Ensures the image is displayed at this width
-                            height: '300px',  // Ensures the image is displayed at this height
+                            height: '300px', // Ensures the image is displayed at this height
                             filter:
-                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
-                        
+
                         <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                           {securityItem.text}
                         </div>
@@ -765,12 +789,15 @@ const HomePage = () => {
                     </a>
                   </div>
                 ))}
-               <p className=' animate-pulse text-black text-2xl font-semibold mt-2'  style={{
-                  marginTop: '15px',
-                  color: '#000',
-                  font: 'bold',
-                  textShadow: '1px 2px 2px #000 '
-                }}>
+                <p
+                  className=' animate-pulse text-black text-2xl font-semibold mt-2'
+                  style={{
+                    marginTop: '15px',
+                    color: '#000',
+                    font: 'bold',
+                    textShadow: '1px 2px 2px #000 '
+                  }}
+                >
                   Many More Coming Soon...
                 </p>
               </div>
@@ -801,7 +828,7 @@ const HomePage = () => {
                             height={140} // Specify the desired height
                             style={{
                               filter:
-                                 'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                             }}
                           />
                           <p className='text-black text-lg font-semibold mt-2'>
@@ -946,6 +973,41 @@ const HomePage = () => {
 
             .sidebar {
               margin-top: 20px;
+            }
+          }
+        `}</style>
+        <div
+          className='share-buttons-container'
+          style={{
+            marginTop: '15px'
+          }}
+        >
+          <ShareButtons
+            title={title}
+            description={description}
+            shareMessage={shareMessage}
+          />
+        </div>
+        <style jsx>{`
+          .share-buttons-container {
+            position: fixed !important;
+            top: 50% !important;
+            right: 0 !important;
+            transform: translateY(-50%) !important;
+            display: flex !important;
+            flex-direction: column !important; /* Display buttons in a column */
+            gap: 10px !important;
+            padding: 10px !important;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+          }
+
+          @media (max-width: 600px) {
+            .share-buttons-container {
+              flex-direction: column;
+              right: 0;
+              top: auto;
+              bottom: 10px;
+              transform: translateY(0);
             }
           }
         `}</style>
