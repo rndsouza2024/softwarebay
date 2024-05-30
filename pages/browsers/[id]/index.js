@@ -542,6 +542,7 @@ const browsersDetail = ({ browsersItem }) => {
       >
         <div
           className='shadow-lg flex items-center justify-center '
+          loading='priority'
           role='navigation'
           style={{
             justifyContent: 'center',
@@ -709,7 +710,7 @@ const browsersDetail = ({ browsersItem }) => {
               height={300}
               // priority
               objectFit='cover'
-              loading="lazy"
+              loading='lazy'
               style={{
                 width: '400px', // Ensures the image is displayed at this width
                 height: '500px', // Ensures the image is displayed at this height

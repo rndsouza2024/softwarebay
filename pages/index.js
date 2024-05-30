@@ -399,6 +399,7 @@ const HomePage = () => {
         <div
           className='shadow-lg flex items-center justify-center'
           role='navigation'
+          loading='priority'
         >
           <ul
             id='menu-header-menu'

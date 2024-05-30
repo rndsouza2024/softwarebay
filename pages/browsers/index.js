@@ -237,6 +237,7 @@ const browsersPage = ({ items }) => {
       </p>
       <div
         className='shadow-lg flex items-center justify-center'
+        loading='priority'
         role='navigation'
       >
         <ul
