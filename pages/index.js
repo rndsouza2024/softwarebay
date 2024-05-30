@@ -5,11 +5,25 @@ import moviesData from '../public/movies.json'
 import multimediaData from '../public/multimedia.json'
 import graphicdesignData from '../public/graphicdesign.json'
 import gamesData from '../public/games.json'
-import ShareButtons from '@components/ShareButtons'
+// import ShareButtons from '@components/ShareButtons'
 
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  EmailShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  EmailIcon,
+} from 'react-share';
+
 
 // Function to shuffle an array and return the first few items
 function getRandomItems (array, numberOfItems) {
@@ -17,6 +31,8 @@ function getRandomItems (array, numberOfItems) {
 }
 
 const HomePage = () => {
+  const url = typeof window !== 'undefined' ? window.location.href : '';
+
   const [latest, setlatest] = useState(latestData)
 
   // const [security, setsecurity] = useState(securityData.slice(0, 2)) // Only the first 2 items
@@ -228,6 +244,7 @@ const HomePage = () => {
     ]
   })
 
+
   const title = 'Softwarebay - Explore. Discover. Download.'
   const description =
     'Check out this amazing Softwarebay - Explore. Discover. Download.'
@@ -235,7 +252,10 @@ const HomePage = () => {
     'Share this Softwarebay - Explore. Discover. Download. with your friends!'
 
   return (
+
+    
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
+      
       <div className='container'>
         <Head>
           <title>{pageTitle}</title>
@@ -845,18 +865,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <div
-          className='share-buttons-container'
-          style={{
-            marginTop: '15px'
-          }}
-        >
-          <ShareButtons
-            title={title}
-            description={description}
-            shareMessage={shareMessage}
-          />
-        </div>
+           
           </div>
         </div>
 
@@ -988,7 +997,28 @@ const HomePage = () => {
             }
           }
         `}</style>
-  
+    <div className="bg-transparent flex flex-col gap-2 justify-end p-2" style={{ position: 'fixed', top: '50%', right: '10px', transform: 'translateY(-50%)' }}>
+  <FacebookShareButton url={url} quote={description || shareMessage}>
+    <FacebookIcon size={48} round />
+  </FacebookShareButton>
+
+  <TwitterShareButton url={url} title={description || shareMessage}>
+    <TwitterIcon size={48} round />
+  </TwitterShareButton>
+
+  <LinkedinShareButton url={url} title={description || shareMessage}>
+    <LinkedinIcon size={48} round />
+  </LinkedinShareButton>
+
+  <WhatsappShareButton url={url} title={description || shareMessage}>
+    <WhatsappIcon size={48} round />
+  </WhatsappShareButton>
+
+  <EmailShareButton url={url} subject={title} body={description || shareMessage}>
+    <EmailIcon size={48} round />
+  </EmailShareButton>
+</div>
+
         <style jsx>{`
           .share-buttons-container {
             position: fixed !important;
