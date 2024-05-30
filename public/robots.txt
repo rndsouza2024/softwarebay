@@ -1,9 +1,3 @@
-# *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://softwarebay.vercel.app/
-
-# Sitemaps
 Sitemap: https://softwarebay.vercel.app/sitemap.xml
