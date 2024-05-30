@@ -370,7 +370,18 @@ const HomePage = () => {
             }}
           />
         </Head>
-
+        <div
+          className='share-buttons-container'
+          style={{
+            marginTop: '15px'
+          }}
+        >
+          <ShareButtons
+            title={title}
+            description={description}
+            shareMessage={shareMessage}
+          />
+        </div>
         <h1
           className='text-black bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
           style={{
@@ -561,18 +572,7 @@ const HomePage = () => {
             </button>
           </ul>
         </div>
-        <div
-          className='share-buttons-container'
-          style={{
-            marginTop: '15px'
-          }}
-        >
-          <ShareButtons
-            title={title}
-            description={description}
-            shareMessage={shareMessage}
-          />
-        </div>
+    
         <h3
           className='px-0 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  font-bold hover:text-blue-800 text-3xl  mt-2'
           style={{
