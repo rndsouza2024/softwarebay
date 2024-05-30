@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
-import multimediaData from '../../public/multimedia.json'
+import filesharingData from '../../public/filesharing.json'
 import ShareButtons from '@components/ShareButtons'
 import Head from 'next/head'
 import Script from 'next/script';
@@ -46,12 +46,12 @@ const softwareSchema = JSON.stringify({
   '@type': 'http://schema.org/SoftwareApplication',
   datePublished: '13-04-2024',
   dateModified: '13-04-2024',
-  softwareVersion: 'Multimedia 2024',
-  url: 'https://softwarebay.vercel.app/multimedia/',
+  softwareVersion: 'File Sharing 2024',
+  url: 'https://softwarebay.vercel.app/file-sharing/',
   operatingSystem: 'Windows',
-  applicationCategory: 'Multimedia',
+  applicationCategory: 'File Sharing',
   image: 'https://softwarebay.vercel.app/og_image.jpg',
-  name: 'Multimedia',
+  name: 'File Sharing',
   interactionStatistic: 498618,
   offers: {
     '@type': 'http://schema.org/Offer',
@@ -60,7 +60,7 @@ const softwareSchema = JSON.stringify({
   },
   aggregateRating: {
     '@type': 'http://schema.org/AggregateRating',
-    '@id': 'https://softwarebay.vercel.app/multimedia/',
+    '@id': 'https://softwarebay.vercel.app/file-sharing/',
     ratingValue: 8,
     ratingCount: 0,
     bestRating: '10',
@@ -81,25 +81,25 @@ const breadcrumbSchema = JSON.stringify({
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Multimedia',
-      item: 'https://softwarebay.vercel.app/multimedia/'
+      name: 'File Sharing',
+      item: 'https://softwarebay.vercel.app/file-sharing/'
     },
    
   ]
 })
 
-const multimediaPage = ({ items }) => {
+const filesharingPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
-  const title = 'Download Multimedia | Softwarebay™'
+  const title = 'Download File Sharing | Softwarebay™'
   const description = 'Check out this amazing Software!'
   const shareMessage = 'Share this Software with your friends!'
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
        <Head>
-        <title> Download Multimedia | Softwarebay</title>
-        <link rel='canonical' href="https://softwarebay.vercel.app/multimedia/" />
+        <title> Download File Sharing | Softwarebay</title>
+        <link rel='canonical' href="https://softwarebay.vercel.app/file-sharing/" />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -111,15 +111,15 @@ const multimediaPage = ({ items }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content=" Download Multimedia | Softwarebay"
+          content=" Download File Sharing | Softwarebay"
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
       
-        <meta property='og:url' content= "https://softwarebay.vercel.app/multimedia"/>
-        <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser"/>
+        <meta property='og:url' content= "https://softwarebay.vercel.app/file-sharing"/>
+       
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
@@ -127,13 +127,13 @@ const multimediaPage = ({ items }) => {
           content= "https://softwarebay.vercel.app/og_image.jpg"
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Multimedia' />
+        <meta property='article:section' content='File Sharing' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-          <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities" />
+          <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser" />
         <meta
           property='og:image'
           content= "https://softwarebay.vercel.app/og_image.jpg"  />
@@ -209,7 +209,7 @@ const multimediaPage = ({ items }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '15px'
-        }}>SoftwareBay Multimedia Section.</h1>
+        }}>SoftwareBay File Sharing Section.</h1>
 
 <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
@@ -234,7 +234,7 @@ const multimediaPage = ({ items }) => {
           id='menu-header-menu'
           className='menu flex flex-wrap justify-center'
         >
-           <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
@@ -376,16 +376,16 @@ const multimediaPage = ({ items }) => {
             </button>
         </ul>
       </div>
-
+  
       <div className='container'>
-        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>multimedia Section</h1> */}
+        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>filesharing Section</h1> */}
         <div className='flex-container'>
           <div className='main-content'>
             <div className='card-container'>
-            {multimediaData.map(item => (
+            {filesharingData.map(item => (
           <div key={item.id}>
                 {/* <div key={item.id} className='card'> */}
-                  <Link href={`/multimedia/${item.id}`}>
+                  <Link href={`/file-sharing/${item.id}`}>
                     <div className='relative'>
                       <Image
                         src={item.image}
@@ -576,7 +576,7 @@ const multimediaPage = ({ items }) => {
             }
           }
         `}</style>
-        <style jsx>{`
+    <style jsx>{`
           .share-buttons-container {
             position: fixed !important;
             top: 50% !important;
@@ -618,7 +618,7 @@ const multimediaPage = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://softwarebay.vercel.app/multimedia.json');
+    const res = await fetch('https://softwarebay.vercel.app/file-sharing.json');
     const data = await res.json();
     
     return {
@@ -637,4 +637,4 @@ export async function getStaticProps() {
 }
 
 
-export default multimediaPage
+export default filesharingPage

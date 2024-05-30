@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
 import educationData from '../../public/education.json'
+import ShareButtons from '@components/ShareButtons'
 import Head from 'next/head'
 import Script from 'next/script'
 
@@ -12,7 +13,9 @@ const uwatchfreeSchema = JSON.stringify([
     '@type': 'Organization',
     name: 'Softwarebay',
     url: 'https://softwarebay.vercel.app/',
-    image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+    image: [
+      'https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+    ],
     logo: {
       '@type': 'ImageObject',
       url: 'https://softwarebay.vercel.app/logo.png',
@@ -28,7 +31,8 @@ const uwatchfreeSchema = JSON.stringify([
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
+        urlTemplate:
+          'https://softwarebay.vercel.app/search?q={search_term_string}'
       },
       'query-input': 'required name=search_term_string'
     }
@@ -84,11 +88,18 @@ const breadcrumbSchema = JSON.stringify({
 const educationPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
+  const title = 'Download Education | Softwarebay™'
+  const description = 'Check out this amazing Software!'
+  const shareMessage = 'Share this Software with your friends!'
+
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
       <Head>
         <title> Download Education | Softwarebay</title>
-        <link rel='canonical' href='https://softwarebay.vercel.app/education/' />
+        <link
+          rel='canonical'
+          href='https://softwarebay.vercel.app/education/'
+        />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -103,9 +114,12 @@ const educationPage = ({ items }) => {
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-       
-        <meta property='og:url' content='https://softwarebay.vercel.app/education' />
-        
+
+        <meta
+          property='og:url'
+          content='https://softwarebay.vercel.app/education'
+        />
+
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
@@ -388,7 +402,7 @@ const educationPage = ({ items }) => {
                         height={140} // Specify the desired height
                         style={{
                           filter:
-                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                            'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                         }}
                       />
                       <p className='text-black text-2xl font-semibold mt-2'>
@@ -400,6 +414,7 @@ const educationPage = ({ items }) => {
                       <p className='text-black text-bg font-semibold mt-2'>
                         Developers: {item.developers}
                       </p>
+
                       <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                         {item.text}
                       </div>
@@ -450,7 +465,7 @@ const educationPage = ({ items }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
                         <p className='text-black text-lg font-semibold mt-2'>
@@ -574,6 +589,41 @@ const educationPage = ({ items }) => {
             }
           }
         `}</style>
+        <style jsx>{`
+          .share-buttons-container {
+            position: fixed !important;
+            top: 50% !important;
+            right: 0 !important;
+            transform: translateY(-50%) !important;
+            display: flex !important;
+            flex-direction: column !important; /* Display buttons in a column */
+            gap: 10px !important;
+            padding: 10px !important;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+          }
+
+          @media (max-width: 600px) {
+            .share-buttons-container {
+              flex-direction: column;
+              right: 0;
+              top: auto;
+              bottom: 10px;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+        <div
+          className='share-buttons-container'
+          style={{
+            marginTop: '15px'
+          }}
+        >
+          <ShareButtons
+            title={title}
+            description={description}
+            shareMessage={shareMessage}
+          />
+        </div>
       </div>
     </div>
   )

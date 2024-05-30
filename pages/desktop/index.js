@@ -2,15 +2,10 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
-import multimediaData from '../../public/multimedia.json'
+import desktopData from '../../public/desktop.json'
 import ShareButtons from '@components/ShareButtons'
 import Head from 'next/head'
-import Script from 'next/script';
-
-
-
-
-
+import Script from 'next/script'
 
 const uwatchfreeSchema = JSON.stringify([
   {
@@ -18,7 +13,9 @@ const uwatchfreeSchema = JSON.stringify([
     '@type': 'Organization',
     name: 'Softwarebay',
     url: 'https://softwarebay.vercel.app/',
-    image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+    image: [
+      'https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+    ],
     logo: {
       '@type': 'ImageObject',
       url: 'https://softwarebay.vercel.app/logo.png',
@@ -34,7 +31,8 @@ const uwatchfreeSchema = JSON.stringify([
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
+        urlTemplate:
+          'https://softwarebay.vercel.app/search?q={search_term_string}'
       },
       'query-input': 'required name=search_term_string'
     }
@@ -46,12 +44,12 @@ const softwareSchema = JSON.stringify({
   '@type': 'http://schema.org/SoftwareApplication',
   datePublished: '13-04-2024',
   dateModified: '13-04-2024',
-  softwareVersion: 'Multimedia 2024',
-  url: 'https://softwarebay.vercel.app/multimedia/',
+  softwareVersion: 'Desktop 2024',
+  url: 'https://softwarebay.vercel.app/desktop/',
   operatingSystem: 'Windows',
-  applicationCategory: 'Multimedia',
+  applicationCategory: 'Desktop',
   image: 'https://softwarebay.vercel.app/og_image.jpg',
-  name: 'Multimedia',
+  name: 'Desktop',
   interactionStatistic: 498618,
   offers: {
     '@type': 'http://schema.org/Offer',
@@ -60,7 +58,7 @@ const softwareSchema = JSON.stringify({
   },
   aggregateRating: {
     '@type': 'http://schema.org/AggregateRating',
-    '@id': 'https://softwarebay.vercel.app/multimedia/',
+    '@id': 'https://softwarebay.vercel.app/desktop/',
     ratingValue: 8,
     ratingCount: 0,
     bestRating: '10',
@@ -81,62 +79,65 @@ const breadcrumbSchema = JSON.stringify({
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Multimedia',
-      item: 'https://softwarebay.vercel.app/multimedia/'
-    },
-   
+      name: 'Desktop',
+      item: 'https://softwarebay.vercel.app/desktop/'
+    }
   ]
 })
 
-const multimediaPage = ({ items }) => {
+const desktopPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
-  const title = 'Download Multimedia | Softwarebay™'
+  const title = 'Download Desktop | Softwarebay™'
   const description = 'Check out this amazing Software!'
   const shareMessage = 'Share this Software with your friends!'
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
-       <Head>
-        <title> Download Multimedia | Softwarebay</title>
-        <link rel='canonical' href="https://softwarebay.vercel.app/multimedia/" />
+      <Head>
+        <title> Download Desktop | Softwarebay</title>
+        <link rel='canonical' href='https://softwarebay.vercel.app/desktop/' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-       <meta name='robots' content='index, follow' />
+        <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content=" Download Multimedia | Softwarebay"
-        />
+        <meta property='og:title' content=' Download Desktop | Softwarebay' />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-      
-        <meta property='og:url' content= "https://softwarebay.vercel.app/multimedia"/>
-        <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser"/>
+
+        <meta
+          property='og:url'
+          content='https://softwarebay.vercel.app/desktop'
+        />
+
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content= "https://softwarebay.vercel.app/og_image.jpg"
+          content='https://softwarebay.vercel.app/og_image.jpg'
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Multimedia' />
+        <meta property='article:section' content='Desktop' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-          <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities" />
+        <meta
+          name='keywords'
+          content='download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser'
+        />
         <meta
           property='og:image'
-          content= "https://softwarebay.vercel.app/og_image.jpg"  />
+          content='https://softwarebay.vercel.app/og_image.jpg'
+        />
         <meta property='og:image:width' content='1080px' />
         <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/jpeg' />
@@ -161,7 +162,7 @@ const multimediaPage = ({ items }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
         />
-       
+
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: softwareSchema }}
@@ -194,13 +195,13 @@ const multimediaPage = ({ items }) => {
           `
           }}
         />
-      
       </Head>
-      <Script src="../../propler/ads.js" defer />
-        <Script src="../../propler/ads2.js" defer />
+      <Script src='../../propler/ads.js' defer />
+      <Script src='../../propler/ads2.js' defer />
 
-
-        <h1  className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'  style={{
+      <h1
+        className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+        style={{
           justifyContent: 'center',
           alignItems: 'center',
           padding: '10px',
@@ -209,23 +210,26 @@ const multimediaPage = ({ items }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '15px'
-        }}>SoftwareBay Multimedia Section.</h1>
+        }}
+      >
+        SoftwareBay Desktop Section.
+      </h1>
 
-<p
-          className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '10px',
-            fontSize: '35px',
-            fontFamily: 'Poppins, sans-serif',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: '15px'
-          }}
-        >
-          Select Categories.{' '}
-        </p>
+      <p
+        className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '10px',
+          fontSize: '35px',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: '15px'
+        }}
+      >
+        Select Categories.{' '}
+      </p>
       <div
         className='shadow-lg flex items-center justify-center'
         role='navigation'
@@ -234,158 +238,158 @@ const multimediaPage = ({ items }) => {
           id='menu-header-menu'
           className='menu flex flex-wrap justify-center'
         >
-           <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-35' className='menu-home active'>
-                <a
-                  href='/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Home<span className='p'></span>
-                </a>
-              </li>
-            </button>
-
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-284913' className='menu-softwarecategories'>
-                <a href='../browsers/'>
-                  <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
-                    Browser<span className='p'></span>
-                  </h3>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-248' className='menu-operating-systems'>
-                <a
-                  href='../desktop/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Desktop<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-11605' className='menu-3dcad'>
-                <a
-                  href='../multimedia/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Multimedia<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-11610' className='menu-graphicdesign'>
-                <a
-                  href='../graphic-design/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Graphic Design<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-196' className='menu-multimedia'>
-                <a
-                  href='../network/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Network<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-161' className='menu-development'>
-                <a
-                  href='../development/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Development<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-84' className='menu-antivirus'>
-                <a
-                  href='../file-sharing/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  File Sharing<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-84' className='menu-antivirus'>
-                <a
-                  href='../security/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Security<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-11606' className='menu-education'>
-                <a
-                  href='../games/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Games<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-35' className='menu-home active'>
-                <a
-                  href='../education'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Education<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-35' className='menu-home active'>
-                <a
-                  href='../mobile'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Mobile<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-11606' className='menu-education'>
-                <a
-                  href='../utilities/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Utilities<span className='p'></span>
-                </a>
-              </li>
-            </button>
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
-              <li id='menu-item-194' className='menu-tutorials'>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-35' className='menu-home active'>
               <a
-                  href='../movies/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
-                >
-                  Movies<span className='p'></span>
-                </a>
-              </li>
-            </button>
+                href='/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Home<span className='p'></span>
+              </a>
+            </li>
+          </button>
+
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-284913' className='menu-softwarecategories'>
+              <a href='../browsers/'>
+                <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
+                  Browser<span className='p'></span>
+                </h3>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-248' className='menu-operating-systems'>
+              <a
+                href='../desktop/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Desktop<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-11605' className='menu-3dcad'>
+              <a
+                href='../multimedia/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Multimedia<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-11610' className='menu-graphicdesign'>
+              <a
+                href='../graphic-design/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Graphic Design<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-196' className='menu-multimedia'>
+              <a
+                href='../network/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Network<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-161' className='menu-development'>
+              <a
+                href='../development/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Development<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-84' className='menu-antivirus'>
+              <a
+                href='../file-sharing/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                File Sharing<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-84' className='menu-antivirus'>
+              <a
+                href='../security/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Security<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-11606' className='menu-education'>
+              <a
+                href='../games/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Games<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-35' className='menu-home active'>
+              <a
+                href='../education'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Education<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-35' className='menu-home active'>
+              <a
+                href='../mobile'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Mobile<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-11606' className='menu-education'>
+              <a
+                href='../utilities/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Utilities<span className='p'></span>
+              </a>
+            </li>
+          </button>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <li id='menu-item-194' className='menu-tutorials'>
+              <a
+                href='../movies/'
+                className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+              >
+                Movies<span className='p'></span>
+              </a>
+            </li>
+          </button>
         </ul>
       </div>
 
       <div className='container'>
-        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>multimedia Section</h1> */}
+        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>desktop Section</h1> */}
         <div className='flex-container'>
           <div className='main-content'>
             <div className='card-container'>
-            {multimediaData.map(item => (
-          <div key={item.id}>
-                {/* <div key={item.id} className='card'> */}
-                  <Link href={`/multimedia/${item.id}`}>
+              {desktopData.map(item => (
+                <div key={item.id}>
+                  {/* <div key={item.id} className='card'> */}
+                  <Link href={`/desktop/${item.id}`}>
                     <div className='relative'>
                       <Image
                         src={item.image}
@@ -394,35 +398,41 @@ const multimediaPage = ({ items }) => {
                         width={140} // Specify the desired width
                         height={140} // Specify the desired height
                         style={{
-                            filter:
-                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
-                        }} 
+                          filter:
+                            'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        }}
                       />
                       <p className='text-black text-2xl font-semibold mt-2'>
                         {item.name}
                       </p>
                       <p className='text-black text-bg font-semibold mt-2'>
-                      License: {item.license}, Version: {item.version}
+                        License: {item.license}, Version: {item.version}
                       </p>
                       <p className='text-black text-bg font-semibold mt-2'>
-                      Developers: {item.developers}
+                        Developers: {item.developers}
                       </p>
+
                       <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                         {item.text}
                       </div>
-                      <div className='animate-pulse badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'>{item.badge}</div>
+                      <div className='animate-pulse badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'>
+                        {item.badge}
+                      </div>
                     </div>
                   </Link>
                 </div>
               ))}
-               <p className=' text-black text-2xl font-semibold mt-2'  style={{
+              <p
+                className=' text-black text-2xl font-semibold mt-2'
+                style={{
                   marginTop: '15px',
                   color: '#000',
                   font: 'bold',
                   textShadow: '1px 2px 2px #000 '
-                }}>
-                  Many More Coming Soon...
-                </p>
+                }}
+              >
+                Many More Coming Soon...
+              </p>
             </div>
           </div>
 
@@ -452,8 +462,8 @@ const multimediaPage = ({ items }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
-                        }} 
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                          }}
                         />
                         <p className='text-black text-lg font-semibold mt-2'>
                           {latestItem.name}
@@ -616,25 +626,24 @@ const multimediaPage = ({ items }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   try {
-    const res = await fetch('https://softwarebay.vercel.app/multimedia.json');
-    const data = await res.json();
-    
+    const res = await fetch('https://softwarebay.vercel.app/desktop.json')
+    const data = await res.json()
+
     return {
       props: {
         items: data
       }
-    };
+    }
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error('Error fetching data:', error)
     return {
       props: {
         items: []
       }
-    };
+    }
   }
 }
 
-
-export default multimediaPage
+export default desktopPage

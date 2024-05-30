@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
+import ShareButtons from '@components/ShareButtons'
 import Script from 'next/script'
 
 const educationDetail = ({ educationItem }) => {
@@ -351,6 +352,10 @@ const educationDetail = ({ educationItem }) => {
 
   // Convert newsArticleSchema and videoObjects to JSON strings
   const newsArticleJson = JSON.stringify(newsArticleSchema)
+
+  const title = educationItem ? educationItem.name : 'Software'
+  const description = 'Check out this amazing Software!'
+  const shareMessage = 'Share this Software with your friends!'
 
   return (
     <div>
@@ -1139,6 +1144,41 @@ const educationDetail = ({ educationItem }) => {
             }
           }
         `}</style>
+          <style jsx>{`
+          .share-buttons-container {
+            position: fixed !important;
+            top: 50% !important;
+            right: 0 !important;
+            transform: translateY(-50%) !important;
+            display: flex !important;
+            flex-direction: column !important; /* Display buttons in a column */
+            gap: 10px !important;
+            padding: 10px !important;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+          }
+
+          @media (max-width: 600px) {
+            .share-buttons-container {
+              flex-direction: column;
+              right: 0;
+              top: auto;
+              bottom: 10px;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+        <div
+          className='share-buttons-container'
+          style={{
+            marginTop: '15px'
+          }}
+        >
+          <ShareButtons
+            title={title}
+            description={description}
+            shareMessage={shareMessage}
+          />
+        </div>
       </div>
     </div>
   )

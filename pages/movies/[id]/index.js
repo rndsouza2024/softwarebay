@@ -4,6 +4,7 @@ import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import ShareButtons from '@components/ShareButtons'
 import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
 import Script from 'next/script'
@@ -137,7 +138,9 @@ const moviesDetail = ({ moviesItem }) => {
       '@type': 'Organization',
       name: 'Softwarebay',
       url: 'https://softwarebay.vercel.app/',
-      image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+      image: [
+        'https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+      ],
       logo: {
         '@type': 'ImageObject',
         url: 'https://softwarebay.vercel.app/logo.png',
@@ -153,7 +156,8 @@ const moviesDetail = ({ moviesItem }) => {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://softwarebay.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -375,7 +379,7 @@ const moviesDetail = ({ moviesItem }) => {
       target: {
         '@type': 'EntryPoint',
         name: moviesItem.title,
-        urlTemplate: moviesItem.siteurl,
+        urlTemplate: moviesItem.siteurl
       }
     },
     locationCreated: {
@@ -401,8 +405,11 @@ const moviesDetail = ({ moviesItem }) => {
       name: 'Action Platform',
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     }
-   
   })
+
+  const title = moviesItem ? moviesItem.name : 'Movie'
+  const description = 'Check out this amazing Movie!'
+  const shareMessage = 'Share this Movie with your friends!'
 
   return (
     <div>
@@ -426,7 +433,7 @@ const moviesDetail = ({ moviesItem }) => {
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-      
+
         <meta property='og:url' content={`${moviesItem && moviesItem.url}`} />
         <meta
           name='keywords'
@@ -751,13 +758,13 @@ const moviesDetail = ({ moviesItem }) => {
               loading='lazy'
               style={{
                 width: '400px', // Ensures the image is displayed at this width
-                height: '500px',  // Ensures the image is displayed at this height
+                height: '500px', // Ensures the image is displayed at this height
                 margin: 'auto',
                 marginBottom: '20px',
                 borderRadius: '50px',
                 boxShadow: '0 0 10px 0 #fff',
                 filter:
-                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
               }}
             />
             <div
@@ -791,13 +798,14 @@ const moviesDetail = ({ moviesItem }) => {
               <p className='text-black text-bg font-semibold mt-2'>
                 Language: {moviesItem.language}
               </p>
+
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
                   marginTop: '50px',
                   marginBottom: '50px',
                   filter:
-                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
                 {!showTimer ? (
@@ -957,13 +965,13 @@ const moviesDetail = ({ moviesItem }) => {
                 loading='lazy'
                 style={{
                   width: '800px', // Ensures the image is displayed at this width
-                  height: '400px',  // Ensures the image is displayed at this height
+                  height: '400px', // Ensures the image is displayed at this height
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
               {moviesItem.news1.split('\n\n').map((paragraph, idx) => (
@@ -995,13 +1003,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                      height: '400px',  // Ensures the image is displayed at this height
+                      height: '400px', // Ensures the image is displayed at this height
                       margin: 'auto',
                       marginBottom: '20px',
                       borderRadius: '50px',
                       boxShadow: '0 0 10px 0 #fff',
                       filter:
-                      'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1016,13 +1024,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                      height: '400px',  // Ensures the image is displayed at this height
+                      height: '400px', // Ensures the image is displayed at this height
                       margin: 'auto',
                       marginBottom: '20px',
                       borderRadius: '50px',
                       boxShadow: '0 0 10px 0 #fff',
                       filter:
-                      'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1037,13 +1045,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                  height: '400px',  // Ensures the image is displayed at this height
-                  margin: 'auto',
-                  marginBottom: '20px',
-                  borderRadius: '50px',
-                  boxShadow: '0 0 10px 0 #fff',
-                  filter:
-                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                      height: '400px', // Ensures the image is displayed at this height
+                      margin: 'auto',
+                      marginBottom: '20px',
+                      borderRadius: '50px',
+                      boxShadow: '0 0 10px 0 #fff',
+                      filter:
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1058,13 +1066,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                      height: '400px',  // Ensures the image is displayed at this height
+                      height: '400px', // Ensures the image is displayed at this height
                       margin: 'auto',
                       marginBottom: '20px',
                       borderRadius: '50px',
                       boxShadow: '0 0 10px 0 #fff',
                       filter:
-                      'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1079,13 +1087,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                      height: '400px',  // Ensures the image is displayed at this height
+                      height: '400px', // Ensures the image is displayed at this height
                       margin: 'auto',
                       marginBottom: '20px',
                       borderRadius: '50px',
                       boxShadow: '0 0 10px 0 #fff',
                       filter:
-                      'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1100,13 +1108,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                      height: '400px',  // Ensures the image is displayed at this height
+                      height: '400px', // Ensures the image is displayed at this height
                       margin: 'auto',
                       marginBottom: '20px',
                       borderRadius: '50px',
                       boxShadow: '0 0 10px 0 #fff',
                       filter:
-                      'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1121,13 +1129,13 @@ const moviesDetail = ({ moviesItem }) => {
                     loading='lazy'
                     style={{
                       width: '800px', // Ensures the image is displayed at this width
-                      height: '400px',  // Ensures the image is displayed at this height
+                      height: '400px', // Ensures the image is displayed at this height
                       margin: 'auto',
                       marginBottom: '20px',
                       borderRadius: '50px',
                       boxShadow: '0 0 10px 0 #fff',
                       filter:
-                      'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                        'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                     }}
                   />
                 )}
@@ -1286,7 +1294,43 @@ const moviesDetail = ({ moviesItem }) => {
             }
           }
         `}</style>
+        <style jsx>{`
+          .share-buttons-container {
+            position: fixed !important;
+            top: 50% !important;
+            right: 0 !important;
+            transform: translateY(-50%) !important;
+            display: flex !important;
+            flex-direction: column !important; /* Display buttons in a column */
+            gap: 10px !important;
+            padding: 10px !important;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+          }
+
+          @media (max-width: 600px) {
+            .share-buttons-container {
+              flex-direction: column;
+              right: 0;
+              top: auto;
+              bottom: 10px;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+          <div
+        className='share-buttons-container'
+        style={{
+          marginTop: '15px'
+        }}
+      >
+        <ShareButtons
+          title={title}
+          description={description}
+          shareMessage={shareMessage}
+        />
       </div>
+      </div>
+    
     </div>
   )
 }

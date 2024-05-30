@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import gamesData from '../../../public/games.json'
+import utilitiesData from '../../../public/utilities.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -9,7 +9,7 @@ import HomeStyles from '@styles/styles.module.css'
 import ShareButtons from '@components/ShareButtons'
 import Script from 'next/script'
 
-const gamesDetail = ({ gamesItem }) => {
+const utilitiesDetail = ({ utilitiesItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -93,7 +93,7 @@ const gamesDetail = ({ gamesItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = gamesItem.videoitem
+      const videoIds = utilitiesItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -130,7 +130,7 @@ const gamesDetail = ({ gamesItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, gamesItem])
+  }, [playerReady, showTimer, utilitiesItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -164,15 +164,15 @@ const gamesDetail = ({ gamesItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: gamesItem.datePublished,
-    dateModified: gamesItem.dateModified,
-    softwareVersion: gamesItem.softwareVersion,
-    url: gamesItem.siteurl,
-    operatingSystem: gamesItem.operatingSystem,
-    applicationCategory: gamesItem.applicationCategory,
-    image: gamesItem.image,
-    name: gamesItem.name,
-    interactionStatistic: gamesItem.interactionStatistic,
+    datePublished: utilitiesItem.datePublished,
+    dateModified: utilitiesItem.dateModified,
+    softwareVersion: utilitiesItem.softwareVersion,
+    url: utilitiesItem.siteurl,
+    operatingSystem: utilitiesItem.operatingSystem,
+    applicationCategory: utilitiesItem.applicationCategory,
+    image: utilitiesItem.image,
+    name: utilitiesItem.name,
+    interactionStatistic: utilitiesItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -180,7 +180,7 @@ const gamesDetail = ({ gamesItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': gamesItem.siteurl,
+      '@id': utilitiesItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -201,14 +201,14 @@ const gamesDetail = ({ gamesItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'gamesItem',
-        item: gamesItem.baseurl
+        name: 'Utilities',
+        item: utilitiesItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: gamesItem.name,
-        item: gamesItem.siteurl
+        name: utilitiesItem.name,
+        item: utilitiesItem.siteurl
       }
     ]
   })
@@ -233,11 +233,11 @@ const gamesDetail = ({ gamesItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${gamesItem.siteurl}#webpage`,
-        url: gamesItem.siteurl,
-        name: `${gamesItem.name} | Softwarebay`,
-        datePublished: gamesItem.datePublished,
-        dateModified: gamesItem.dateModified,
+        '@id': `${utilitiesItem.siteurl}#webpage`,
+        url: utilitiesItem.siteurl,
+        name: `${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -259,35 +259,35 @@ const gamesDetail = ({ gamesItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${gamesItem.siteurl}#article`,
-        headline: `Download ${gamesItem.name} | Softwarebay`,
-        datePublished: gamesItem.datePublished,
-        dateModified: gamesItem.dateModified,
-        articleSection: 'Games',
+        '@id': `${utilitiesItem.siteurl}#article`,
+        headline: `Download ${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
+        articleSection: 'Utilities',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/gamesItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/utilitiesItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: gamesItem.image,
-        name: `Download ${gamesItem.name} | Softwarebay`,
+        image: utilitiesItem.image,
+        name: `Download ${utilitiesItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${gamesItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${gamesItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${gamesItem.siteurl}#blogPost`,
-        headline: `Download ${gamesItem.name} | Softwarebay`,
-        datePublished: gamesItem.datePublished,
-        dateModified: gamesItem.dateModified,
-        articleSection: 'Games',
+        '@id': `${utilitiesItem.siteurl}#blogPost`,
+        headline: `Download ${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
+        articleSection: 'Utilities',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -295,15 +295,15 @@ const gamesDetail = ({ gamesItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: gamesItem.image,
-        name: `Download ${gamesItem.name} | Softwarebay`,
-        '@id': `${gamesItem.siteurl}#richSnippet`,
+        image: utilitiesItem.image,
+        name: `Download ${utilitiesItem.name} | Softwarebay`,
+        '@id': `${utilitiesItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${gamesItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${gamesItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         }
       }
     ]
@@ -312,23 +312,23 @@ const gamesDetail = ({ gamesItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${gamesItem.siteurl}#webpage`, // Add a comma here
-    name: gamesItem.title,
-    url: gamesItem.siteurl,
-    description: gamesItem.news1,
-    image: gamesItem.image,
-    datePublished: gamesItem.startDate,
+    '@id': `${utilitiesItem.siteurl}#webpage`, // Add a comma here
+    name: utilitiesItem.title,
+    url: utilitiesItem.siteurl,
+    description: utilitiesItem.news1,
+    image: utilitiesItem.image,
+    datePublished: utilitiesItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: gamesItem.title,
-        urlTemplate: gamesItem.siteurl
+        name: utilitiesItem.title,
+        urlTemplate: utilitiesItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: gamesItem.country
+      name: utilitiesItem.country
     },
     author: {
       '@type': 'Person',
@@ -353,7 +353,7 @@ const gamesDetail = ({ gamesItem }) => {
   // Convert newsArticleSchema and videoObjects to JSON strings
   const newsArticleJson = JSON.stringify(newsArticleSchema)
 
-  const title = gamesItem ? gamesItem.name : 'Software'
+  const title = utilitiesItem ? utilitiesItem.name : 'Software'
   const description = 'Check out this amazing Software!'
   const shareMessage = 'Share this Software with your friends!'
 
@@ -364,8 +364,11 @@ const gamesDetail = ({ gamesItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Download {gamesItem && gamesItem.name} | Softwarebay</title>
-        <link rel='canonical' href={gamesItem && gamesItem.siteurl} />
+        <title>
+          {' '}
+          Download {utilitiesItem && utilitiesItem.name} | Softwarebay
+        </title>
+        <link rel='canonical' href={utilitiesItem && utilitiesItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -373,23 +376,29 @@ const gamesDetail = ({ gamesItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${gamesItem && gamesItem.name} - Softwarebay`}
+          content={`${utilitiesItem && utilitiesItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-       
-        <meta property='og:url' content={`${gamesItem && gamesItem.url}`} />
-        <meta name='keywords' content={`${gamesItem && gamesItem.keywords}`} />
+   
+        <meta
+          property='og:url'
+          content={`${utilitiesItem && utilitiesItem.url}`}
+        />
+        <meta
+          name='keywords'
+          content={`${utilitiesItem && utilitiesItem.keywords}`}
+        />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${gamesItem && gamesItem.group}`}
+          content={`${utilitiesItem && utilitiesItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Games' />
+        <meta property='article:section' content='Utilities' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -397,7 +406,7 @@ const gamesDetail = ({ gamesItem }) => {
         />
         <meta
           property='og:image'
-          content={`${gamesItem && gamesItem.backimage}`}
+          content={`${utilitiesItem && utilitiesItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -490,7 +499,7 @@ const gamesDetail = ({ gamesItem }) => {
             marginBottom: '12px'
           }}
         >
-          {gamesItem.title}
+          {utilitiesItem.title}
         </h1>
 
         <p
@@ -687,8 +696,8 @@ const gamesDetail = ({ gamesItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={gamesItem.channelposter}
-              alt={gamesItem.title}
+              src={utilitiesItem.channelposter}
+              alt={utilitiesItem.title}
               width={300}
               height={300}
               // priority
@@ -717,18 +726,18 @@ const gamesDetail = ({ gamesItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {gamesItem.title}
+                  {utilitiesItem.title}
                 </h2>
               </div>
 
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {gamesItem.version}
+                Version: {utilitiesItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {gamesItem.developers}
+                Developers: {utilitiesItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {gamesItem.license}
+                License: {utilitiesItem.license}
               </p>
               <div
                 className='flex flex-col items-center justify-center'
@@ -768,13 +777,13 @@ const gamesDetail = ({ gamesItem }) => {
                     ></lottie-player>
 
                     <p className='text-3xl font-bold mb-4'>
-                      Installation Video & Games Trailer.
+                      Installation Video
                     </p>
                     <div
                       id='player'
                       style={{
-                        // filter:
-                        //   'contrast(1.1) ',
+                        filter:
+                          'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)',
                         maxWidth: '100%',
                         height: '400px',
                         borderRadius: '20px',
@@ -784,8 +793,11 @@ const gamesDetail = ({ gamesItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {gamesItem.downloadlink && (
-                          <Link href={gamesItem.downloadlink} target='_blank'>
+                        {utilitiesItem.downloadlink && (
+                          <Link
+                            href={utilitiesItem.downloadlink}
+                            target='_blank'
+                          >
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -813,8 +825,11 @@ const gamesDetail = ({ gamesItem }) => {
                             </div>
                           </Link>
                         )}
-                        {gamesItem.downloadlink1 && (
-                          <Link href={gamesItem.downloadlink1} target='_blank'>
+                        {utilitiesItem.downloadlink1 && (
+                          <Link
+                            href={utilitiesItem.downloadlink1}
+                            target='_blank'
+                          >
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -830,7 +845,7 @@ const gamesDetail = ({ gamesItem }) => {
                             </div>
                           </Link>
                         )}
-                        {gamesItem.additionalLinks?.map((link, index) => (
+                        {utilitiesItem.additionalLinks?.map((link, index) => (
                           <Link key={index} href={link.url} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
@@ -854,12 +869,12 @@ const gamesDetail = ({ gamesItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {gamesItem.head1} </strong>
+                  <strong> {utilitiesItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={gamesItem.image1}
-                alt={gamesItem.name}
+                src={utilitiesItem.image1}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -876,7 +891,7 @@ const gamesDetail = ({ gamesItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {gamesItem.news1.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -890,12 +905,12 @@ const gamesDetail = ({ gamesItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {gamesItem.head2} </strong>
+                  <strong> {utilitiesItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={gamesItem.image2}
-                alt={gamesItem.name}
+                src={utilitiesItem.image2}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -912,7 +927,7 @@ const gamesDetail = ({ gamesItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {gamesItem.news2.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -926,12 +941,12 @@ const gamesDetail = ({ gamesItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {gamesItem.head3} </strong>
+                  <strong> {utilitiesItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={gamesItem.image3}
-                alt={gamesItem.name}
+                src={utilitiesItem.image3}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -948,7 +963,7 @@ const gamesDetail = ({ gamesItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {gamesItem.news3.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -962,10 +977,10 @@ const gamesDetail = ({ gamesItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {gamesItem.head4} </strong>
+                  <strong> {utilitiesItem.head4} </strong>
                 </p>
               </div>
-              {gamesItem.news4.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1131,7 +1146,7 @@ const gamesDetail = ({ gamesItem }) => {
             }
           }
         `}</style>
-          <style jsx>{`
+        <style jsx>{`
           .share-buttons-container {
             position: fixed !important;
             top: 50% !important;
@@ -1172,7 +1187,7 @@ const gamesDetail = ({ gamesItem }) => {
 }
 
 export async function getStaticPaths () {
-  const paths = gamesData.map(item => ({
+  const paths = utilitiesData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1180,7 +1195,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const gamesItem = gamesData.find(item => item.id === params.id)
-  return { props: { gamesItem } }
+  const utilitiesItem = utilitiesData.find(item => item.id === params.id)
+  return { props: { utilitiesItem } }
 }
-export default gamesDetail
+export default utilitiesDetail

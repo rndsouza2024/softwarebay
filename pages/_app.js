@@ -22,8 +22,8 @@ function Application({ Component, pageProps }) {
         strategy="afterInteractive"
       /> */}
       
- <Script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=664f7ed93a56e900196c14e4&product=sticky-share-buttons&source=platform" async="async"></Script>
-        <GoogleAnalytics measurementId="G-S5LDTN7VFD" />
+ {/* <Script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=664f7ed93a56e900196c14e4&product=sticky-share-buttons&source=platform" async="async"></Script>
+        <GoogleAnalytics measurementId="G-S5LDTN7VFD" /> */}
         {/* <Script async data-id="101405628" src="//static.getclicky.com/js"></Script> */}
      
         <PageTransition>  

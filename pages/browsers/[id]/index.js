@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
+import ShareButtons from '@components/ShareButtons'
 import Script from 'next/script'
 
 const browsersDetail = ({ browsersItem }) => {
@@ -137,7 +138,9 @@ const browsersDetail = ({ browsersItem }) => {
       '@type': 'Organization',
       name: 'Softwarebay',
       url: 'https://softwarebay.vercel.app/',
-      image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+      image: [
+        'https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+      ],
       logo: {
         '@type': 'ImageObject',
         url: 'https://softwarebay.vercel.app/logo.png',
@@ -153,7 +156,8 @@ const browsersDetail = ({ browsersItem }) => {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://softwarebay.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -352,6 +356,14 @@ const browsersDetail = ({ browsersItem }) => {
   // Convert newsArticleSchema and videoObjects to JSON strings
   const newsArticleJson = JSON.stringify(newsArticleSchema)
 
+  const title = browsersItem ? browsersItem.name : 'Software'
+  const description = browsersItem
+    ? browsersItem.name
+    : 'Check out this amazing Software!'
+  const shareMessage = browsersItem
+    ? browsersItem.name
+    : 'Share this Software with your friends!'
+
   return (
     <div>
       <Head>
@@ -377,7 +389,7 @@ const browsersDetail = ({ browsersItem }) => {
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-       
+
         <meta
           property='og:url'
           content={`${browsersItem && browsersItem.url}`}
@@ -700,13 +712,13 @@ const browsersDetail = ({ browsersItem }) => {
               loading='lazy'
               style={{
                 width: '400px', // Ensures the image is displayed at this width
-                height: '500px',  // Ensures the image is displayed at this height
+                height: '500px', // Ensures the image is displayed at this height
                 margin: 'auto',
                 marginBottom: '20px',
                 borderRadius: '50px',
                 boxShadow: '0 0 10px 0 #fff',
                 filter:
-                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
               }}
             />
             <div
@@ -733,13 +745,14 @@ const browsersDetail = ({ browsersItem }) => {
               <p className='text-black text-bg font-semibold mt-2'>
                 License: {browsersItem.license}
               </p>
+           
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
                   marginTop: '50px',
                   marginBottom: '50px',
                   filter:
-                     'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               >
                 {!showTimer ? (
@@ -813,19 +826,18 @@ const browsersDetail = ({ browsersItem }) => {
                                   'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
                               }}
                             >
-                               <span
-                                  style={{
-                                    color: '#0efa06',
-                                    fontSize: '24px',
-                                    textShadow: '3px 5px 5px #000'
-                                  }}
-                                >
-                                <i
-                                className='fa fa-download'
-                                aria-hidden='true'
+                              <span
+                                style={{
+                                  color: '#0efa06',
+                                  fontSize: '24px',
+                                  textShadow: '3px 5px 5px #000'
+                                }}
                               >
-                             
-                            </i>  </span>
+                                <i
+                                  className='fa fa-download'
+                                  aria-hidden='true'
+                                ></i>{' '}
+                              </span>
                               Click Here to Download
                             </div>
                           </Link>
@@ -887,13 +899,13 @@ const browsersDetail = ({ browsersItem }) => {
                 loading='lazy'
                 style={{
                   width: '800px', // Ensures the image is displayed at this width
-                  height: '400px',  // Ensures the image is displayed at this height
+                  height: '400px', // Ensures the image is displayed at this height
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
               {browsersItem.news1.split('\n\n').map((paragraph, idx) => (
@@ -923,13 +935,13 @@ const browsersDetail = ({ browsersItem }) => {
                 loading='lazy'
                 style={{
                   width: '800px', // Ensures the image is displayed at this width
-                  height: '400px',  // Ensures the image is displayed at this height
+                  height: '400px', // Ensures the image is displayed at this height
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
               {browsersItem.news2.split('\n\n').map((paragraph, idx) => (
@@ -959,13 +971,13 @@ const browsersDetail = ({ browsersItem }) => {
                 loading='lazy'
                 style={{
                   width: '800px', // Ensures the image is displayed at this width
-                  height: '400px',  // Ensures the image is displayed at this height
+                  height: '400px', // Ensures the image is displayed at this height
                   margin: 'auto',
                   marginBottom: '20px',
                   borderRadius: '50px',
                   boxShadow: '0 0 10px 0 #fff',
                   filter:
-                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                    'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
               {browsersItem.news3.split('\n\n').map((paragraph, idx) => (
@@ -1045,7 +1057,7 @@ const browsersDetail = ({ browsersItem }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                           }}
                         />
                         <p className='text-black text-lg font-semibold mt-2'>
@@ -1169,6 +1181,41 @@ const browsersDetail = ({ browsersItem }) => {
             }
           }
         `}</style>
+        <style jsx>{`
+          .share-buttons-container {
+            position: fixed !important;
+            top: 50% !important;
+            right: 0 !important;
+            transform: translateY(-50%) !important;
+            display: flex !important;
+            flex-direction: column !important; /* Display buttons in a column */
+            gap: 10px !important;
+            padding: 10px !important;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+          }
+
+          @media (max-width: 600px) {
+            .share-buttons-container {
+              flex-direction: column;
+              right: 0;
+              top: auto;
+              bottom: 10px;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+           <div
+                className='share-buttons-container'
+                style={{
+                  marginTop: '15px'
+                }}
+              >
+                <ShareButtons
+                  title={title}
+                  description={description}
+                  shareMessage={shareMessage}
+                />
+              </div>
       </div>
     </div>
   )
