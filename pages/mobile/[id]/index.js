@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import multimediaData from '../../../public/multimedia.json'
+import mobileData from '../../../public/mobile.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
 import Script from 'next/script'
 
-const multimediaDetail = ({ multimediaItem }) => {
+const mobileDetail = ({ mobileItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -92,7 +92,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = multimediaItem.videoitem
+      const videoIds = mobileItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -129,7 +129,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, multimediaItem])
+  }, [playerReady, showTimer, mobileItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -163,15 +163,15 @@ const multimediaDetail = ({ multimediaItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: multimediaItem.datePublished,
-    dateModified: multimediaItem.dateModified,
-    softwareVersion: multimediaItem.softwareVersion,
-    url: multimediaItem.siteurl,
-    operatingSystem: multimediaItem.operatingSystem,
-    applicationCategory: multimediaItem.applicationCategory,
-    image: multimediaItem.image,
-    name: multimediaItem.name,
-    interactionStatistic: multimediaItem.interactionStatistic,
+    datePublished: mobileItem.datePublished,
+    dateModified: mobileItem.dateModified,
+    softwareVersion: mobileItem.softwareVersion,
+    url: mobileItem.siteurl,
+    operatingSystem: mobileItem.operatingSystem,
+    applicationCategory: mobileItem.applicationCategory,
+    image: mobileItem.image,
+    name: mobileItem.name,
+    interactionStatistic: mobileItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -179,7 +179,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': multimediaItem.siteurl,
+      '@id': mobileItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -200,14 +200,14 @@ const multimediaDetail = ({ multimediaItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'multimediaItem',
-        item: multimediaItem.baseurl
+        name: 'Mobile',
+        item: mobileItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: multimediaItem.name,
-        item: multimediaItem.siteurl
+        name: mobileItem.name,
+        item: mobileItem.siteurl
       }
     ]
   })
@@ -232,11 +232,11 @@ const multimediaDetail = ({ multimediaItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${multimediaItem.siteurl}#webpage`,
-        url: multimediaItem.siteurl,
-        name: `${multimediaItem.name} | Softwarebay`,
-        datePublished: multimediaItem.datePublished,
-        dateModified: multimediaItem.dateModified,
+        '@id': `${mobileItem.siteurl}#webpage`,
+        url: mobileItem.siteurl,
+        name: `${mobileItem.name} | Softwarebay`,
+        datePublished: mobileItem.datePublished,
+        dateModified: mobileItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -258,35 +258,35 @@ const multimediaDetail = ({ multimediaItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${multimediaItem.siteurl}#article`,
-        headline: `Download ${multimediaItem.name} | Softwarebay`,
-        datePublished: multimediaItem.datePublished,
-        dateModified: multimediaItem.dateModified,
-        articleSection: 'Multimedia',
+        '@id': `${mobileItem.siteurl}#article`,
+        headline: `Download ${mobileItem.name} | Softwarebay`,
+        datePublished: mobileItem.datePublished,
+        dateModified: mobileItem.dateModified,
+        articleSection: 'Mobile',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/multimediaItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/mobileItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: multimediaItem.image,
-        name: `Download ${multimediaItem.name} | Softwarebay`,
+        image: mobileItem.image,
+        name: `Download ${mobileItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${mobileItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${mobileItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${multimediaItem.siteurl}#blogPost`,
-        headline: `Download ${multimediaItem.name} | Softwarebay`,
-        datePublished: multimediaItem.datePublished,
-        dateModified: multimediaItem.dateModified,
-        articleSection: 'Multimedia',
+        '@id': `${mobileItem.siteurl}#blogPost`,
+        headline: `Download ${mobileItem.name} | Softwarebay`,
+        datePublished: mobileItem.datePublished,
+        dateModified: mobileItem.dateModified,
+        articleSection: 'Mobile',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -294,15 +294,15 @@ const multimediaDetail = ({ multimediaItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: multimediaItem.image,
-        name: `Download ${multimediaItem.name} | Softwarebay`,
-        '@id': `${multimediaItem.siteurl}#richSnippet`,
+        image: mobileItem.image,
+        name: `Download ${mobileItem.name} | Softwarebay`,
+        '@id': `${mobileItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${mobileItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${mobileItem.siteurl}#webpage`
         }
       }
     ]
@@ -311,23 +311,23 @@ const multimediaDetail = ({ multimediaItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${multimediaItem.siteurl}#webpage`, // Add a comma here
-    name: multimediaItem.title,
-    url: multimediaItem.siteurl,
-    description: multimediaItem.news1,
-    image: multimediaItem.image,
-    datePublished: multimediaItem.startDate,
+    '@id': `${mobileItem.siteurl}#webpage`, // Add a comma here
+    name: mobileItem.title,
+    url: mobileItem.siteurl,
+    description: mobileItem.news1,
+    image: mobileItem.image,
+    datePublished: mobileItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: multimediaItem.title,
-        urlTemplate: multimediaItem.siteurl
+        name: mobileItem.title,
+        urlTemplate: mobileItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: multimediaItem.country
+      name: mobileItem.country
     },
     author: {
       '@type': 'Person',
@@ -359,11 +359,8 @@ const multimediaDetail = ({ multimediaItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>
-          {' '}
-          Download {multimediaItem && multimediaItem.name} | Softwarebay
-        </title>
-        <link rel='canonical' href={multimediaItem && multimediaItem.siteurl} />
+        <title> Download {mobileItem && mobileItem.name} | Softwarebay</title>
+        <link rel='canonical' href={mobileItem && mobileItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -371,28 +368,26 @@ const multimediaDetail = ({ multimediaItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${multimediaItem && multimediaItem.name} - Softwarebay`}
+          content={`${mobileItem && mobileItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
-    
-        <meta
-          property='og:url'
-          content={`${multimediaItem && multimediaItem.url}`}
         />
+       
+        <meta property='og:url' content={`${mobileItem && mobileItem.url}`} />
         <meta
           name='keywords'
-          content={`${multimediaItem && multimediaItem.keywords}`}
+          content={`${mobileItem && mobileItem.keywords}`}
         />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${multimediaItem && multimediaItem.group}`}
+          content={`${mobileItem && mobileItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='multimediaItem' />
+        <meta property='article:section' content='Mobile' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -400,7 +395,7 @@ const multimediaDetail = ({ multimediaItem }) => {
         />
         <meta
           property='og:image'
-          content={`${multimediaItem && multimediaItem.backimage}`}
+          content={`${mobileItem && mobileItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -493,7 +488,7 @@ const multimediaDetail = ({ multimediaItem }) => {
             marginBottom: '12px'
           }}
         >
-          {multimediaItem.title}
+          {mobileItem.title}
         </h1>
 
         <p
@@ -690,8 +685,8 @@ const multimediaDetail = ({ multimediaItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={multimediaItem.channelposter}
-              alt={multimediaItem.title}
+              src={mobileItem.channelposter}
+              alt={mobileItem.title}
               width={300}
               height={300}
               // priority
@@ -699,13 +694,13 @@ const multimediaDetail = ({ multimediaItem }) => {
               loading='lazy'
               style={{
                 width: '400px', // Ensures the image is displayed at this width
-                height: '500px',  // Ensures the image is displayed at this height
-                margin: 'auto',
-                marginBottom: '20px',
-                borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #fff',
-                filter:
-                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                  height: '500px',  // Ensures the image is displayed at this height
+                  margin: 'auto',
+                  marginBottom: '20px',
+                  borderRadius: '50px',
+                  boxShadow: '0 0 10px 0 #fff',
+                  filter:
+                  'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
               }}
             />
             <div
@@ -720,18 +715,18 @@ const multimediaDetail = ({ multimediaItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {multimediaItem.title}
+                  {mobileItem.title}
                 </h2>
               </div>
 
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {multimediaItem.version}
+                Version: {mobileItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {multimediaItem.developers}
+                Developers: {mobileItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {multimediaItem.license}
+                License: {mobileItem.license}
               </p>
               <div
                 className='flex flex-col items-center justify-center'
@@ -787,11 +782,8 @@ const multimediaDetail = ({ multimediaItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {multimediaItem.downloadlink && (
-                          <Link
-                            href={multimediaItem.downloadlink}
-                            target='_blank'
-                          >
+                        {mobileItem.downloadlink && (
+                          <Link href={mobileItem.downloadlink} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -819,11 +811,8 @@ const multimediaDetail = ({ multimediaItem }) => {
                             </div>
                           </Link>
                         )}
-                        {multimediaItem.downloadlink1 && (
-                          <Link
-                            href={multimediaItem.downloadlink1}
-                            target='_blank'
-                          >
+                        {mobileItem.downloadlink1 && (
+                          <Link href={mobileItem.downloadlink1} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -839,7 +828,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                             </div>
                           </Link>
                         )}
-                        {multimediaItem.additionalLinks?.map((link, index) => (
+                        {mobileItem.additionalLinks?.map((link, index) => (
                           <Link key={index} href={link.url} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
@@ -863,12 +852,12 @@ const multimediaDetail = ({ multimediaItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head1} </strong>
+                  <strong> {mobileItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={multimediaItem.image1}
-                alt={multimediaItem.name}
+                src={mobileItem.image1}
+                alt={mobileItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -885,7 +874,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {multimediaItem.news1.split('\n\n').map((paragraph, idx) => (
+              {mobileItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -899,12 +888,12 @@ const multimediaDetail = ({ multimediaItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head2} </strong>
+                  <strong> {mobileItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={multimediaItem.image2}
-                alt={multimediaItem.name}
+                src={mobileItem.image2}
+                alt={mobileItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -921,7 +910,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {multimediaItem.news2.split('\n\n').map((paragraph, idx) => (
+              {mobileItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -935,12 +924,12 @@ const multimediaDetail = ({ multimediaItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head3} </strong>
+                  <strong> {mobileItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={multimediaItem.image3}
-                alt={multimediaItem.name}
+                src={mobileItem.image3}
+                alt={mobileItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -957,7 +946,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {multimediaItem.news3.split('\n\n').map((paragraph, idx) => (
+              {mobileItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -971,10 +960,10 @@ const multimediaDetail = ({ multimediaItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head4} </strong>
+                  <strong> {mobileItem.head4} </strong>
                 </p>
               </div>
-              {multimediaItem.news4.split('\n\n').map((paragraph, idx) => (
+              {mobileItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1146,7 +1135,7 @@ const multimediaDetail = ({ multimediaItem }) => {
 }
 
 export async function getStaticPaths () {
-  const paths = multimediaData.map(item => ({
+  const paths = mobileData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1154,7 +1143,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const multimediaItem = multimediaData.find(item => item.id === params.id)
-  return { props: { multimediaItem } }
+  const mobileItem = mobileData.find(item => item.id === params.id)
+  return { props: { mobileItem } }
 }
-export default multimediaDetail
+export default mobileDetail

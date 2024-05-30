@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
-import graphicdesignData from '../../public/graphicdesign.json'
+import filesharingData from '../../public/filesharing.json'
 import Head from 'next/head'
 import Script from 'next/script';
 
@@ -45,12 +45,12 @@ const softwareSchema = JSON.stringify({
   '@type': 'http://schema.org/SoftwareApplication',
   datePublished: '13-04-2024',
   dateModified: '13-04-2024',
-  softwareVersion: 'Graphic Design 2024',
-  url: 'https://softwarebay.vercel.app/graphic-design/',
+  softwareVersion: 'File Sharing 2024',
+  url: 'https://softwarebay.vercel.app/file-sharing/',
   operatingSystem: 'Windows',
-  applicationCategory: 'Graphic Design',
+  applicationCategory: 'File Sharing',
   image: 'https://softwarebay.vercel.app/og_image.jpg',
-  name: 'Graphic Design',
+  name: 'File Sharing',
   interactionStatistic: 498618,
   offers: {
     '@type': 'http://schema.org/Offer',
@@ -59,7 +59,7 @@ const softwareSchema = JSON.stringify({
   },
   aggregateRating: {
     '@type': 'http://schema.org/AggregateRating',
-    '@id': 'https://softwarebay.vercel.app/graphic-design/',
+    '@id': 'https://softwarebay.vercel.app/file-sharing/',
     ratingValue: 8,
     ratingCount: 0,
     bestRating: '10',
@@ -80,21 +80,21 @@ const breadcrumbSchema = JSON.stringify({
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Graphic Design',
-      item: 'https://softwarebay.vercel.app/graphic-design/'
+      name: 'File Sharing',
+      item: 'https://softwarebay.vercel.app/file-sharing/'
     },
    
   ]
 })
 
-const graphicdesignPage = ({ items }) => {
+const filesharingPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
        <Head>
-        <title> Download Graphic Design | Softwarebay</title>
-        <link rel='canonical' href="https://softwarebay.vercel.app/graphic-design/" />
+        <title> Download File Sharing | Softwarebay</title>
+        <link rel='canonical' href="https://softwarebay.vercel.app/file-sharing/" />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -106,14 +106,14 @@ const graphicdesignPage = ({ items }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content=" Download Graphic Design | Softwarebay"
+          content=" Download File Sharing | Softwarebay"
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
       
-        <meta property='og:url' content= "https://softwarebay.vercel.app/graphic-design"/>
+        <meta property='og:url' content= "https://softwarebay.vercel.app/file-sharing"/>
        
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
@@ -122,7 +122,7 @@ const graphicdesignPage = ({ items }) => {
           content= "https://softwarebay.vercel.app/og_image.jpg"
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Graphic Design' />
+        <meta property='article:section' content='File Sharing' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -194,6 +194,7 @@ const graphicdesignPage = ({ items }) => {
       <Script src="../../propler/ads.js" defer />
         <Script src="../../propler/ads2.js" defer />
 
+
         <h1  className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'  style={{
           justifyContent: 'center',
           alignItems: 'center',
@@ -203,7 +204,7 @@ const graphicdesignPage = ({ items }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '15px'
-        }}>SoftwareBay Graphic Design Section.</h1>
+        }}>SoftwareBay File Sharing Section.</h1>
 
 <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
@@ -228,7 +229,7 @@ const graphicdesignPage = ({ items }) => {
           id='menu-header-menu'
           className='menu flex flex-wrap justify-center'
         >
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
@@ -370,16 +371,16 @@ const graphicdesignPage = ({ items }) => {
             </button>
         </ul>
       </div>
-     
+  
       <div className='container'>
-        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>graphicdesign Section</h1> */}
+        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>filesharing Section</h1> */}
         <div className='flex-container'>
           <div className='main-content'>
             <div className='card-container'>
-            {graphicdesignData.map(item => (
+            {filesharingData.map(item => (
           <div key={item.id}>
                 {/* <div key={item.id} className='card'> */}
-                  <Link href={`/graphic-design/${item.id}`}>
+                  <Link href={`/file-sharing/${item.id}`}>
                     <div className='relative'>
                       <Image
                         src={item.image}
@@ -577,7 +578,7 @@ const graphicdesignPage = ({ items }) => {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://softwarebay.vercel.app/graphic-design.json');
+    const res = await fetch('https://softwarebay.vercel.app/file-sharing.json');
     const data = await res.json();
     
     return {
@@ -596,4 +597,4 @@ export async function getStaticProps() {
 }
 
 
-export default graphicdesignPage
+export default filesharingPage

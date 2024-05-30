@@ -202,15 +202,10 @@ const latestDetail = ({ latest }) => {
           property='og:title'
           content={`${latest && latest.name} - Softwarebay`}
         />
+       
         <meta
           property='og:description'
-          content={`${
-            latest && latest.name
-          } | For latests, TV Show & Sports Live.`}
-        />
-        <meta
-          property='og:description'
-          content='Explore. Discover. Download - Free Your Desired Software.'
+          content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
         <meta property='og:url' content={`${latest && latest.url}`} />
         <meta name='keywords' content={`${latest && latest.keywords}`} />

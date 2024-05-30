@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import multimediaData from '../../../public/multimedia.json'
+import networkData from '../../../public/network.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import HomeStyles from '@styles/styles.module.css'
 import Script from 'next/script'
 
-const multimediaDetail = ({ multimediaItem }) => {
+const networkDetail = ({ networkItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -92,7 +92,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = multimediaItem.videoitem
+      const videoIds = networkItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -129,7 +129,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, multimediaItem])
+  }, [playerReady, showTimer, networkItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -163,15 +163,15 @@ const multimediaDetail = ({ multimediaItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: multimediaItem.datePublished,
-    dateModified: multimediaItem.dateModified,
-    softwareVersion: multimediaItem.softwareVersion,
-    url: multimediaItem.siteurl,
-    operatingSystem: multimediaItem.operatingSystem,
-    applicationCategory: multimediaItem.applicationCategory,
-    image: multimediaItem.image,
-    name: multimediaItem.name,
-    interactionStatistic: multimediaItem.interactionStatistic,
+    datePublished: networkItem.datePublished,
+    dateModified: networkItem.dateModified,
+    softwareVersion: networkItem.softwareVersion,
+    url: networkItem.siteurl,
+    operatingSystem: networkItem.operatingSystem,
+    applicationCategory: networkItem.applicationCategory,
+    image: networkItem.image,
+    name: networkItem.name,
+    interactionStatistic: networkItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -179,7 +179,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': multimediaItem.siteurl,
+      '@id': networkItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -200,14 +200,14 @@ const multimediaDetail = ({ multimediaItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'multimediaItem',
-        item: multimediaItem.baseurl
+        name: 'Network',
+        item: networkItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: multimediaItem.name,
-        item: multimediaItem.siteurl
+        name: networkItem.name,
+        item: networkItem.siteurl
       }
     ]
   })
@@ -232,11 +232,11 @@ const multimediaDetail = ({ multimediaItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${multimediaItem.siteurl}#webpage`,
-        url: multimediaItem.siteurl,
-        name: `${multimediaItem.name} | Softwarebay`,
-        datePublished: multimediaItem.datePublished,
-        dateModified: multimediaItem.dateModified,
+        '@id': `${networkItem.siteurl}#webpage`,
+        url: networkItem.siteurl,
+        name: `${networkItem.name} | Softwarebay`,
+        datePublished: networkItem.datePublished,
+        dateModified: networkItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -258,35 +258,35 @@ const multimediaDetail = ({ multimediaItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${multimediaItem.siteurl}#article`,
-        headline: `Download ${multimediaItem.name} | Softwarebay`,
-        datePublished: multimediaItem.datePublished,
-        dateModified: multimediaItem.dateModified,
-        articleSection: 'Multimedia',
+        '@id': `${networkItem.siteurl}#article`,
+        headline: `Download ${networkItem.name} | Softwarebay`,
+        datePublished: networkItem.datePublished,
+        dateModified: networkItem.dateModified,
+        articleSection: 'Network',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/multimediaItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/networkItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: multimediaItem.image,
-        name: `Download ${multimediaItem.name} | Softwarebay`,
+        image: networkItem.image,
+        name: `Download ${networkItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${multimediaItem.siteurl}#blogPost`,
-        headline: `Download ${multimediaItem.name} | Softwarebay`,
-        datePublished: multimediaItem.datePublished,
-        dateModified: multimediaItem.dateModified,
-        articleSection: 'Multimedia',
+        '@id': `${networkItem.siteurl}#blogPost`,
+        headline: `Download ${networkItem.name} | Softwarebay`,
+        datePublished: networkItem.datePublished,
+        dateModified: networkItem.dateModified,
+        articleSection: 'Network',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -294,15 +294,15 @@ const multimediaDetail = ({ multimediaItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: multimediaItem.image,
-        name: `Download ${multimediaItem.name} | Softwarebay`,
-        '@id': `${multimediaItem.siteurl}#richSnippet`,
+        image: networkItem.image,
+        name: `Download ${networkItem.name} | Softwarebay`,
+        '@id': `${networkItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${multimediaItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         }
       }
     ]
@@ -311,23 +311,23 @@ const multimediaDetail = ({ multimediaItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${multimediaItem.siteurl}#webpage`, // Add a comma here
-    name: multimediaItem.title,
-    url: multimediaItem.siteurl,
-    description: multimediaItem.news1,
-    image: multimediaItem.image,
-    datePublished: multimediaItem.startDate,
+    '@id': `${networkItem.siteurl}#webpage`, // Add a comma here
+    name: networkItem.title,
+    url: networkItem.siteurl,
+    description: networkItem.news1,
+    image: networkItem.image,
+    datePublished: networkItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: multimediaItem.title,
-        urlTemplate: multimediaItem.siteurl
+        name: networkItem.title,
+        urlTemplate: networkItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: multimediaItem.country
+      name: networkItem.country
     },
     author: {
       '@type': 'Person',
@@ -359,11 +359,8 @@ const multimediaDetail = ({ multimediaItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>
-          {' '}
-          Download {multimediaItem && multimediaItem.name} | Softwarebay
-        </title>
-        <link rel='canonical' href={multimediaItem && multimediaItem.siteurl} />
+        <title> Download {networkItem && networkItem.name} | Softwarebay</title>
+        <link rel='canonical' href={networkItem && networkItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -371,28 +368,26 @@ const multimediaDetail = ({ multimediaItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${multimediaItem && multimediaItem.name} - Softwarebay`}
+          content={`${networkItem && networkItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
-    
-        <meta
-          property='og:url'
-          content={`${multimediaItem && multimediaItem.url}`}
         />
+      
+        <meta property='og:url' content={`${networkItem && networkItem.url}`} />
         <meta
           name='keywords'
-          content={`${multimediaItem && multimediaItem.keywords}`}
+          content={`${networkItem && networkItem.keywords}`}
         />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${multimediaItem && multimediaItem.group}`}
+          content={`${networkItem && networkItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='multimediaItem' />
+        <meta property='article:section' content='network' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -400,7 +395,7 @@ const multimediaDetail = ({ multimediaItem }) => {
         />
         <meta
           property='og:image'
-          content={`${multimediaItem && multimediaItem.backimage}`}
+          content={`${networkItem && networkItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -493,7 +488,7 @@ const multimediaDetail = ({ multimediaItem }) => {
             marginBottom: '12px'
           }}
         >
-          {multimediaItem.title}
+          {networkItem.title}
         </h1>
 
         <p
@@ -690,8 +685,8 @@ const multimediaDetail = ({ multimediaItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={multimediaItem.channelposter}
-              alt={multimediaItem.title}
+              src={networkItem.channelposter}
+              alt={networkItem.title}
               width={300}
               height={300}
               // priority
@@ -705,7 +700,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                 borderRadius: '50px',
                 boxShadow: '0 0 10px 0 #fff',
                 filter:
-                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
               }}
             />
             <div
@@ -720,18 +715,18 @@ const multimediaDetail = ({ multimediaItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {multimediaItem.title}
+                  {networkItem.title}
                 </h2>
               </div>
 
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {multimediaItem.version}
+                Version: {networkItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {multimediaItem.developers}
+                Developers: {networkItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {multimediaItem.license}
+                License: {networkItem.license}
               </p>
               <div
                 className='flex flex-col items-center justify-center'
@@ -787,11 +782,8 @@ const multimediaDetail = ({ multimediaItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {multimediaItem.downloadlink && (
-                          <Link
-                            href={multimediaItem.downloadlink}
-                            target='_blank'
-                          >
+                        {networkItem.downloadlink && (
+                          <Link href={networkItem.downloadlink} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -819,9 +811,9 @@ const multimediaDetail = ({ multimediaItem }) => {
                             </div>
                           </Link>
                         )}
-                        {multimediaItem.downloadlink1 && (
+                        {networkItem.downloadlink1 && (
                           <Link
-                            href={multimediaItem.downloadlink1}
+                            href={networkItem.downloadlink1}
                             target='_blank'
                           >
                             <div
@@ -839,7 +831,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                             </div>
                           </Link>
                         )}
-                        {multimediaItem.additionalLinks?.map((link, index) => (
+                        {networkItem.additionalLinks?.map((link, index) => (
                           <Link key={index} href={link.url} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
@@ -863,12 +855,12 @@ const multimediaDetail = ({ multimediaItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head1} </strong>
+                  <strong> {networkItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={multimediaItem.image1}
-                alt={multimediaItem.name}
+                src={networkItem.image1}
+                alt={networkItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -885,7 +877,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {multimediaItem.news1.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -899,12 +891,12 @@ const multimediaDetail = ({ multimediaItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head2} </strong>
+                  <strong> {networkItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={multimediaItem.image2}
-                alt={multimediaItem.name}
+                src={networkItem.image2}
+                alt={networkItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -921,7 +913,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {multimediaItem.news2.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -935,12 +927,12 @@ const multimediaDetail = ({ multimediaItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head3} </strong>
+                  <strong> {networkItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={multimediaItem.image3}
-                alt={multimediaItem.name}
+                src={networkItem.image3}
+                alt={networkItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -957,7 +949,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {multimediaItem.news3.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -971,10 +963,10 @@ const multimediaDetail = ({ multimediaItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {multimediaItem.head4} </strong>
+                  <strong> {networkItem.head4} </strong>
                 </p>
               </div>
-              {multimediaItem.news4.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
@@ -1146,7 +1138,7 @@ const multimediaDetail = ({ multimediaItem }) => {
 }
 
 export async function getStaticPaths () {
-  const paths = multimediaData.map(item => ({
+  const paths = networkData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1154,7 +1146,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const multimediaItem = multimediaData.find(item => item.id === params.id)
-  return { props: { multimediaItem } }
+  const networkItem = networkData.find(item => item.id === params.id)
+  return { props: { networkItem } }
 }
-export default multimediaDetail
+export default networkDetail

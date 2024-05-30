@@ -200,7 +200,7 @@ const Privacy = () => {
           />
           <meta
             name='keywords'
-            content='download, software, freeware, shareware, trial versions, program, utilities'
+            content='download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser'
           />
           <meta
             name='description'
@@ -215,7 +215,7 @@ const Privacy = () => {
           />
           <meta
             property='og:description'
-            content='Explore. Discover. Download - Free Your Desired Software.'
+            content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
           />
           <meta property='og:url' content='https://softwarebay.vercel.app/intro/privacy/' />
           <meta

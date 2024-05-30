@@ -2,14 +2,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
-import graphicdesignData from '../../public/graphicdesign.json'
+import networkData from '../../public/network.json'
 import Head from 'next/head'
-import Script from 'next/script';
-
-
-
-
-
+import Script from 'next/script'
 
 const uwatchfreeSchema = JSON.stringify([
   {
@@ -45,12 +40,12 @@ const softwareSchema = JSON.stringify({
   '@type': 'http://schema.org/SoftwareApplication',
   datePublished: '13-04-2024',
   dateModified: '13-04-2024',
-  softwareVersion: 'Graphic Design 2024',
-  url: 'https://softwarebay.vercel.app/graphic-design/',
+  softwareVersion: 'network 2024',
+  url: 'https://softwarebay.vercel.app/network/',
   operatingSystem: 'Windows',
-  applicationCategory: 'Graphic Design',
+  applicationCategory: 'Network',
   image: 'https://softwarebay.vercel.app/og_image.jpg',
-  name: 'Graphic Design',
+  name: 'Network',
   interactionStatistic: 498618,
   offers: {
     '@type': 'http://schema.org/Offer',
@@ -59,7 +54,7 @@ const softwareSchema = JSON.stringify({
   },
   aggregateRating: {
     '@type': 'http://schema.org/AggregateRating',
-    '@id': 'https://softwarebay.vercel.app/graphic-design/',
+    '@id': 'https://softwarebay.vercel.app/network/',
     ratingValue: 8,
     ratingCount: 0,
     bestRating: '10',
@@ -80,58 +75,58 @@ const breadcrumbSchema = JSON.stringify({
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Graphic Design',
-      item: 'https://softwarebay.vercel.app/graphic-design/'
-    },
-   
+      name: 'Network',
+      item: 'https://softwarebay.vercel.app/network/'
+    }
   ]
 })
 
-const graphicdesignPage = ({ items }) => {
+const networkPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
-       <Head>
-        <title> Download Graphic Design | Softwarebay</title>
-        <link rel='canonical' href="https://softwarebay.vercel.app/graphic-design/" />
+      <Head>
+        <title> Download Network | Softwarebay</title>
+        <link rel='canonical' href='https://softwarebay.vercel.app/network/' />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-       <meta name='robots' content='index, follow' />
+        <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
         <meta property='og:locale' content='en_US' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content=" Download Graphic Design | Softwarebay"
-        />
+        <meta property='og:title' content=' Download Network | Softwarebay' />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-      
-        <meta property='og:url' content= "https://softwarebay.vercel.app/graphic-design"/>
        
+        <meta property='og:url' content='https://softwarebay.vercel.app/network' />
+        <meta name='keywords' content='' />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content= "https://softwarebay.vercel.app/og_image.jpg"
+          content='https://softwarebay.vercel.app/og_image.jpg'
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Graphic Design' />
+        <meta property='article:section' content='Network' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-          <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser" />
+        <meta
+          name='keywords'
+          content='download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser'
+        />
         <meta
           property='og:image'
-          content= "https://softwarebay.vercel.app/og_image.jpg"  />
+          content='https://softwarebay.vercel.app/og_image.jpg'
+        />
         <meta property='og:image:width' content='1080px' />
         <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/jpeg' />
@@ -156,7 +151,7 @@ const graphicdesignPage = ({ items }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
         />
-       
+
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: softwareSchema }}
@@ -189,12 +184,13 @@ const graphicdesignPage = ({ items }) => {
           `
           }}
         />
-      
       </Head>
-      <Script src="../../propler/ads.js" defer />
-        <Script src="../../propler/ads2.js" defer />
+      <Script src='../../propler/ads.js' defer />
+      <Script src='../../propler/ads2.js' defer />
 
-        <h1  className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'  style={{
+      <h1
+        className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+        style={{
           justifyContent: 'center',
           alignItems: 'center',
           padding: '10px',
@@ -203,23 +199,26 @@ const graphicdesignPage = ({ items }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '15px'
-        }}>SoftwareBay Graphic Design Section.</h1>
+        }}
+      >
+        SoftwareBay Network Section.
+      </h1>
 
-<p
-          className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '10px',
-            fontSize: '35px',
-            fontFamily: 'Poppins, sans-serif',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: '15px'
-          }}
-        >
-          Select Categories.{' '}
-        </p>
+      <p
+        className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '10px',
+          fontSize: '35px',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: '15px'
+        }}
+      >
+        Select Categories.{' '}
+      </p>
       <div
         className='shadow-lg flex items-center justify-center'
         role='navigation'
@@ -228,7 +227,7 @@ const graphicdesignPage = ({ items }) => {
           id='menu-header-menu'
           className='menu flex flex-wrap justify-center'
         >
-            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+          <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
@@ -370,16 +369,16 @@ const graphicdesignPage = ({ items }) => {
             </button>
         </ul>
       </div>
-     
+
       <div className='container'>
-        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>graphicdesign Section</h1> */}
+        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>network Section</h1> */}
         <div className='flex-container'>
           <div className='main-content'>
             <div className='card-container'>
-            {graphicdesignData.map(item => (
-          <div key={item.id}>
-                {/* <div key={item.id} className='card'> */}
-                  <Link href={`/graphic-design/${item.id}`}>
+              {networkData.map(item => (
+                <div key={item.id}>
+                  {/* <div key={item.id} className='card'> */}
+                  <Link href={`/network/${item.id}`}>
                     <div className='relative'>
                       <Image
                         src={item.image}
@@ -388,23 +387,25 @@ const graphicdesignPage = ({ items }) => {
                         width={140} // Specify the desired width
                         height={140} // Specify the desired height
                         style={{
-                            filter:
+                          filter:
                              'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
-                        }} 
+                        }}
                       />
                       <p className='text-black text-2xl font-semibold mt-2'>
                         {item.name}
                       </p>
                       <p className='text-black text-bg font-semibold mt-2'>
-                      License: {item.license}, Version: {item.version}
+                        License: {item.license}, Version: {item.version}
                       </p>
                       <p className='text-black text-bg font-semibold mt-2'>
-                      Developers: {item.developers}
+                        Developers: {item.developers}
                       </p>
                       <div className='bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-black text-lg font-semibold mt-2'>
                         {item.text}
                       </div>
-                      <div className='animate-pulse badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'>{item.badge}</div>
+                      <div className='animate-pulse badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'>
+                        {item.badge}
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -446,8 +447,8 @@ const graphicdesignPage = ({ items }) => {
                           height={140} // Specify the desired height
                           style={{
                             filter:
-                             'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
-                        }} 
+                               'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
+                          }}
                         />
                         <p className='text-black text-lg font-semibold mt-2'>
                           {latestItem.name}
@@ -575,25 +576,24 @@ const graphicdesignPage = ({ items }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   try {
-    const res = await fetch('https://softwarebay.vercel.app/graphic-design.json');
-    const data = await res.json();
-    
+    const res = await fetch('https://softwarebay.vercel.app/network.json')
+    const data = await res.json()
+
     return {
       props: {
         items: data
       }
-    };
+    }
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error('Error fetching data:', error)
     return {
       props: {
         items: []
       }
-    };
+    }
   }
 }
 
-
-export default graphicdesignPage
+export default networkPage
