@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://softwarebay.vercel.app/sitemap.xml
