@@ -785,18 +785,111 @@ const moviesDetail = ({ moviesItem }) => {
                 Genre: {moviesItem.genre}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Director: {moviesItem.director}
+                Director: {moviesItem.directorname}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
                 Starring: {moviesItem.starring}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Origin Country: {moviesItem.origincountry}
+                Origin Country: {moviesItem.country}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
                 Language: {moviesItem.language}
               </p>
-
+            
+              <div className={`${HomeStyles.imageGrid} mt-5`}>
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload `}
+                  src={moviesItem.directorimg}
+                  alt={moviesItem.directorname}
+                  title={moviesItem.directorname}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    filter: 'contrast(1.2) saturate(1.2)',
+                    boxShadow: '0 0 10px 0 #C0C0C0' // Shadow effect with black color
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={moviesItem.actor1img}
+                  alt={moviesItem.actor1}
+                  title={moviesItem.actor1}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={moviesItem.actor2img}
+                  alt={moviesItem.actor2}
+                  title={moviesItem.actor2}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={moviesItem.actor3img}
+                  alt={moviesItem.actor3}
+                  title={moviesItem.actor3}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={moviesItem.actor4img}
+                  alt={moviesItem.actor4}
+                  title={moviesItem.actor4}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={moviesItem.actor5img}
+                  alt={moviesItem.actor5}
+                  title={moviesItem.actor5}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+              </div>
+        
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -975,7 +1068,7 @@ const moviesDetail = ({ moviesItem }) => {
               {moviesItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'

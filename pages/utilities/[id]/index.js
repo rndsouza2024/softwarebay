@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import graphicdesignData from '../../../public/graphicdesign.json'
+import utilitiesData from '../../../public/utilities.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -9,7 +9,7 @@ import HomeStyles from '@styles/styles.module.css'
 
 import Script from 'next/script'
 
-const graphicdesignDetail = ({ graphicdesignItem }) => {
+const utilitiesDetail = ({ utilitiesItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -93,7 +93,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = graphicdesignItem.videoitem
+      const videoIds = utilitiesItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -130,7 +130,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, graphicdesignItem])
+  }, [playerReady, showTimer, utilitiesItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -164,15 +164,15 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: graphicdesignItem.datePublished,
-    dateModified: graphicdesignItem.dateModified,
-    softwareVersion: graphicdesignItem.softwareVersion,
-    url: graphicdesignItem.siteurl,
-    operatingSystem: graphicdesignItem.operatingSystem,
-    applicationCategory: graphicdesignItem.applicationCategory,
-    image: graphicdesignItem.image,
-    name: graphicdesignItem.name,
-    interactionStatistic: graphicdesignItem.interactionStatistic,
+    datePublished: utilitiesItem.datePublished,
+    dateModified: utilitiesItem.dateModified,
+    softwareVersion: utilitiesItem.softwareVersion,
+    url: utilitiesItem.siteurl,
+    operatingSystem: utilitiesItem.operatingSystem,
+    applicationCategory: utilitiesItem.applicationCategory,
+    image: utilitiesItem.image,
+    name: utilitiesItem.name,
+    interactionStatistic: utilitiesItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -180,7 +180,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': graphicdesignItem.siteurl,
+      '@id': utilitiesItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -201,14 +201,14 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'graphicdesignItem',
-        item: graphicdesignItem.baseurl
+        name: 'Utilities',
+        item: utilitiesItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: graphicdesignItem.name,
-        item: graphicdesignItem.siteurl
+        name: utilitiesItem.name,
+        item: utilitiesItem.siteurl
       }
     ]
   })
@@ -233,11 +233,11 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${graphicdesignItem.siteurl}#webpage`,
-        url: graphicdesignItem.siteurl,
-        name: `${graphicdesignItem.name} | Softwarebay`,
-        datePublished: graphicdesignItem.datePublished,
-        dateModified: graphicdesignItem.dateModified,
+        '@id': `${utilitiesItem.siteurl}#webpage`,
+        url: utilitiesItem.siteurl,
+        name: `${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -259,35 +259,35 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${graphicdesignItem.siteurl}#article`,
-        headline: `Download ${graphicdesignItem.name} | Softwarebay`,
-        datePublished: graphicdesignItem.datePublished,
-        dateModified: graphicdesignItem.dateModified,
-        articleSection: 'graphicdesignal',
+        '@id': `${utilitiesItem.siteurl}#article`,
+        headline: `Download ${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
+        articleSection: 'Utilities',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/graphicdesignItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/utilitiesItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: graphicdesignItem.image,
-        name: `Download ${graphicdesignItem.name} | Softwarebay`,
+        image: utilitiesItem.image,
+        name: `Download ${utilitiesItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${graphicdesignItem.siteurl}#blogPost`,
-        headline: `Download ${graphicdesignItem.name} | Softwarebay`,
-        datePublished: graphicdesignItem.datePublished,
-        dateModified: graphicdesignItem.dateModified,
-        articleSection: 'graphicdesignItem',
+        '@id': `${utilitiesItem.siteurl}#blogPost`,
+        headline: `Download ${utilitiesItem.name} | Softwarebay`,
+        datePublished: utilitiesItem.datePublished,
+        dateModified: utilitiesItem.dateModified,
+        articleSection: 'Utilities',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -295,15 +295,15 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: graphicdesignItem.image,
-        name: `Download ${graphicdesignItem.name} | Softwarebay`,
-        '@id': `${graphicdesignItem.siteurl}#richSnippet`,
+        image: utilitiesItem.image,
+        name: `Download ${utilitiesItem.name} | Softwarebay`,
+        '@id': `${utilitiesItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${utilitiesItem.siteurl}#webpage`
         }
       }
     ]
@@ -312,23 +312,23 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${graphicdesignItem.siteurl}#webpage`, // Add a comma here
-    name: graphicdesignItem.title,
-    url: graphicdesignItem.siteurl,
-    description: graphicdesignItem.news1,
-    image: graphicdesignItem.image,
-    datePublished: graphicdesignItem.startDate,
+    '@id': `${utilitiesItem.siteurl}#webpage`, // Add a comma here
+    name: utilitiesItem.title,
+    url: utilitiesItem.siteurl,
+    description: utilitiesItem.news1,
+    image: utilitiesItem.image,
+    datePublished: utilitiesItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: graphicdesignItem.title,
-        urlTemplate: graphicdesignItem.siteurl
+        name: utilitiesItem.title,
+        urlTemplate: utilitiesItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: graphicdesignItem.country
+      name: utilitiesItem.country
     },
     author: {
       '@type': 'Person',
@@ -364,12 +364,9 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         />
         <title>
           {' '}
-          Download {graphicdesignItem && graphicdesignItem.name} | Softwarebay
+          Download {utilitiesItem && utilitiesItem.name} | Softwarebay
         </title>
-        <link
-          rel='canonical'
-          href={graphicdesignItem && graphicdesignItem.siteurl}
-        />
+        <link rel='canonical' href={utilitiesItem && utilitiesItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -377,31 +374,29 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${
-            graphicdesignItem && graphicdesignItem.name
-          } - Softwarebay`}
+          content={`${utilitiesItem && utilitiesItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-      
+   
         <meta
           property='og:url'
-          content={`${graphicdesignItem && graphicdesignItem.url}`}
+          content={`${utilitiesItem && utilitiesItem.url}`}
         />
         <meta
           name='keywords'
-          content={`${graphicdesignItem && graphicdesignItem.keywords}`}
+          content={`${utilitiesItem && utilitiesItem.keywords}`}
         />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${graphicdesignItem && graphicdesignItem.group}`}
+          content={`${utilitiesItem && utilitiesItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Graphic Design' />
+        <meta property='article:section' content='Utilities' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -409,7 +404,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         />
         <meta
           property='og:image'
-          content={`${graphicdesignItem && graphicdesignItem.backimage}`}
+          content={`${utilitiesItem && utilitiesItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -502,7 +497,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
             marginBottom: '12px'
           }}
         >
-          {graphicdesignItem.title}
+          {utilitiesItem.title}
         </h1>
 
         <p
@@ -699,8 +694,8 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={graphicdesignItem.channelposter}
-              alt={graphicdesignItem.title}
+              src={utilitiesItem.channelposter}
+              alt={utilitiesItem.title}
               width={300}
               height={300}
               // priority
@@ -729,20 +724,19 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {graphicdesignItem.title}
+                  {utilitiesItem.title}
                 </h2>
               </div>
 
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {graphicdesignItem.version}
+                Version: {utilitiesItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {graphicdesignItem.developers}
+                Developers: {utilitiesItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {graphicdesignItem.license}
+                License: {utilitiesItem.license}
               </p>
-
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -797,9 +791,9 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {graphicdesignItem.downloadlink && (
+                        {utilitiesItem.downloadlink && (
                           <Link
-                            href={graphicdesignItem.downloadlink}
+                            href={utilitiesItem.downloadlink}
                             target='_blank'
                           >
                             <div
@@ -829,9 +823,9 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                             </div>
                           </Link>
                         )}
-                        {graphicdesignItem.downloadlink1 && (
+                        {utilitiesItem.downloadlink1 && (
                           <Link
-                            href={graphicdesignItem.downloadlink1}
+                            href={utilitiesItem.downloadlink1}
                             target='_blank'
                           >
                             <div
@@ -849,25 +843,23 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                             </div>
                           </Link>
                         )}
-                        {graphicdesignItem.additionalLinks?.map(
-                          (link, index) => (
-                            <Link key={index} href={link.url} target='_blank'>
-                              <div
-                                className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                                style={{
-                                  margin: 'auto',
-                                  marginBottom: '50px',
-                                  borderRadius: '50px',
-                                  boxShadow: '0 0 10px 0 #fff',
-                                  filter:
-                                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-                                }}
-                              >
-                                Click Here to Download {index + 3}
-                              </div>
-                            </Link>
-                          )
-                        )}
+                        {utilitiesItem.additionalLinks?.map((link, index) => (
+                          <Link key={index} href={link.url} target='_blank'>
+                            <div
+                              className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                              style={{
+                                margin: 'auto',
+                                marginBottom: '50px',
+                                borderRadius: '50px',
+                                boxShadow: '0 0 10px 0 #fff',
+                                filter:
+                                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                              }}
+                            >
+                              Click Here to Download {index + 3}
+                            </div>
+                          </Link>
+                        ))}
                       </>
                     )}
                   </>
@@ -875,12 +867,12 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head1} </strong>
+                  <strong> {utilitiesItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={graphicdesignItem.image1}
-                alt={graphicdesignItem.name}
+                src={utilitiesItem.image1}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -897,7 +889,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {graphicdesignItem.news1.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description text-black font-bold mt-2 text-xl'
@@ -911,12 +903,12 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head2} </strong>
+                  <strong> {utilitiesItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={graphicdesignItem.image2}
-                alt={graphicdesignItem.name}
+                src={utilitiesItem.image2}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -933,7 +925,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {graphicdesignItem.news2.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description text-black font-bold mt-2 text-xl'
@@ -947,12 +939,12 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head3} </strong>
+                  <strong> {utilitiesItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={graphicdesignItem.image3}
-                alt={graphicdesignItem.name}
+                src={utilitiesItem.image3}
+                alt={utilitiesItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -969,7 +961,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {graphicdesignItem.news3.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description text-black font-bold mt-2 text-xl'
@@ -983,10 +975,10 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head4} </strong>
+                  <strong> {utilitiesItem.head4} </strong>
                 </p>
               </div>
-              {graphicdesignItem.news4.split('\n\n').map((paragraph, idx) => (
+              {utilitiesItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
                   className='description text-black font-bold mt-2 text-xl'
@@ -1152,14 +1144,14 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
             }
           }
         `}</style>
-     
+
       </div>
     </div>
   )
 }
 
 export async function getStaticPaths () {
-  const paths = graphicdesignData.map(item => ({
+  const paths = utilitiesData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1167,9 +1159,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const graphicdesignItem = graphicdesignData.find(
-    item => item.id === params.id
-  )
-  return { props: { graphicdesignItem } }
+  const utilitiesItem = utilitiesData.find(item => item.id === params.id)
+  return { props: { utilitiesItem } }
 }
-export default graphicdesignDetail
+export default utilitiesDetail

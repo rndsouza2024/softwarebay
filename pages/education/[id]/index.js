@@ -890,7 +890,7 @@ const educationDetail = ({ educationItem }) => {
               {educationItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -926,7 +926,7 @@ const educationDetail = ({ educationItem }) => {
               {educationItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -962,7 +962,7 @@ const educationDetail = ({ educationItem }) => {
               {educationItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -979,7 +979,7 @@ const educationDetail = ({ educationItem }) => {
               {educationItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'

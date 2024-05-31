@@ -936,7 +936,7 @@ const securityDetail = ({ securityItem }) => {
               {securityItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -972,7 +972,7 @@ const securityDetail = ({ securityItem }) => {
               {securityItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -1008,7 +1008,7 @@ const securityDetail = ({ securityItem }) => {
               {securityItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -1026,7 +1026,7 @@ const securityDetail = ({ securityItem }) => {
               {securityItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
+                  className='description text-black font-bold mt-2 text-xl'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'

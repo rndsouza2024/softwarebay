@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import graphicdesignData from '../../../public/graphicdesign.json'
+import networkData from '../../../public/network.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
@@ -9,7 +9,7 @@ import HomeStyles from '@styles/styles.module.css'
 
 import Script from 'next/script'
 
-const graphicdesignDetail = ({ graphicdesignItem }) => {
+const networkDetail = ({ networkItem }) => {
   const router = useRouter()
   const { id } = router.query
 
@@ -93,7 +93,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     if (!playerReady || !showTimer) return
 
     const initializePlayer = () => {
-      const videoIds = graphicdesignItem.videoitem
+      const videoIds = networkItem.videoitem
       const randomVideoId =
         videoIds[Math.floor(Math.random() * videoIds.length)]
 
@@ -130,7 +130,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     }
 
     initializePlayer()
-  }, [playerReady, showTimer, graphicdesignItem])
+  }, [playerReady, showTimer, networkItem])
 
   const uwatchfreeSchema = JSON.stringify([
     {
@@ -164,15 +164,15 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
   const softwareSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'http://schema.org/SoftwareApplication',
-    datePublished: graphicdesignItem.datePublished,
-    dateModified: graphicdesignItem.dateModified,
-    softwareVersion: graphicdesignItem.softwareVersion,
-    url: graphicdesignItem.siteurl,
-    operatingSystem: graphicdesignItem.operatingSystem,
-    applicationCategory: graphicdesignItem.applicationCategory,
-    image: graphicdesignItem.image,
-    name: graphicdesignItem.name,
-    interactionStatistic: graphicdesignItem.interactionStatistic,
+    datePublished: networkItem.datePublished,
+    dateModified: networkItem.dateModified,
+    softwareVersion: networkItem.softwareVersion,
+    url: networkItem.siteurl,
+    operatingSystem: networkItem.operatingSystem,
+    applicationCategory: networkItem.applicationCategory,
+    image: networkItem.image,
+    name: networkItem.name,
+    interactionStatistic: networkItem.interactionStatistic,
     offers: {
       '@type': 'http://schema.org/Offer',
       price: '0',
@@ -180,7 +180,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     },
     aggregateRating: {
       '@type': 'http://schema.org/AggregateRating',
-      '@id': graphicdesignItem.siteurl,
+      '@id': networkItem.siteurl,
       ratingValue: 8,
       ratingCount: 0,
       bestRating: '10',
@@ -201,14 +201,14 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'graphicdesignItem',
-        item: graphicdesignItem.baseurl
+        name: 'Network',
+        item: networkItem.baseurl
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: graphicdesignItem.name,
-        item: graphicdesignItem.siteurl
+        name: networkItem.name,
+        item: networkItem.siteurl
       }
     ]
   })
@@ -233,11 +233,11 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${graphicdesignItem.siteurl}#webpage`,
-        url: graphicdesignItem.siteurl,
-        name: `${graphicdesignItem.name} | Softwarebay`,
-        datePublished: graphicdesignItem.datePublished,
-        dateModified: graphicdesignItem.dateModified,
+        '@id': `${networkItem.siteurl}#webpage`,
+        url: networkItem.siteurl,
+        name: `${networkItem.name} | Softwarebay`,
+        datePublished: networkItem.datePublished,
+        dateModified: networkItem.dateModified,
         isPartOf: {
           '@id': 'https://softwarebay.vercel.app#website'
         },
@@ -259,35 +259,35 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${graphicdesignItem.siteurl}#article`,
-        headline: `Download ${graphicdesignItem.name} | Softwarebay`,
-        datePublished: graphicdesignItem.datePublished,
-        dateModified: graphicdesignItem.dateModified,
-        articleSection: 'graphicdesignal',
+        '@id': `${networkItem.siteurl}#article`,
+        headline: `Download ${networkItem.name} | Softwarebay`,
+        datePublished: networkItem.datePublished,
+        dateModified: networkItem.dateModified,
+        articleSection: 'Network',
         author: {
-          '@id': 'https://softwarebay.vercel.appauthor/graphicdesignItem/'
+          '@id': 'https://softwarebay.vercel.appauthor/networkItem/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: graphicdesignItem.image,
-        name: `Download ${graphicdesignItem.name} | Softwarebay`,
+        image: networkItem.image,
+        name: `Download ${networkItem.name} | Softwarebay`,
         isPartOf: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `${graphicdesignItem.siteurl}#blogPost`,
-        headline: `Download ${graphicdesignItem.name} | Softwarebay`,
-        datePublished: graphicdesignItem.datePublished,
-        dateModified: graphicdesignItem.dateModified,
-        articleSection: 'graphicdesignItem',
+        '@id': `${networkItem.siteurl}#blogPost`,
+        headline: `Download ${networkItem.name} | Softwarebay`,
+        datePublished: networkItem.datePublished,
+        dateModified: networkItem.dateModified,
+        articleSection: 'Network',
         author: {
           '@id': 'https://softwarebay.vercel.app/author/softwarebay/'
         },
@@ -295,15 +295,15 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: `Explore. Discover. Download - Free Your Desired Software.`,
-        image: graphicdesignItem.image,
-        name: `Download ${graphicdesignItem.name} | Softwarebay`,
-        '@id': `${graphicdesignItem.siteurl}#richSnippet`,
+        image: networkItem.image,
+        name: `Download ${networkItem.name} | Softwarebay`,
+        '@id': `${networkItem.siteurl}#richSnippet`,
         isPartOf: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${graphicdesignItem.siteurl}#webpage`
+          '@id': `${networkItem.siteurl}#webpage`
         }
       }
     ]
@@ -312,23 +312,23 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
   const newsArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
-    '@id': `${graphicdesignItem.siteurl}#webpage`, // Add a comma here
-    name: graphicdesignItem.title,
-    url: graphicdesignItem.siteurl,
-    description: graphicdesignItem.news1,
-    image: graphicdesignItem.image,
-    datePublished: graphicdesignItem.startDate,
+    '@id': `${networkItem.siteurl}#webpage`, // Add a comma here
+    name: networkItem.title,
+    url: networkItem.siteurl,
+    description: networkItem.news1,
+    image: networkItem.image,
+    datePublished: networkItem.startDate,
     potentialAction: {
       '@type': 'WatchAction',
       target: {
         '@type': 'EntryPoint',
-        name: graphicdesignItem.title,
-        urlTemplate: graphicdesignItem.siteurl
+        name: networkItem.title,
+        urlTemplate: networkItem.siteurl
       }
     },
     locationCreated: {
       '@type': 'Place',
-      name: graphicdesignItem.country
+      name: networkItem.country
     },
     author: {
       '@type': 'Person',
@@ -362,14 +362,8 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>
-          {' '}
-          Download {graphicdesignItem && graphicdesignItem.name} | Softwarebay
-        </title>
-        <link
-          rel='canonical'
-          href={graphicdesignItem && graphicdesignItem.siteurl}
-        />
+        <title> Download {networkItem && networkItem.name} | Softwarebay</title>
+        <link rel='canonical' href={networkItem && networkItem.siteurl} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -377,31 +371,26 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${
-            graphicdesignItem && graphicdesignItem.name
-          } - Softwarebay`}
+          content={`${networkItem && networkItem.name} - Softwarebay`}
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
       
-        <meta
-          property='og:url'
-          content={`${graphicdesignItem && graphicdesignItem.url}`}
-        />
+        <meta property='og:url' content={`${networkItem && networkItem.url}`} />
         <meta
           name='keywords'
-          content={`${graphicdesignItem && graphicdesignItem.keywords}`}
+          content={`${networkItem && networkItem.keywords}`}
         />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content={`${graphicdesignItem && graphicdesignItem.group}`}
+          content={`${networkItem && networkItem.group}`}
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Graphic Design' />
+        <meta property='article:section' content='network' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -409,7 +398,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         />
         <meta
           property='og:image'
-          content={`${graphicdesignItem && graphicdesignItem.backimage}`}
+          content={`${networkItem && networkItem.backimage}`}
         />
 
         <meta property='og:image:width' content='1080px' />
@@ -502,7 +491,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
             marginBottom: '12px'
           }}
         >
-          {graphicdesignItem.title}
+          {networkItem.title}
         </h1>
 
         <p
@@ -699,8 +688,8 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         <div className='flex-container'>
           <div className='category-container'>
             <Image
-              src={graphicdesignItem.channelposter}
-              alt={graphicdesignItem.title}
+              src={networkItem.channelposter}
+              alt={networkItem.title}
               width={300}
               height={300}
               // priority
@@ -729,20 +718,19 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                     marginBottom: '12px'
                   }}
                 >
-                  {graphicdesignItem.title}
+                  {networkItem.title}
                 </h2>
               </div>
 
               <p className='text-black text-bg font-semibold mt-2'>
-                Version: {graphicdesignItem.version}
+                Version: {networkItem.version}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                Developers: {graphicdesignItem.developers}
+                Developers: {networkItem.developers}
               </p>
               <p className='text-black text-bg font-semibold mt-2'>
-                License: {graphicdesignItem.license}
+                License: {networkItem.license}
               </p>
-
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -797,11 +785,8 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                     ></div>
                     {seconds === 0 && (
                       <>
-                        {graphicdesignItem.downloadlink && (
-                          <Link
-                            href={graphicdesignItem.downloadlink}
-                            target='_blank'
-                          >
+                        {networkItem.downloadlink && (
+                          <Link href={networkItem.downloadlink} target='_blank'>
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -829,9 +814,9 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                             </div>
                           </Link>
                         )}
-                        {graphicdesignItem.downloadlink1 && (
+                        {networkItem.downloadlink1 && (
                           <Link
-                            href={graphicdesignItem.downloadlink1}
+                            href={networkItem.downloadlink1}
                             target='_blank'
                           >
                             <div
@@ -849,25 +834,23 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                             </div>
                           </Link>
                         )}
-                        {graphicdesignItem.additionalLinks?.map(
-                          (link, index) => (
-                            <Link key={index} href={link.url} target='_blank'>
-                              <div
-                                className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                                style={{
-                                  margin: 'auto',
-                                  marginBottom: '50px',
-                                  borderRadius: '50px',
-                                  boxShadow: '0 0 10px 0 #fff',
-                                  filter:
-                                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-                                }}
-                              >
-                                Click Here to Download {index + 3}
-                              </div>
-                            </Link>
-                          )
-                        )}
+                        {networkItem.additionalLinks?.map((link, index) => (
+                          <Link key={index} href={link.url} target='_blank'>
+                            <div
+                              className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                              style={{
+                                margin: 'auto',
+                                marginBottom: '50px',
+                                borderRadius: '50px',
+                                boxShadow: '0 0 10px 0 #fff',
+                                filter:
+                                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                              }}
+                            >
+                              Click Here to Download {index + 3}
+                            </div>
+                          </Link>
+                        ))}
                       </>
                     )}
                   </>
@@ -875,12 +858,12 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head1} </strong>
+                  <strong> {networkItem.head1} </strong>
                 </p>
               </div>
               <Image
-                src={graphicdesignItem.image1}
-                alt={graphicdesignItem.name}
+                src={networkItem.image1}
+                alt={networkItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -897,10 +880,10 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {graphicdesignItem.news1.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news1.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description text-black font-bold mt-2 text-xl'
+                  className='description text-black text-lg font-semibold mt-2'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -911,12 +894,12 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head2} </strong>
+                  <strong> {networkItem.head2} </strong>
                 </p>
               </div>
               <Image
-                src={graphicdesignItem.image2}
-                alt={graphicdesignItem.name}
+                src={networkItem.image2}
+                alt={networkItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -933,10 +916,10 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {graphicdesignItem.news2.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news2.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description text-black font-bold mt-2 text-xl'
+                  className='description text-black text-lg font-semibold mt-2'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -947,12 +930,12 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head3} </strong>
+                  <strong> {networkItem.head3} </strong>
                 </p>
               </div>
               <Image
-                src={graphicdesignItem.image3}
-                alt={graphicdesignItem.name}
+                src={networkItem.image3}
+                alt={networkItem.name}
                 width={1280}
                 height={720}
                 // priority
@@ -969,10 +952,10 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                   'contrast(1.1) saturate(1.1) brightness(1.0) hue-rotate(0deg)'
                 }}
               />
-              {graphicdesignItem.news3.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news3.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description text-black font-bold mt-2 text-xl'
+                  className='description text-black text-lg font-semibold mt-2'
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -983,13 +966,13 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               ))}
               <div className='flex flex-col items-center justify-center'>
                 <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
-                  <strong> {graphicdesignItem.head4} </strong>
+                  <strong> {networkItem.head4} </strong>
                 </p>
               </div>
-              {graphicdesignItem.news4.split('\n\n').map((paragraph, idx) => (
+              {networkItem.news4.split('\n\n').map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className='description text-black font-bold mt-2 text-xl'
+                  className='description text-black text-lg font-semibold mt-2 '
                   style={{
                     marginBottom: '10px',
                     fontFamily: 'Poppins, sans-serif'
@@ -1152,14 +1135,15 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
             }
           }
         `}</style>
-     
+        
       </div>
     </div>
+   
   )
 }
 
 export async function getStaticPaths () {
-  const paths = graphicdesignData.map(item => ({
+  const paths = networkData.map(item => ({
     params: { id: item.id }
   }))
 
@@ -1167,9 +1151,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const graphicdesignItem = graphicdesignData.find(
-    item => item.id === params.id
-  )
-  return { props: { graphicdesignItem } }
+  const networkItem = networkData.find(item => item.id === params.id)
+  return { props: { networkItem } }
 }
-export default graphicdesignDetail
+export default networkDetail

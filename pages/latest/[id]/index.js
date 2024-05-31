@@ -11,15 +11,15 @@ const latestDetail = ({ latest }) => {
   const router = useRouter()
   const { id } = router.query
 
-  
-
   const uwatchfreeSchema = JSON.stringify([
     {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Softwarebay',
       url: 'https://softwarebay.vercel.app/',
-      image: ['https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'],
+      image: [
+        'https://softwarebay.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+      ],
       logo: {
         '@type': 'ImageObject',
         url: 'https://softwarebay.vercel.app/logo.png',
@@ -35,7 +35,8 @@ const latestDetail = ({ latest }) => {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://softwarebay.vercel.app/search?q={search_term_string}'
+          urlTemplate:
+            'https://softwarebay.vercel.app/search?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       }
@@ -179,10 +180,8 @@ const latestDetail = ({ latest }) => {
     }
   }
 
-
   // Convert newsArticleSchema and videoObjects to JSON strings
   const newsArticleJson = JSON.stringify(newsArticleSchema)
-
 
   return (
     <div>
@@ -202,7 +201,7 @@ const latestDetail = ({ latest }) => {
           property='og:title'
           content={`${latest && latest.name} - Softwarebay`}
         />
-       
+
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
@@ -240,12 +239,11 @@ const latestDetail = ({ latest }) => {
           content='dmv6sg06w9r5eji88'
         />
 
-     
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
         />
-      
+
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
@@ -255,7 +253,6 @@ const latestDetail = ({ latest }) => {
           dangerouslySetInnerHTML={{ __html: newsArticleJson }}
         />
 
-      
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
@@ -281,8 +278,8 @@ const latestDetail = ({ latest }) => {
           }}
         />
       </Head>
-      <Script src="../../propler/ads.js" defer />
-        <Script src="../../propler/ads2.js" defer />
+      <Script src='../../propler/ads.js' defer />
+      <Script src='../../propler/ads2.js' defer />
 
       <div
         className={`w-full`}
@@ -299,18 +296,23 @@ const latestDetail = ({ latest }) => {
           backgroundColor: '#D3D3D3'
         }}
       >
-          <h1  className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'  style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '10px',
-          fontSize: '35px',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '15px'
-        }}>Welcome to SoftwareBay Latest Software News.</h1>
+        <h1
+          className='badge bg-gradient-to-r from-pink-500 to-amber-500 font-bold py-3 px-6  shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '10px',
+            fontSize: '35px',
+            fontFamily: 'Poppins, sans-serif',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '15px'
+          }}
+        >
+          Welcome to SoftwareBay Latest Software News.
+        </h1>
 
-<p
+        <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
           style={{
             justifyContent: 'center',
@@ -342,11 +344,11 @@ const latestDetail = ({ latest }) => {
             id='menu-header-menu'
             className='menu flex flex-wrap justify-center'
           >
-             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
+            <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl' 
                 >
                   Home<span className='p'></span>
                 </a>
@@ -474,7 +476,7 @@ const latestDetail = ({ latest }) => {
             </button>
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-194' className='menu-tutorials'>
-              <a
+                <a
                   href='../movies/'
                   className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
@@ -482,39 +484,43 @@ const latestDetail = ({ latest }) => {
                 </a>
               </li>
             </button>
-
           </ul>
         </div>
-  <div className='category-container'>
-    <Image
-      src={latest.channelposter}
-      alt={latest.name}
-      width={1280}
-      height={720}  
-      // priority
-      objectFit='cover'
-      loading='lazy'
-      style={{
-        // maxWidth: '50%',
-        margin: 'auto',
-        marginBottom: '20px',
-        borderRadius: '50px',
-        boxShadow: '0 0 10px 0 #fff',
-        filter:
-          'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-      }}
-    />
-    <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
-      <h2  className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-3xl mb-2 items-center justify-center "
-        style={{
-          fontFamily: 'Poppins, sans-serif',
-         
-        }}
-      >
-        {latest.title}
-      </h2>
-    
-      {/* <p
+        <div className='category-container'>
+          <Image
+            src={latest.channelposter}
+            alt={latest.name}
+            width={1280}
+            height={720}
+            // priority
+            objectFit='cover'
+            loading='lazy'
+            style={{
+              width: '800px', // Ensures the image is displayed at this width
+              height: '400px', // Ensures the image is displayed at this height
+              margin: 'auto',
+              marginBottom: '20px',
+              borderRadius: '50px',
+              boxShadow: '0 0 10px 0 #fff',
+              filter:
+                'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+            }}
+          />
+          <div
+            style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}
+          >
+            <h2
+              className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                font: 'bold',
+                textShadow: '1px 2px 1px #000 '
+              }}
+            >
+              {latest.title}
+            </h2>
+
+            {/* <p
         style={{
           marginBottom: '10px',
           fontFamily: 'Poppins, sans-serif',
@@ -527,123 +533,197 @@ const latestDetail = ({ latest }) => {
         {' '}
         Genre: {latest.genre.join(', ')}{' '}
       </p> */}
-      <p className="text-black font-bold mt-2 text-3xl mb-2 items-center justify-center "><strong> {latest.head1}{' '}</strong></p>
-      <Image     src={latest.image1}
-        alt={latest.name}
-        width={1280}
-        height={720}  
-        // priority
-        objectFit='cover'
-        loading='lazy'  style={{
-          // maxWidth: '50%',
-          margin: 'auto',
-          marginBottom: '20px',
-          borderRadius: '50px',
-          boxShadow: '0 0 10px 0 #fff',
-          filter:
-            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-        }}/>
-      {latest.news1.split('\n\n').map((paragraph, idx) => (
-        <p
-          key={idx}
-          className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-          
-          }}
-        >
-        
-          {paragraph}
-       
-        </p>
-      
-        
-      ))}
-         <p className="text-black font-bold mt-2 text-3xl mb-2 items-center justify-center "><strong> {latest.head2}{' '}</strong></p>
-         <Image     src={latest.image1}
-        alt={latest.name}
-        width={1280}
-        height={720}  
-        // priority
-        objectFit='cover'
-        loading='lazy'  style={{
-          // maxWidth: '50%',
-          margin: 'auto',
-          marginBottom: '20px',
-          borderRadius: '50px',
-          boxShadow: '0 0 10px 0 #fff',
-          filter:
-            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-        }} />
-      {latest.news2.split('\n\n').map((paragraph, idx) => (
-        <p
-          key={idx}
-          className='description bg-gradient-to-r from-pink-700 to-blue-700 bg-clip-text text-transparent text-xl'
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-          
-          }}
-        >
-          {paragraph}
-        </p>
-      ))}
-    </div>
-  </div>
-  {/* <div className='sidebar'>
+            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
+              <strong> {latest.head1} </strong>
+            </p>
+            <Image
+              src={latest.image1}
+              alt={latest.name}
+              width={1280}
+              height={720}
+              // priority
+              objectFit='cover'
+              loading='lazy'
+              style={{
+                width: '800px', // Ensures the image is displayed at this width
+                height: '400px', // Ensures the image is displayed at this height
+                margin: 'auto',
+                marginBottom: '20px',
+                borderRadius: '50px',
+                boxShadow: '0 0 10px 0 #fff',
+                filter:
+                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+              }}
+            />
+            {latest.news1.split('\n\n').map((paragraph, idx) => (
+              <p
+                key={idx}
+                className='description text-black font-bold mt-2 text-xl'
+                style={{
+                  marginBottom: '10px',
+                  fontFamily: 'Poppins, sans-serif'
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
+              <strong> {latest.head2} </strong>
+            </p>
+            <Image
+              src={latest.image2}
+              alt={latest.name}
+              width={1280}
+              height={720}
+              // priority
+              objectFit='cover'
+              loading='lazy'
+              style={{
+                width: '800px', // Ensures the image is displayed at this width
+                height: '400px', // Ensures the image is displayed at this height
+                margin: 'auto',
+                marginBottom: '20px',
+                borderRadius: '50px',
+                boxShadow: '0 0 10px 0 #fff',
+                filter:
+                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+              }}
+            />
+            {latest.news2.split('\n\n').map((paragraph, idx) => (
+              <p
+                key={idx}
+                className='description text-black font-bold mt-2 text-xl'
+                style={{
+                  marginBottom: '10px',
+                  fontFamily: 'Poppins, sans-serif'
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
+              <strong> {latest.head3} </strong>
+            </p>
+            <Image
+              src={latest.image3}
+              alt={latest.name}
+              width={1280}
+              height={720}
+              // priority
+              objectFit='cover'
+              loading='lazy'
+              style={{
+                width: '800px', // Ensures the image is displayed at this width
+                height: '400px', // Ensures the image is displayed at this height
+                margin: 'auto',
+                marginBottom: '20px',
+                borderRadius: '50px',
+                boxShadow: '0 0 10px 0 #fff',
+                filter:
+                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+              }}
+            />
+            {latest.news3.split('\n\n').map((paragraph, idx) => (
+              <p
+                key={idx}
+                className='description text-black font-bold mt-2 text-xl'
+                style={{
+                  marginBottom: '10px',
+                  fontFamily: 'Poppins, sans-serif'
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
+              <strong> {latest.head4} </strong>
+            </p>
+            <Image
+              src={latest.image4}
+              alt={latest.name}
+              width={1280}
+              height={720}
+              // priority
+              objectFit='cover'
+              loading='lazy'
+              style={{
+                width: '800px', // Ensures the image is displayed at this width
+                height: '400px', // Ensures the image is displayed at this height
+                margin: 'auto',
+                marginBottom: '20px',
+                borderRadius: '50px',
+                boxShadow: '0 0 10px 0 #fff',
+                filter:
+                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+              }}
+            />
+            {latest.news4.split('\n\n').map((paragraph, idx) => (
+              <p
+                key={idx}
+                className='description text-black font-bold mt-2 text-xl'
+                style={{
+                  marginBottom: '10px',
+                  fontFamily: 'Poppins, sans-serif'
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+        {/* <div className='sidebar'>
     <h1>LATEST SOFTWARE NEWS</h1>
   </div> */}
-{/* </div> */}
+        {/* </div> */}
 
-<style jsx>{`
-  /* Global styles */
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-  }
+        <style jsx>{`
+          /* Global styles */
+          body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+          }
 
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+          .flex-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+          }
 
-  .category-container {
-    flex-grow: 1;
-    max-width: calc(60% - 10px);
-  }
+          .category-container {
+            flex-grow: 1;
+            max-width: calc(60% - 10px);
+          }
 
-  .sidebar {
-    flex-grow: 1;
-    max-width: calc(40% - 10px);
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 40px;
-    // background-color: #fff; 
-  }
+          .sidebar {
+            flex-grow: 1;
+            max-width: calc(40% - 10px);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            // background-color: #fff;
+          }
 
-  @media (max-width: 768px) {
-    .flex-container {
-      flex-direction: column;
-    }
+          @media (max-width: 768px) {
+            .flex-container {
+              flex-direction: column;
+            }
 
-    .category-container,
-    .sidebar {
-      max-width: 100%;
-    }
+            .category-container,
+            .sidebar {
+              max-width: 100%;
+            }
 
-    .sidebar {
-      margin-top: 20px;
-    }
-  }
-`}</style>
-</div>
-</div>
+            .sidebar {
+              margin-top: 20px;
+            }
+          }
+        `}</style>
+      </div>
+    </div>
   )
 }
 
