@@ -348,7 +348,7 @@ const latestDetail = ({ latest }) => {
               <li id='menu-item-35' className='menu-home active'>
                 <a
                   href='/'
-                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl' 
+                  className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'
                 >
                   Home<span className='p'></span>
                 </a>
@@ -487,195 +487,172 @@ const latestDetail = ({ latest }) => {
           </ul>
         </div>
         <div className='category-container'>
-          <Image
-            src={latest.channelposter}
-            alt={latest.name}
-            width={1280}
-            height={720}
-            // priority
-            objectFit='cover'
-            loading='lazy'
-            style={{
-              width: '800px', // Ensures the image is displayed at this width
-              height: '400px', // Ensures the image is displayed at this height
-              margin: 'auto',
-              marginBottom: '20px',
-              borderRadius: '50px',
-              boxShadow: '0 0 10px 0 #fff',
-              filter:
-                'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-            }}
-          />
-          <div
-            style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}
-          >
-            <h2
-              className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '
-              style={{
-                fontFamily: 'Poppins, sans-serif',
-                font: 'bold',
-                textShadow: '1px 2px 1px #000 '
-              }}
-            >
-              {latest.title}
-            </h2>
+  <Image
+    src={latest.channelposter}
+    alt={latest.name}
+    width={1280}
+    height={720}
+    objectFit='cover'
+    loading='lazy'
+    style={{
+      width: '800px', // Ensures the image is displayed at this width
+      height: '400px', // Ensures the image is displayed at this height
+      margin: 'auto',
+      marginBottom: '20px',
+      borderRadius: '50px',
+      boxShadow: '0 0 10px 0 #fff',
+      filter: 'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)',
+    }}
+  />
+  <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
+    <h2
+      className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '
+      style={{
+        fontFamily: 'Poppins, sans-serif',
+        fontWeight: 'bold',
+        textShadow: '1px 2px 1px rgba(0, 0, 0, 0.5)', // Adjusted to include transparency
+      }}
+    >
+      {latest.title}
+    </h2>
 
-            {/* <p
+    {latest.head1 && <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '><strong>{latest.head1}</strong></p>}
+    {latest.image1 && (
+      <Image
+        src={latest.image1}
+        alt={latest.name}
+        width={1280}
+        height={720}
+        objectFit='cover'
+        loading='lazy'
         style={{
-          marginBottom: '10px',
-          fontFamily: 'Poppins, sans-serif',
-          fontSize: '20px',
-          fontWeight: 'bold',
-          color: '#40D7BC',
-          textShadow: '2px 5px 5px #000000'
+          width: '800px', // Ensures the image is displayed at this width
+          height: '400px', // Ensures the image is displayed at this height
+          margin: 'auto',
+          marginBottom: '20px',
+          borderRadius: '50px',
+          boxShadow: '0 0 10px 0 #fff',
+          filter: 'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)',
         }}
-      >
-        {' '}
-        Genre: {latest.genre.join(', ')}{' '}
-      </p> */}
-            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
-              <strong> {latest.head1} </strong>
-            </p>
-            <Image
-              src={latest.image1}
-              alt={latest.name}
-              width={1280}
-              height={720}
-              // priority
-              objectFit='cover'
-              loading='lazy'
-              style={{
-                width: '800px', // Ensures the image is displayed at this width
-                height: '400px', // Ensures the image is displayed at this height
-                margin: 'auto',
-                marginBottom: '20px',
-                borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #fff',
-                filter:
-                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-              }}
-            />
-            {latest.news1.split('\n\n').map((paragraph, idx) => (
-              <p
-                key={idx}
-                className='description text-black font-bold mt-2 text-xl'
-                style={{
-                  marginBottom: '10px',
-                  fontFamily: 'Poppins, sans-serif'
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
-              <strong> {latest.head2} </strong>
-            </p>
-            <Image
-              src={latest.image2}
-              alt={latest.name}
-              width={1280}
-              height={720}
-              // priority
-              objectFit='cover'
-              loading='lazy'
-              style={{
-                width: '800px', // Ensures the image is displayed at this width
-                height: '400px', // Ensures the image is displayed at this height
-                margin: 'auto',
-                marginBottom: '20px',
-                borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #fff',
-                filter:
-                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-              }}
-            />
-            {latest.news2.split('\n\n').map((paragraph, idx) => (
-              <p
-                key={idx}
-                className='description text-black font-bold mt-2 text-xl'
-                style={{
-                  marginBottom: '10px',
-                  fontFamily: 'Poppins, sans-serif'
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
-              <strong> {latest.head3} </strong>
-            </p>
-            <Image
-              src={latest.image3}
-              alt={latest.name}
-              width={1280}
-              height={720}
-              // priority
-              objectFit='cover'
-              loading='lazy'
-              style={{
-                width: '800px', // Ensures the image is displayed at this width
-                height: '400px', // Ensures the image is displayed at this height
-                margin: 'auto',
-                marginBottom: '20px',
-                borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #fff',
-                filter:
-                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-              }}
-            />
-            {latest.news3.split('\n\n').map((paragraph, idx) => (
-              <p
-                key={idx}
-                className='description text-black font-bold mt-2 text-xl'
-                style={{
-                  marginBottom: '10px',
-                  fontFamily: 'Poppins, sans-serif'
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-            <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '>
-              <strong> {latest.head4} </strong>
-            </p>
-            <Image
-              src={latest.image4}
-              alt={latest.name}
-              width={1280}
-              height={720}
-              // priority
-              objectFit='cover'
-              loading='lazy'
-              style={{
-                width: '800px', // Ensures the image is displayed at this width
-                height: '400px', // Ensures the image is displayed at this height
-                margin: 'auto',
-                marginBottom: '20px',
-                borderRadius: '50px',
-                boxShadow: '0 0 10px 0 #fff',
-                filter:
-                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-              }}
-            />
-            {latest.news4.split('\n\n').map((paragraph, idx) => (
-              <p
-                key={idx}
-                className='description text-black font-bold mt-2 text-xl'
-                style={{
-                  marginBottom: '10px',
-                  fontFamily: 'Poppins, sans-serif'
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
-        {/* <div className='sidebar'>
-    <h1>LATEST SOFTWARE NEWS</h1>
-  </div> */}
-        {/* </div> */}
+      />
+    )}
+    {latest.news1 &&
+      latest.news1.split('\n\n').map((paragraph, idx) => (
+        <p
+          key={idx}
+          className='description text-black font-bold mt-2 text-xl'
+          style={{
+            marginBottom: '10px',
+            fontFamily: 'Poppins, sans-serif',
+          }}
+        >
+          {paragraph}
+        </p>
+      ))}
+    
+    {latest.head2 && <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '><strong>{latest.head2}</strong></p>}
+    {latest.image2 && (
+      <Image
+        src={latest.image2}
+        alt={latest.name}
+        width={1280}
+        height={720}
+        objectFit='cover'
+        loading='lazy'
+        style={{
+          width: '800px', // Ensures the image is displayed at this width
+          height: '400px', // Ensures the image is displayed at this height
+          margin: 'auto',
+          marginBottom: '20px',
+          borderRadius: '50px',
+          boxShadow: '0 0 10px 0 #fff',
+          filter: 'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)',
+        }}
+      />
+    )}
+    {latest.news2 &&
+      latest.news2.split('\n\n').map((paragraph, idx) => (
+        <p
+          key={idx}
+          className='description text-black font-bold mt-2 text-xl'
+          style={{
+            marginBottom: '10px',
+            fontFamily: 'Poppins, sans-serif',
+          }}
+        >
+          {paragraph}
+        </p>
+      ))}
 
+    {latest.head3 && <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '><strong>{latest.head3}</strong></p>}
+    {latest.image3 && (
+      <Image
+        src={latest.image3}
+        alt={latest.name}
+        width={1280}
+        height={720}
+        objectFit='cover'
+        loading='lazy'
+        style={{
+          width: '800px', // Ensures the image is displayed at this width
+          height: '400px', // Ensures the image is displayed at this height
+          margin: 'auto',
+          marginBottom: '20px',
+          borderRadius: '50px',
+          boxShadow: '0 0 10px 0 #fff',
+          filter: 'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)',
+        }}
+      />
+    )}
+    {latest.news3 &&
+      latest.news3.split('\n\n').map((paragraph, idx) => (
+        <p
+          key={idx}
+          className='description text-black font-bold mt-2 text-xl'
+          style={{
+            marginBottom: '10px',
+            fontFamily: 'Poppins, sans-serif',
+          }}
+        >
+          {paragraph}
+        </p>
+      ))}
+
+    {latest.head4 && <p className='text-black font-bold mt-2 text-3xl mb-2 items-center justify-center '><strong>{latest.head4}</strong></p>}
+    {latest.image4 && (
+      <Image
+        src={latest.image4}
+        alt={latest.name}
+        width={1280}
+        height={720}
+        objectFit='cover'
+        loading='lazy'
+        style={{
+          width: '800px', // Ensures the image is displayed at this width
+          height: '400px', // Ensures the image is displayed at this height
+          margin: 'auto',
+          marginBottom: '20px',
+          borderRadius: '50px',
+          boxShadow: '0 0 10px 0 #fff',
+          filter: 'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)',
+        }}
+      />
+    )}
+    {latest.news4 &&
+      latest.news4.split('\n\n').map((paragraph, idx) => (
+        <p
+          key={idx}
+          className='description text-black font-bold mt-2 text-xl'
+          style={{
+            marginBottom: '10px',
+            fontFamily: 'Poppins, sans-serif',
+          }}
+        >
+          {paragraph}
+        </p>
+      ))}
+  </div>
+</div>
         <style jsx>{`
           /* Global styles */
           body {
