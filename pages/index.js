@@ -313,7 +313,10 @@ const HomePage = () => {
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta name="trustpilot-one-time-domain-verification-id" content="48b41bc7-60cf-4de8-9c3b-6a55be476696"/>
-          <meta name="google-adsense-account" content="ca-pub-5527677677744511">
+          <meta
+            name='google-adsense-account'
+            content='ca-pub-5527677677744511'
+          />
           <meta
             name='google-site-verification'
             content='4gdbnCGat0T4Ow3Y_RYzPM4vwtsXvhUel5Q-2yULK6k'
