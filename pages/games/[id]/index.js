@@ -182,7 +182,7 @@ const gamesDetail = ({ gamesItem }) => {
       '@type': 'http://schema.org/AggregateRating',
       '@id': gamesItem.siteurl,
       ratingValue: 8,
-      ratingCount: 0,
+      ratingCount: 5,
       bestRating: '10',
       worstRating: '1'
     }

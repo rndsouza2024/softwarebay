@@ -62,7 +62,7 @@ const softwareSchema = JSON.stringify({
     '@type': 'http://schema.org/AggregateRating',
     '@id': 'https://softwarebay.vercel.app/games/',
     ratingValue: 8,
-    ratingCount: 0,
+    ratingCount: 5,
     bestRating: '10',
     worstRating: '1'
   }

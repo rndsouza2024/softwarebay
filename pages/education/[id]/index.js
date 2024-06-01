@@ -182,7 +182,7 @@ const educationDetail = ({ educationItem }) => {
       '@type': 'http://schema.org/AggregateRating',
       '@id': educationItem.siteurl,
       ratingValue: 8,
-      ratingCount: 0,
+      ratingCount: 5,
       bestRating: '10',
       worstRating: '1'
     }
