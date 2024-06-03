@@ -93,24 +93,6 @@ const breadcrumbSchema = JSON.stringify({
   ]
 })
 
-const breadcrumbSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Windows',
-      item: 'https://softwarebay.vercel.app/'
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Network',
-      item: 'https://softwarebay.vercel.app/network/'
-    }
-  ]
-})
 
 const networkPage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
@@ -273,7 +255,7 @@ const networkPage = ({ items }) => {
 
             <button className='border border-black p-2 m-1 hover:bg-orange-100'>
               <li id='menu-item-284913' className='menu-softwarecategories'>
-                <a href='../browsers/'>
+                <a href='../network/'>
                   <h3 className='text-black hover:px-0 text-bg font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl'>
                     Browser<span className='p'></span>
                   </h3>
