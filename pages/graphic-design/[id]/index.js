@@ -182,7 +182,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
       '@type': 'http://schema.org/AggregateRating',
       '@id': graphicdesignItem.siteurl,
       ratingValue: 8,
-      ratingCount: 5,
+      ratingCount: 6,
       bestRating: '10',
       worstRating: '1'
     }
