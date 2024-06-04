@@ -1088,6 +1088,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
@@ -1109,6 +1110,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
@@ -1130,6 +1132,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
@@ -1151,6 +1154,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
@@ -1172,6 +1176,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
@@ -1193,6 +1198,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
@@ -1214,6 +1220,7 @@ const moviesDetail = ({ moviesItem }) => {
                     alt={moviesItem.name}
                     width={1280}
                     height={720}
+                    quality={90}
                     objectFit='cover'
                     loading='lazy'
                     style={{
