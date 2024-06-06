@@ -190,7 +190,7 @@ const latestDetail = ({ latest }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title>  {latest && latest.name} </title>
+        <title> Watch {latest && latest.name} | Softwarebay</title>
         <link rel='canonical' href={latest && latest.url} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -220,9 +220,9 @@ const latestDetail = ({ latest }) => {
         />
         <meta property='og:image' content={`${latest && latest.backimage}`} />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

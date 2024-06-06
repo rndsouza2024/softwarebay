@@ -43,10 +43,10 @@ const softwareSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://softwarebay.vercel.app/graphic-design/',
-  'headline': 'Softwarebay - Explore. Discover. Download.',
+  'headline': 'Download Graphic Design | Softwarebay™',
   'url': 'https://softwarebay.vercel.app/graphic-design/',
   'description': 'SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.',
-  'image': 'https://softwarebay.vercel.app/og_image.jpg',
+  'image': 'https://softwarebay.vercel.app/wp-content/uploads/graphic-design.webp',
   'author': {
     '@type': 'Person',
     'name': 'DrTrailer',
@@ -132,7 +132,7 @@ const graphicdesignPage = ({ items }) => {
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content='https://softwarebay.vercel.app/og_image.jpg'
+          content='https://softwarebay.vercel.app/wp-content/uploads/graphic-design.webp'
         />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta property='article:section' content='Graphic Design' />
@@ -147,11 +147,11 @@ const graphicdesignPage = ({ items }) => {
         />
         <meta
           property='og:image'
-          content='https://softwarebay.vercel.app/og_image.jpg'
+          content='https://softwarebay.vercel.app/wp-content/uploads/graphic-design.webp'
         />
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

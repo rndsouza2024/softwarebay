@@ -273,7 +273,7 @@ const networkDetail = ({ networkItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: networkItem.synopsis,
         image: networkItem.image,
         name: `Download ${networkItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const networkDetail = ({ networkItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: networkItem.synopsis,
         image: networkItem.image,
         name: `Download ${networkItem.name} | Softwarebay`,
         '@id': `${networkItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const networkDetail = ({ networkItem }) => {
     '@id': `${networkItem.siteurl}#webpage`, // Add a comma here
     name: networkItem.title,
     url: networkItem.siteurl,
-    description: networkItem.news1,
+    description: networkItem.synopsis,
     image: networkItem.image,
     datePublished: networkItem.startDate,
     potentialAction: {
@@ -402,9 +402,9 @@ const networkDetail = ({ networkItem }) => {
           content={`${networkItem && networkItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

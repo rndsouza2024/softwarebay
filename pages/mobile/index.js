@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
-import moviesData from '../../public/movies.json'
+import mobileData from '../../public/mobile.json'
 import Marquee from '../../components/Marquee'
 import Head from 'next/head'
 import Script from 'next/script';
@@ -47,11 +47,11 @@ const uwatchfreeSchema = JSON.stringify([
 const softwareSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Article',
-  '@id': 'https://softwarebay.vercel.app/movies/',
-  'headline': 'Download Movies | Softwarebay™',
-  'url': 'https://softwarebay.vercel.app/movies/',
+  '@id': 'https://softwarebay.vercel.app/mobile/',
+  'headline': 'Download Mobile | Softwarebay™',
+  'url': 'https://softwarebay.vercel.app/mobile/',
   'description': 'SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.',
-  'image': 'https://softwarebay.vercel.app/wp-content/uploads/movies.webp',
+  'image': 'https://softwarebay.vercel.app/wp-content/uploads/mobile.webp',
   'author': {
     '@type': 'Person',
     'name': 'DrTrailer',
@@ -69,7 +69,7 @@ const softwareSchema = JSON.stringify({
   'dateModified': '2024-06-02',
   'mainEntityOfPage': {
     '@type': 'WebPage',
-    '@id': 'https://softwarebay.vercel.app/movies/'
+    '@id': 'https://softwarebay.vercel.app/mobile/'
   },
   'additionalProperty': {
     '@type': 'PropertyValue',
@@ -92,20 +92,23 @@ const breadcrumbSchema = JSON.stringify({
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Movies',
-      item: 'https://softwarebay.vercel.app/movies/'
+      name: 'Mobile',
+      item: 'https://softwarebay.vercel.app/mobile/'
     }
   ]
 })
 
-const moviesPage = ({ items }) => {
+
+const mobilePage = ({ items }) => {
   const [latest, setLatest] = useState(latestData)
+
+
 
   return (
     <div className='w-full' style={{ backgroundColor: '#D3D3D3' }}>
        <Head>
-        <title> Download Movies | Softwarebay</title>
-        <link rel='canonical' href="https://softwarebay.vercel.app/movies/" />
+        <title> Download Mobile | Softwarebay</title>
+        <link rel='canonical' href="https://softwarebay.vercel.app/mobile/" />
         <meta
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -117,23 +120,23 @@ const moviesPage = ({ items }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content=" Download Movies | Softwarebay"
+          content=" Download Mobile | Softwarebay"
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
-    
-        <meta property='og:url' content= "https://softwarebay.vercel.app/movies"/>
+      
+        <meta property='og:url' content= "https://softwarebay.vercel.app/mobile"/>
        
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
           property=' og:image:alt'
-          content= "https://softwarebay.vercel.app/wp-content/uploads/movies.webp"
+          content= "https://softwarebay.vercel.app/wp-content/uploads/mobile.webp"
         />
         <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Movies' />
+        <meta property='article:section' content='Mobile' />
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -142,7 +145,7 @@ const moviesPage = ({ items }) => {
           <meta name='keywords' content="download, software, freeware, shareware, trial versions, program, utilities, security, network, multimedia, movies, mobile, games, graphic design, file sharing, education, development, desktop, browser" />
         <meta
           property='og:image'
-          content= "https://softwarebay.vercel.app/wp-content/uploads/movies.webp"  />
+          content= "https://softwarebay.vercel.app/wp-content/uploads/mobile.webp"  />
         <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/webp' />
@@ -215,7 +218,7 @@ const moviesPage = ({ items }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '15px'
-        }}>SoftwareBay Movies Section.</h1>
+        }}>SoftwareBay Mobile Section.</h1>
     <Marquee  />
 {/* <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
@@ -384,14 +387,14 @@ const moviesPage = ({ items }) => {
       </div>
     
       <div className='container'>
-        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>movies Section</h1> */}
+        {/* <h1  className='px-0 font-black bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent'>mobile Section</h1> */}
         <div className='flex-container'>
           <div className='main-content'>
             <div className='card-container'>
-            {moviesData.map(item => (
+            {mobileData.map(item => (
           <div key={item.id}>
                 {/* <div key={item.id} className='card'> */}
-                  <Link href={`/movies/${item.id}`}>
+                  <Link href={`/mobile/${item.id}`}>
                     <div className='relative'>
                       <Image
                         src={item.image}
@@ -588,14 +591,14 @@ const moviesPage = ({ items }) => {
             }
           }
         `}</style>
-      </div>
+            </div>
     </div>
   )
 }
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('https://softwarebay.vercel.app/movies.json');
+    const res = await fetch('https://softwarebay.vercel.app/mobile.json');
     const data = await res.json();
     
     return {
@@ -614,4 +617,4 @@ export async function getStaticProps() {
 }
 
 
-export default moviesPage
+export default mobilePage

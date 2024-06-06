@@ -273,7 +273,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: graphicdesignItem.synopsis,
         image: graphicdesignItem.image,
         name: `Download ${graphicdesignItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: graphicdesignItem.synopsis,
         image: graphicdesignItem.image,
         name: `Download ${graphicdesignItem.name} | Softwarebay`,
         '@id': `${graphicdesignItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
     '@id': `${graphicdesignItem.siteurl}#webpage`, // Add a comma here
     name: graphicdesignItem.title,
     url: graphicdesignItem.siteurl,
-    description: graphicdesignItem.news1,
+    description: graphicdesignItem.synopsis,
     image: graphicdesignItem.image,
     datePublished: graphicdesignItem.startDate,
     potentialAction: {
@@ -399,9 +399,9 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
           content={`${graphicdesignItem && graphicdesignItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

@@ -273,7 +273,7 @@ const moviesDetail = ({ moviesItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: moviesItem.synopsis,
         image: moviesItem.image,
         name: `Download ${moviesItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const moviesDetail = ({ moviesItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: moviesItem.synopsis,
         image: moviesItem.image,
         name: `Download ${moviesItem.name} | Softwarebay`,
         '@id': `${moviesItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const moviesDetail = ({ moviesItem }) => {
     '@id': `${moviesItem.siteurl}#webpage`, // Add a comma here
     name: moviesItem.title,
     url: moviesItem.siteurl,
-    description: moviesItem.news1,
+    description: moviesItem.synopsis,
     image: moviesItem.image,
     datePublished: moviesItem.startDate,
     potentialAction: {
@@ -362,7 +362,7 @@ const moviesDetail = ({ moviesItem }) => {
     '@id': `${moviesItem.siteurl}`,
     name: moviesItem.title,
     url: moviesItem.siteurl,
-    description: moviesItem.text,
+    description: moviesItem.synopsis,
     image: moviesItem.image,
     genre: moviesItem.genre,
     datePublished: moviesItem.datePublished,
@@ -453,9 +453,9 @@ const moviesDetail = ({ moviesItem }) => {
           content={`${moviesItem && moviesItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

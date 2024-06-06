@@ -273,7 +273,7 @@ const gamesDetail = ({ gamesItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: gamesItem.synopsis,
         image: gamesItem.image,
         name: `Download ${gamesItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const gamesDetail = ({ gamesItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: gamesItem.synopsis,
         image: gamesItem.image,
         name: `Download ${gamesItem.name} | Softwarebay`,
         '@id': `${gamesItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const gamesDetail = ({ gamesItem }) => {
     '@id': `${gamesItem.siteurl}#webpage`, // Add a comma here
     name: gamesItem.title,
     url: gamesItem.siteurl,
-    description: gamesItem.news1,
+    description: gamesItem.synopsis,
     image: gamesItem.image,
     datePublished: gamesItem.startDate,
     potentialAction: {
@@ -399,9 +399,9 @@ const gamesDetail = ({ gamesItem }) => {
           content={`${gamesItem && gamesItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

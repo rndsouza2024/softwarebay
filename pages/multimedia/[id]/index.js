@@ -273,7 +273,7 @@ const multimediaDetail = ({ multimediaItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: multimediaItem.synopsis,
         image: multimediaItem.image,
         name: `Download ${multimediaItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const multimediaDetail = ({ multimediaItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: multimediaItem.synopsis,
         image: multimediaItem.image,
         name: `Download ${multimediaItem.name} | Softwarebay`,
         '@id': `${multimediaItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const multimediaDetail = ({ multimediaItem }) => {
     '@id': `${multimediaItem.siteurl}#webpage`, // Add a comma here
     name: multimediaItem.title,
     url: multimediaItem.siteurl,
-    description: multimediaItem.news1,
+    description: multimediaItem.synopsis,
     image: multimediaItem.image,
     datePublished: multimediaItem.startDate,
     potentialAction: {
@@ -408,9 +408,9 @@ const multimediaDetail = ({ multimediaItem }) => {
           content={`${multimediaItem && multimediaItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

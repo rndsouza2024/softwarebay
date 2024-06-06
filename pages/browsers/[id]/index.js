@@ -273,7 +273,7 @@ const browsersDetail = ({ browsersItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: browsersItem.synopsis,
         image: browsersItem.image,
         name: `Download ${browsersItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const browsersDetail = ({ browsersItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: browsersItem.synopsis,
         image: browsersItem.image,
         name: `Download ${browsersItem.name} | Softwarebay`,
         '@id': `${browsersItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const browsersDetail = ({ browsersItem }) => {
     '@id': `${browsersItem.siteurl}#webpage`, // Add a comma here
     name: browsersItem.title,
     url: browsersItem.siteurl,
-    description: browsersItem.news1,
+    description: browsersItem.synopsis,
     image: browsersItem.image,
     datePublished: browsersItem.startDate,
     potentialAction: {
@@ -399,9 +399,9 @@ const browsersDetail = ({ browsersItem }) => {
           content={`${browsersItem && browsersItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

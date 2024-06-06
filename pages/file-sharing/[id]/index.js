@@ -273,7 +273,7 @@ const filesharingDetail = ({ filesharingItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: filesharingItem.synopsis,
         image: filesharingItem.image,
         name: `Download ${filesharingItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const filesharingDetail = ({ filesharingItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: filesharingItem.synopsis,
         image: filesharingItem.image,
         name: `Download ${filesharingItem.name} | Softwarebay`,
         '@id': `${filesharingItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const filesharingDetail = ({ filesharingItem }) => {
     '@id': `${filesharingItem.siteurl}#webpage`, // Add a comma here
     name: filesharingItem.title,
     url: filesharingItem.siteurl,
-    description: filesharingItem.news1,
+    description: filesharingItem.synopsis,
     image: filesharingItem.image,
     datePublished: filesharingItem.startDate,
     potentialAction: {
@@ -411,9 +411,9 @@ const filesharingDetail = ({ filesharingItem }) => {
           content={`${filesharingItem && filesharingItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />

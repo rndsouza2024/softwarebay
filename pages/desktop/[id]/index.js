@@ -273,7 +273,7 @@ const desktopDetail = ({ desktopItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: desktopItem.synopsis,
         image: desktopItem.image,
         name: `Download ${desktopItem.name} | Softwarebay`,
         isPartOf: {
@@ -297,7 +297,7 @@ const desktopDetail = ({ desktopItem }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Explore. Discover. Download - Free Your Desired Software.`,
+        description: desktopItem.synopsis,
         image: desktopItem.image,
         name: `Download ${desktopItem.name} | Softwarebay`,
         '@id': `${desktopItem.siteurl}#richSnippet`,
@@ -318,7 +318,7 @@ const desktopDetail = ({ desktopItem }) => {
     '@id': `${desktopItem.siteurl}#webpage`, // Add a comma here
     name: desktopItem.title,
     url: desktopItem.siteurl,
-    description: desktopItem.news1,
+    description: desktopItem.synopsis,
     image: desktopItem.image,
     datePublished: desktopItem.startDate,
     potentialAction: {
@@ -399,9 +399,9 @@ const desktopDetail = ({ desktopItem }) => {
           content={`${desktopItem && desktopItem.backimage}`}
         />
 
-        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:width' content='1280px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
