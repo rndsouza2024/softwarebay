@@ -110,11 +110,24 @@ class MyDocument extends Document {
             content='dm0zffs8dj8pcb3gd'
           />
           <meta name='monetag' content='35a75bbdeae678c82776e64fb78cdac5' />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W62BF3BQ');`,
+            }}
+          />
         </Head>
 
         <body>
           <Main />
           <NextScript />
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-W62BF3BQ"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
         </body>
       </Html>
     )
