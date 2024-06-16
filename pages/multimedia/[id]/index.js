@@ -853,7 +853,7 @@ const multimediaDetail = ({ multimediaItem }) => {
                       mode='normal'
                     ></lottie-player>
                     <p className='text-3xl font-bold mb-4'>
-                      Installation Video & Games Trailer.
+                      Installation Video.
                     </p>
                     <div
                       style={{
