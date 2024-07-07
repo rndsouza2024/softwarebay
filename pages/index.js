@@ -5,7 +5,7 @@ import moviesData from '../public/movies.json'
 import multimediaData from '../public/multimedia.json'
 import graphicdesignData from '../public/graphicdesign.json'
 import gamesData from '../public/games.json'
-import Marquee from '../components/Marquee';
+// import Marquee from '../components/Marquee';
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -381,7 +381,7 @@ const HomePage = () => {
           {' '}
           Explore. Discover. Download - Free Your Desired Software.{' '}
         </p>
-        <Marquee  />
+        {/* <Marquee  /> */}
         {/* <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
           style={{
