@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
 import browsersData from '../../public/browsers.json'
-import Marquee from '../../components/Marquee'
-import Pagination from '../../components/Pagination'
+// import Marquee from '../../components/Marquee'
+// import Pagination from '../../components/Pagination'
 import Head from 'next/head'
 import Script from 'next/script'
 
@@ -220,7 +220,7 @@ const browsersPage = ({ items }) => {
       >
         SoftwareBay Browsers Section.
       </h1>
-      <Marquee />
+      {/* <Marquee /> */}
       {/* <p
         className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
         style={{
@@ -453,7 +453,7 @@ const browsersPage = ({ items }) => {
                 Many More Coming Soon...
               </p>
             </div>
-            <Pagination currentPage={currentPage} totalPages={totalPages} route="browsers" />
+            {/* <Pagination currentPage={currentPage} totalPages={totalPages} route="browsers" /> */}
           </div>
         
           <div className='sidebar'>

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
 import multimediaData from '../../public/multimedia.json'
-import Marquee from '../../components/Marquee'
-import Pagination from '../../components/Pagination'
+// import Marquee from '../../components/Marquee'
+// import Pagination from '../../components/Pagination'
 import Head from 'next/head'
 import Script from 'next/script';
 
@@ -225,7 +225,7 @@ const multimediaPage = ({ items }) => {
           textAlign: 'center',
           marginBottom: '15px'
         }}>SoftwareBay Multimedia Section.</h1>
-    <Marquee  />
+    {/* <Marquee  /> */}
 {/* <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
           style={{
@@ -452,7 +452,7 @@ const multimediaPage = ({ items }) => {
                   Many More Coming Soon...
                 </p>
             </div>
-            <Pagination currentPage={currentPage} totalPages={totalPages} route="multimedia" />
+            {/* <Pagination currentPage={currentPage} totalPages={totalPages} route="multimedia" /> */}
           </div>
 
           <div className='sidebar'>

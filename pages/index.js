@@ -187,7 +187,7 @@ const HomePage = () => {
             publisher: {
               '@type': 'Organization',
               '@id': 'https://softwarebay.vercel.app/#organization',
-              name: 'Softwarebay - Explore. Discover. Download.',
+              name: 'Softwarebay™ - Explore. Discover. Download.',
               url: 'https://softwarebay.vercel.app'
             }
           },
@@ -195,7 +195,7 @@ const HomePage = () => {
             '@type': 'Article',
             '@id': 'https://softwarebay.vercel.app/',
             url: 'https://softwarebay.vercel.app/',
-            headline: 'Softwarebay - Explore. Discover. Download.',
+            headline: 'Softwarebay™ - Explore. Discover. Download.',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
@@ -280,7 +280,7 @@ const HomePage = () => {
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Softwarebay - Explore. Discover. Download.'
+            content='Softwarebay™ - Explore. Discover. Download.'
           />
           <meta
             property='og:description'
@@ -289,7 +289,7 @@ const HomePage = () => {
           <meta property='og:url' content='https://softwarebay.vercel.app/' />
           <meta
             property='og:site_name'
-            content='Softwarebay - Explore. Discover. Download.'
+            content='Softwarebay™ - Explore. Discover. Download.'
           />
           <meta
             property='og:image'
@@ -300,7 +300,7 @@ const HomePage = () => {
           <meta property='og:image:type' content='image/webp' />
           <meta
             name='application-name'
-            content='Softwarebay - Explore. Discover. Download.'
+            content='Softwarebay™ - Explore. Discover. Download.'
           />
           <meta
             property='article:modified_time'

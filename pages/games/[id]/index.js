@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import gamesData from '../../../public/games.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
+import Pagination from '../../../components/Pagination'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +13,8 @@ import Script from 'next/script'
 const gamesDetail = ({ gamesItem }) => {
   const router = useRouter()
   const { id } = router.query
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = 0 // Assume there are 3 pages
 
   const [latest, setLatest] = useState(latestData)
   const [playerReady, setPlayerReady] = useState(false)
@@ -745,7 +748,19 @@ const gamesDetail = ({ gamesItem }) => {
             </button>
           </ul>
         </div>
-
+  <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                route='games'
+                style={{
+                  marginTop: '50px',
+                  marginBottom: '50px',
+                  borderRadius: '50px',
+                  boxShadow: '0 0 10px 0 #fff',
+                  filter:
+                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                }}
+              />
         <div className='flex-container'>
           <div className='category-container'>
             <Image
@@ -760,6 +775,7 @@ const gamesDetail = ({ gamesItem }) => {
                 width: '400px', // Ensures the image is displayed at this width
                 height: '500px', // Ensures the image is displayed at this height
                 margin: 'auto',
+                marginTop: '50px',
                 marginBottom: '20px',
                 borderRadius: '50px',
                 boxShadow: '0 0 10px 0 #fff',
@@ -792,6 +808,29 @@ const gamesDetail = ({ gamesItem }) => {
               <p className='text-black text-bg font-semibold mt-2'>
                 License: {gamesItem.license}
               </p>
+              <h2 className='text-black font-bold mt-2 text-sm mb-2 items-center justify-center '>
+              {' '}
+              Author: {gamesItem.group}.
+            </h2>
+             <Image
+                src={gamesItem.directorimg}
+                alt={gamesItem.group}
+                width={100}
+                height={100}
+                quality={90}
+                objectFit='cover'
+                loading='lazy'
+                style={{
+                  width: '50px', // Ensures the image is displayed at this width
+                  height: '50px', // Ensures the image is displayed at this height
+                  margin: 'auto',
+                  marginBottom: '20px',
+                  borderRadius: '80px',
+                  boxShadow: '0 0 10px 0 #fff',
+                  filter:
+                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                }}
+              />
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -948,8 +987,25 @@ const gamesDetail = ({ gamesItem }) => {
                   </>
                 )}
               </div>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                route='games'
+                style={{
+                  marginTop: '50px',
+                  marginBottom: '50px',
+                  borderRadius: '50px',
+                  boxShadow: '0 0 10px 0 #fff',
+                  filter:
+                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                }}
+              />
               <div className='flex flex-col items-center justify-center'>
-                <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
+                <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '  style={{
+                  marginTop: '50px',
+                   filter:
+                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                }}>
                   <strong> {gamesItem.head1} </strong>
                 </p>
               </div>

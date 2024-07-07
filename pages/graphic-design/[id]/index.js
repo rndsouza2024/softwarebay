@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import graphicdesignData from '../../../public/graphicdesign.json'
 import latestData from '../../../public/latest.json'
 import { useEffect, useState, useRef } from 'react'
+import Pagination from '../../../components/Pagination'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +13,8 @@ import Script from 'next/script'
 const graphicdesignDetail = ({ graphicdesignItem }) => {
   const router = useRouter()
   const { id } = router.query
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = 0 // Assume there are 3 pages
 
   const [latest, setLatest] = useState(latestData)
   const [playerReady, setPlayerReady] = useState(false)
@@ -349,8 +352,14 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Download {graphicdesignItem && graphicdesignItem.name} | Softwarebay</title>
-        <link rel='canonical' href={graphicdesignItem && graphicdesignItem.siteurl} />
+        <title>
+          {' '}
+          Download {graphicdesignItem && graphicdesignItem.name} | Softwarebay
+        </title>
+        <link
+          rel='canonical'
+          href={graphicdesignItem && graphicdesignItem.siteurl}
+        />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -358,15 +367,23 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${graphicdesignItem && graphicdesignItem.name} - Softwarebay`}
+          content={`${
+            graphicdesignItem && graphicdesignItem.name
+          } - Softwarebay`}
         />
         <meta
           property='og:description'
           content='SoftwareBay is the top platform for exploring and downloading software,the premier platform for the latest releases and secure downloads.'
         />
 
-        <meta property='og:url' content={`${graphicdesignItem && graphicdesignItem.url}`} />
-        <meta name='keywords' content={`${graphicdesignItem && graphicdesignItem.keywords}`} />
+        <meta
+          property='og:url'
+          content={`${graphicdesignItem && graphicdesignItem.url}`}
+        />
+        <meta
+          name='keywords'
+          content={`${graphicdesignItem && graphicdesignItem.keywords}`}
+        />
         <meta property='og:site_name' content='Softwarebay' />
         <meta property='og:type' content='article' />
         <meta
@@ -678,7 +695,19 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
             </button>
           </ul>
         </div>
-
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          route='graphic-design'
+          style={{
+            marginTop: '50px',
+            marginBottom: '50px',
+            borderRadius: '50px',
+            boxShadow: '0 0 10px 0 #fff',
+            filter:
+              'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+          }}
+        />
         <div className='flex-container'>
           <div className='category-container'>
             <Image
@@ -693,6 +722,7 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                 width: '400px', // Ensures the image is displayed at this width
                 height: '500px', // Ensures the image is displayed at this height
                 margin: 'auto',
+                marginTop: '50px',
                 marginBottom: '20px',
                 borderRadius: '50px',
                 boxShadow: '0 0 10px 0 #fff',
@@ -725,6 +755,29 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
               <p className='text-black text-bg font-semibold mt-2'>
                 License: {graphicdesignItem.license}
               </p>
+              <h2 className='text-black font-bold mt-2 text-sm mb-2 items-center justify-center '>
+                {' '}
+                Author: {graphicdesignItem.group}.
+              </h2>
+              <Image
+                src={graphicdesignItem.directorimg}
+                alt={graphicdesignItem.group}
+                width={100}
+                height={100}
+                quality={90}
+                objectFit='cover'
+                loading='lazy'
+                style={{
+                  width: '50px', // Ensures the image is displayed at this width
+                  height: '50px', // Ensures the image is displayed at this height
+                  margin: 'auto',
+                  marginBottom: '20px',
+                  borderRadius: '80px',
+                  boxShadow: '0 0 10px 0 #fff',
+                  filter:
+                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                }}
+              />
               <div
                 className='flex flex-col items-center justify-center'
                 style={{
@@ -781,15 +834,15 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                         />
                         <meta
                           itemprop='description'
-                          content=  {graphicdesignItem.text}
+                          content={graphicdesignItem.text}
                         />
                         <meta
                           itemprop='uploadDate'
-                          content=  {graphicdesignItem.datePublished}
+                          content={graphicdesignItem.datePublished}
                         />
                         <meta
                           itemprop='thumbnailUrl'
-                          content=  {graphicdesignItem.backimage}
+                          content={graphicdesignItem.backimage}
                         />
                         <meta itemprop='duration' content='P34S' />
                         <meta
@@ -814,7 +867,10 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                     {showTimer && seconds <= 0 && (
                       <div>
                         {graphicdesignItem.downloadlink && (
-                          <Link href={graphicdesignItem.downloadlink} target='_blank'>
+                          <Link
+                            href={graphicdesignItem.downloadlink}
+                            target='_blank'
+                          >
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -843,7 +899,10 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                           </Link>
                         )}
                         {graphicdesignItem.downloadlink1 && (
-                          <Link href={graphicdesignItem.downloadlink1} target='_blank'>
+                          <Link
+                            href={graphicdesignItem.downloadlink1}
+                            target='_blank'
+                          >
                             <div
                               className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
                               style={{
@@ -859,30 +918,52 @@ const graphicdesignDetail = ({ graphicdesignItem }) => {
                             </div>
                           </Link>
                         )}
-                        {graphicdesignItem.additionalLinks?.map((link, index) => (
-                          <Link key={index} href={link.url} target='_blank'>
-                            <div
-                              className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
-                              style={{
-                                margin: 'auto',
-                                marginBottom: '50px',
-                                borderRadius: '50px',
-                                boxShadow: '0 0 10px 0 #fff',
-                                filter:
-                                  'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
-                              }}
-                            >
-                              Click Here to Download {index + 3}
-                            </div>
-                          </Link>
-                        ))}
+                        {graphicdesignItem.additionalLinks?.map(
+                          (link, index) => (
+                            <Link key={index} href={link.url} target='_blank'>
+                              <div
+                                className='bg-gradient-to-r from-amber-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300'
+                                style={{
+                                  margin: 'auto',
+                                  marginBottom: '50px',
+                                  borderRadius: '50px',
+                                  boxShadow: '0 0 10px 0 #fff',
+                                  filter:
+                                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                                }}
+                              >
+                                Click Here to Download {index + 3}
+                              </div>
+                            </Link>
+                          )
+                        )}
                       </div>
                     )}
                   </>
                 )}
               </div>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                route='graphic-design'
+                style={{
+                  marginTop: '50px',
+                  marginBottom: '50px',
+                  borderRadius: '50px',
+                  boxShadow: '0 0 10px 0 #fff',
+                  filter:
+                    'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                }}
+              />
               <div className='flex flex-col items-center justify-center'>
-                <p className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '>
+                <p
+                  className='bg-gradient-to-r from-amber-500 to-pink-500 font-bold py-3 px-6 rounded-lg shadow-lg hover:from-amber-600 hover:to-pink-600 transition duration-300  text-bg text-black text-bg  mt-2 text-3xl mb-2 items-center justify-center '
+                  style={{
+                    marginTop: '50px',
+                    filter:
+                      'contrast(1.0) saturate(1.0) brightness(1.0) hue-rotate(0deg)'
+                  }}
+                >
                   <strong> {graphicdesignItem.head1} </strong>
                 </p>
               </div>
@@ -1177,7 +1258,9 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ params }) {
-  const graphicdesignItem = graphicdesignData.find(item => item.id === params.id)
+  const graphicdesignItem = graphicdesignData.find(
+    item => item.id === params.id
+  )
   return { props: { graphicdesignItem } }
 }
 export default graphicdesignDetail

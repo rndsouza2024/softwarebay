@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import latestData from '../../public/latest.json'
 import filesharingData from '../../public/filesharing.json'
-import Marquee from '../../components/Marquee'
-import Pagination from '../../components/Pagination'
+// import Marquee from '../../components/Marquee'
+// import Pagination from '../../components/Pagination'
 import Head from 'next/head'
 import Script from 'next/script';
 
@@ -226,7 +226,7 @@ const filesharingPage = ({ items }) => {
           textAlign: 'center',
           marginBottom: '15px'
         }}>SoftwareBay File Sharing Section.</h1>
-            <Marquee  />
+            {/* <Marquee  /> */}
 {/* 
 <p
           className='px-0 text-black font-bold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent text-xl hover:text-blue-800 mt-2'
@@ -454,7 +454,7 @@ const filesharingPage = ({ items }) => {
                   Many More Coming Soon...
                 </p>
             </div>
-            <Pagination currentPage={currentPage} totalPages={totalPages} route="file-sharing" />
+            {/* <Pagination currentPage={currentPage} totalPages={totalPages} route="file-sharing" /> */}
           </div>
 
           <div className='sidebar'>
